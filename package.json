@@ -1,0 +1,21 @@
+{
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "학장기 — Master 이력서 & 포트폴리오 (GitHub Pages)",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "pdf": "node scripts/pdf.mjs",
+    "sync": "node scripts/sync-notion.mjs",
+    "dev": "node scripts/build.mjs && npx -y serve dist -l 5173",
+    "all": "npm run build && npm run pdf"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^14.1.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.0"
+  }
+}

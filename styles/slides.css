@@ -1,0 +1,121 @@
+/* slides.css — 포트폴리오 슬라이드 (16:9). 기준 캔버스 1280×720, 모든 치수는 em(=슬라이드 폭 기준)으로 스케일됨 */
+
+html, body { height: 100%; }
+body.slides-body { background: #e9e8e3; }
+
+.deck {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.slide-wrap { scroll-snap-align: start; height: 100vh; display: grid; place-items: center; padding: 2.6rem 0 0; }
+
+.slide {
+  container-type: inline-size;
+  position: relative;
+  width: min(100vw, calc((100vh - 2.6rem) * 16 / 9));
+  aspect-ratio: 16 / 9;
+  background: var(--bg);
+  color: var(--ink);
+  overflow: hidden;
+  font-size: calc(min(100vw, (100vh - 2.6rem) * 16 / 9) / 80); /* 16px @ 1280 */
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+}
+.slide-inner { position: absolute; inset: 0; padding: 3.2em 4em 3em; display: flex; flex-direction: column; }
+
+/* 공용 요소 */
+.slide .label { font-size: 0.68em; }
+.slide .label.top { margin-bottom: 1.6em; }
+.slide h1 { font-weight: 800; letter-spacing: -0.025em; line-height: 1.08; margin: 0; }
+.slide h2 { font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; margin: 0; }
+.slide .sub { color: var(--ink-soft); font-size: 1em; line-height: 1.55; margin-top: 0.9em; max-width: 44em; }
+.slide .sub strong { color: var(--ink); }
+.slide .prose { font-size: 0.86em; line-height: 1.6; }
+.slide .prose ul { padding-left: 1em; }
+.slide .prose li { margin: 0.25em 0; }
+.slide .prose h4 { font-size: 0.78em; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin: 1em 0 0.3em; }
+.slide .prose h4:first-child { margin-top: 0; }
+.slide .prose img { border-radius: 0.3em; }
+.slide .accent { color: var(--accent); }
+
+.slide .foot {
+  position: absolute; left: 4em; right: 4em; bottom: 1.5em;
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: 0.62em; color: var(--muted); letter-spacing: 0.08em;
+}
+.slide .foot .next b { color: var(--ink); font-weight: 700; margin-right: 0.4em; }
+
+.slide .rows { display: grid; grid-template-columns: 11em 1fr; column-gap: 2.5em; row-gap: 1.7em; margin-top: 2.2em; align-items: start; }
+.slide .rows .label { padding-top: 0.25em; }
+.slide .rows .label .num { font-size: 1em; }
+
+/* ── cover ── */
+.slide.l-cover .slide-inner { justify-content: space-between; }
+.slide.l-cover h1 { font-size: 4.6em; }
+.slide.l-cover .sub { font-size: 1.4em; margin-top: 0.3em; color: var(--ink); font-weight: 500; }
+.slide.l-cover .contact { font-size: 0.78em; color: var(--ink-soft); display: flex; gap: 1.5em; }
+.slide.l-cover .contact a { text-decoration: underline; text-underline-offset: 0.15em; }
+
+/* ── about / detail: 라벨 + 큰 제목 + rows ── */
+.slide.l-about h2, .slide.l-detail h2 { font-size: 1.9em; max-width: 26em; }
+.slide.l-detail h2 { font-size: 1.75em; }
+.slide.l-about .rows { grid-template-columns: 9em 1fr; }
+.slide.l-detail .head { display: grid; grid-template-columns: 1fr 22em; gap: 2.5em; align-items: start; }
+.slide.l-detail .head.no-image { grid-template-columns: 1fr; }
+.slide.l-detail .hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 0.3em; border: 1px solid var(--line); background: #fff; }
+.slide.l-detail .rows { grid-template-columns: 12em 1fr; margin-top: 1.9em; }
+.slide .rows .prose { font-size: 0.86em; }
+
+/* 3열 키워드 (about의 HOW I WORK) */
+.slide .prose .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5em; margin: 0.2em 0 0.8em; }
+.slide .prose .cols h4 { font-size: 1.15em; text-transform: none; letter-spacing: -0.01em; color: var(--ink); font-weight: 800; margin: 0 0 0.2em; }
+.slide .prose .cols p { font-size: 0.86em; color: var(--ink-soft); margin: 0; }
+
+/* ── dark: 섹션 커버 ── */
+.slide.l-dark { background: var(--bg-dark); color: var(--on-dark); }
+.slide.l-dark .label { color: var(--on-dark-muted); }
+.slide.l-dark .kicker { color: var(--accent); font-weight: 700; font-size: 1em; margin-bottom: 1.4em; }
+.slide.l-dark h2 { font-size: 2.4em; }
+.slide.l-dark .sub { color: var(--on-dark-muted); }
+.slide.l-dark .sub strong { color: var(--on-dark); }
+.slide.l-dark .body { display: grid; grid-template-columns: 1fr 1fr; gap: 3em; margin-top: 1.6em; align-items: start; }
+.slide.l-dark .body.no-image { grid-template-columns: 1fr; }
+.slide.l-dark .prose { color: var(--on-dark); }
+.slide.l-dark .prose li::marker { color: var(--on-dark-muted); }
+.slide.l-dark .prose h4 { color: var(--on-dark-muted); }
+.slide.l-dark .hero { width: 100%; border-radius: 0.3em; border: 1px solid #2a2a2a; }
+.slide.l-dark .foot { color: var(--on-dark-muted); }
+.slide.l-dark .foot .next b { color: var(--on-dark); }
+.slide.l-dark .idx { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2em; margin-top: 1.4em; font-size: 0.82em; }
+.slide.l-dark .idx h4 { margin: 0 0 0.3em; font-size: 1.05em; color: var(--on-dark); text-transform: none; letter-spacing: 0; }
+.slide.l-dark .idx p { margin: 0; color: var(--on-dark-muted); }
+
+/* ── index: 큰 연도 + 목록 (WORK EXPERIENCE) ── */
+.slide.l-index .rows { grid-template-columns: 1fr 1.6fr; margin-top: 1.4em; row-gap: 2.4em; }
+.slide.l-index .year { font-size: 2.2em; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+.slide.l-index .year small { display: block; font-size: 0.38em; font-weight: 500; color: var(--ink-soft); letter-spacing: 0; margin-top: 0.6em; }
+.slide.l-index .items { display: grid; gap: 1.1em; }
+.slide.l-index .items .label { margin-bottom: 0.15em; text-transform: none; letter-spacing: 0.02em; }
+.slide.l-index .items .t { font-weight: 600; font-size: 0.95em; }
+
+/* ── two-col ── */
+.slide.l-two-col h2 { font-size: 1.75em; }
+.slide.l-two-col .cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3em; margin-top: 1.8em; align-items: start; }
+
+/* ── 화면 전용 컨트롤 ── */
+.deck-nav { position: fixed; right: 1rem; top: 50%; transform: translateY(-50%); flex-direction: column; z-index: 50; display: flex; gap: 0.4rem; font-size: 0.8rem; }
+.deck-nav button { border: 1px solid var(--line); background: var(--bg); border-radius: 999px; padding: 0.3rem 0.8rem; cursor: pointer; font: inherit; color: var(--ink); }
+.deck-nav button:hover { border-color: var(--ink); }
+
+/* ── 인쇄: 슬라이드 1장 = 1페이지 ── */
+@page { size: 338.67mm 190.5mm; margin: 0; } /* 1280×720 px @ 96dpi */
+@media print {
+  html, body { height: auto; background: #fff; }
+  .deck { height: auto; overflow: visible; scroll-snap-type: none; }
+  .slide-wrap { height: auto; display: block; break-after: page; padding: 0; }
+  .slide-wrap:last-child { break-after: auto; }
+  .slide { width: 338.67mm; height: 190.5mm; aspect-ratio: auto; font-size: 16px; box-shadow: none; }
+  .deck-nav, .site-nav { display: none !important; }
+}
