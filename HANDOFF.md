@@ -1,15 +1,27 @@
 # HANDOFF — Claude Code로 이어서 진행하기 위한 세션 정리
 
-작성: 2026-10-13 (claude.ai 세션 → Claude Code 인계)
+작성: 2026-10-13 · 갱신: 2026-10-14 (claude.ai 세션 → Claude Code 인계)
 
 ---
 
-## 0. 지금 당장 할 일 (순서대로)
+## 0. 현재 상태 (2026-10-14 기준) — 사이트 배포 완료 ✅
 
-1. **GitHub Pages 켜기** (사용자가 웹에서 1회): https://github.com/zzanggi-haki/portfolio/settings/pages → Build and deployment → Source **"GitHub Actions"**
-2. Actions 탭에서 마지막 워크플로 **Re-run** (또는 아무 커밋 push). build 잡은 이미 성공, deploy 잡만 Pages 미활성화로 실패 중.
-3. https://zzanggi-haki.github.io/portfolio/ 열어서 `resume.html`, `portfolio.html`, PDF 링크 확인.
-4. 로컬 클론: `git clone https://github.com/zzanggi-haki/portfolio ~/Desktop/ZZANGGI/Portfolio/site && cd $_ && npm install && npm run dev`
+- **GitHub Pages 활성화 완료** (Source: GitHub Actions), 첫 배포 성공 (run 38398558510, 2026-10-13 21:37 KST)
+- 공개 URL: https://zzanggi-haki.github.io/portfolio/
+  - `resume.html` / `resume.en.html` (상단 PDF 버튼 = 브라우저 인쇄)
+  - `portfolio.html` (↑↓ 키 / 우측 버튼으로 넘김)
+  - `resume.pdf` / `resume.en.pdf` / `portfolio.pdf` — Actions가 매 배포마다 자동 생성
+- 이후 `main`에 push → 2~3분 뒤 자동 반영. 수동 재배포: Actions 탭 → "Build & Deploy (GitHub Pages)" → Run workflow
+  (REST로도 가능: `gh api -X POST repos/zzanggi-haki/portfolio/actions/workflows/deploy.yml/dispatches -f ref=main`)
+- 사용자 확인 완료, "몇 가지 수정할 게 있음" — 구체 내용은 다음 세션에서 받을 것
+
+### Claude Code로 이어서 시작하기
+```bash
+git clone https://github.com/zzanggi-haki/portfolio ~/Desktop/ZZANGGI/Portfolio/site
+cd ~/Desktop/ZZANGGI/Portfolio/site && npm install && npx playwright install chromium
+npm run dev        # http://localhost:5173
+```
+첫 메시지: "HANDOFF.md 읽고 5번 '남은 일'부터 진행해". 사용자 수정 요청을 먼저 받아 반영한 뒤 이미지 작업으로.
 
 ---
 
@@ -92,8 +104,8 @@ portfolio/
 ## 5. 남은 일 (우선순위)
 
 ### 바로
-- [ ] Pages 활성화 → 배포 확인 (위 0번)
-- [ ] 사용자 톤 피드백 반영 (브라우저에서 슬라이드 보고)
+- [x] Pages 활성화 → 배포 확인 (2026-10-13 완료)
+- [ ] **사용자 수정 요청 반영** — 사용자가 배포본을 보고 "몇 가지 수정할 게 있다"고 함. 세션 시작 시 먼저 물어볼 것
 - [ ] 슬라이드 이미지: 키노트에서 스크린샷 추출 → `assets/img/` → 각 md `image:` 지정. 키노트 렌더 참고본은 `~/Desktop/ZZANGGI/Portfolio/_work/design/p-01..19.jpg`. 에이모 원천 이미지는 `Portfolio/` 하위 `이미지/*.png, *.mkv`, `썸네일 뷰어 _ 클래스_속성 수정.pdf`
 - [ ] 이력서 검토 포인트 결정 → `content/resume.*.md` 수정:
   - 첫 줄 문구: "UX 리서치로 문제를 찾고, 그 답을 AI 제품으로 만드는 PO"(현재) vs "UX 리서치 기반으로 AI 제품을 만드는 PO"(원문)
