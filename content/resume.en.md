@@ -50,23 +50,18 @@ Release MVPs into actual work environments, confirm their effectiveness, then ex
 - **Designed and taught two Claude Code courses as lead instructor**
   - 1:1 course for a public enterprise practitioner (Jul 2026 ~ ongoing, week 8): Claude Code literacy, design and procurement review automation, and exercises updating unit prices in design cost breakdowns for an electrical practitioner at Korea Rural Community Corporation
   - One-day class for HRD instructors (Sep 2026): Claude Code fundamentals and hands-on exercises, building tools for immediate use in training
-- **Technical tutor for 35 corporate AI training sessions** — LG 18, SK Innovation 11, Hana Financial Group 2, Hana Capital 2, LX MDI 1, D&O CM 1
-  - LX MDI (Sep 2026): Claude Code training for LX Group executives
-  - Hana Capital (Sep 2026): Gemini fundamentals, MCP, and vibe coding
+- **Technical tutor for 35 corporate AI training sessions** — LG 18, SK Innovation 11, Hana Financial Group and Hana Capital 4, LX MDI and D&O CM 2
   - SK Innovation AI Agent course for team leaders (Aug ~ Sep 2026): Literacy in the internal AI tool Innohub, work redesign, and AI agent creation
-  - Hana Financial Group executives (Jul ~ Sep 2026): First session on Gemini, second session on Claude Code
-  - LG executive AI for Company and AI for Leaders programs (May ~ Sep 2026): AI fundamentals, Claude Code exercises, and vibe coding. Supported participating teams in creating presentation videos by connecting Claude Code and Higgsfield during a three-day MBA new business AI hackathon
-  - D&O CM AI for Company leadership workshop (Aug 2026)
+  - LG AI for Company and AI for Leaders for executives (May ~ Sep 2026): AI fundamentals, Claude Code practice, and vibe coding. Supported participating teams in creating presentation videos by connecting Claude Code and Higgsfield during a three-day MBA new business AI hackathon
 
 ### Team J-Curve — AX Consultant (UX Research, AX Consulting) · Jun 2026 ~ Aug 2026 · 3-month contract
 
-- **LG Chem SCM AI agent proposal — designed the proposal structure, wrote and presented the proposal**
-  - Problem definition: Reframed the core task from adopting technology to making practitioners' decision logic explicit in a form AI could understand
-  - Proposal structure: Centered interviews and observation of operational teams, mapping seven workflow stages → five AI agent types → initial implementation scope
-  - Client discussions: Used a prototype to discuss implementation scope, held two client meetings and delivered the final presentation (contract not awarded)
-- **Documented an AX consulting framework based on UX methods**
-  - Structured corporate AI transformation into four stages: diagnosis → work redesign → implementation → organizational restructuring
-  - Defined AI's role at each stage: assistance, delegation, or autonomy
+- **Designed and presented an SCM AI agent proposal for LG Chem** — Wrote the proposal, held two client meetings, and delivered the final presentation
+  - Designed interviews and observation with business users to extract their decision logic into a form AI could use
+  - Structured the proposal from a seven-step workflow → five AI agent types → initial implementation scope
+  - Built a prototype with simulated data using Claude and used it to discuss implementation scope (not awarded)
+- **Documented a four-stage corporate AI transformation consulting framework** — Diagnosis → work redesign → implementation → structural reorganization
+  - Defined AI roles at each stage (assistance, delegation, autonomy) and applied UX research methods
 
 ### Career break (extended stay abroad) · Jun 2025 ~ Mar 2026
 
