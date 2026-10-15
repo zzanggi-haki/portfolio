@@ -107,18 +107,21 @@ function buildResume(file, out) {
       .map(({ heading, body }) => {
         if (!heading) return `<div class="prose">${md.render(body)}</div>`;
         // "회사 — 직함 · 기간 · 고용형태"
-        // 제목 뒤 첫 "· YYYY." 부터를 기간/메타로 본다 (제목 안의 "·"는 보존)
-        const cut = heading.search(/ · (?=\d{4}\.)/);
+        // 제목 뒤 첫 "· YYYY." (영문은 "· Mon YYYY") 부터를 기간/메타로 본다 (제목 안의 "·"는 보존)
+        const cut = heading.search(/ · (?=\d{4}\.|[A-Z][a-z]{2} \d{4})/);
         const titlePart = cut === -1 ? heading : heading.slice(0, cut);
         const meta = cut === -1 ? [] : heading.slice(cut + 3).split(' · ');
         const period = meta.shift() || '';
         const rest = meta.join(' · ');
+        // 왼쪽 칸 = 기간·고용형태, 오른쪽 칸 = 회사·직함 + 본문
         return `<article class="job">
-  <div class="job-head">
-    <h3>${esc(titlePart)}</h3>
-    <span class="period">${esc(period)}${rest ? ` · ${esc(rest)}` : ''}</span>
+  <div class="job-side">
+    <span class="period">${esc(period)}</span>${rest ? `\n    <span class="meta">${esc(rest)}</span>` : ''}
   </div>
-  <div class="prose">${md.render(body)}</div>
+  <div class="job-main">
+    <h3>${esc(titlePart)}</h3>
+    <div class="prose">${md.render(body)}</div>
+  </div>
 </article>`;
       })
       .join('\n');
@@ -130,7 +133,7 @@ function buildResume(file, out) {
       const isJobs = /^(경력|Experience)$/i.test(heading);
       const cls = /summary/i.test(heading) ? 'summary' : '';
       const inner = isJobs ? renderJobs(body) : `<div class="prose ${cls}">${md.render(body)}</div>`;
-      return `<section class="row"><div class="label">${esc(label)}</div><div>${inner}</div></section>`;
+      return `<section class="row${isJobs ? ' jobs' : ''}"><div class="label">${esc(label)}</div><div>${inner}</div></section>`;
     })
     .join('\n');
 

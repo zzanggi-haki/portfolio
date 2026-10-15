@@ -2,7 +2,7 @@
 lang: en
 name: Jangki Hak
 name_en: 학장기
-tagline: Product Owner who finds the problem through UX research and answers it with an AI product
+tagline: Product Owner who finds problems through UX research and solves them with AI products
 phone: +82 10-4013-2425
 email: zzanggi91@gmail.com
 links:
@@ -11,12 +11,11 @@ links:
   - label: GitHub
     url: https://github.com/zzanggi-haki
 experience: 9 years of experience (since Feb 2017)
-updated: 2026-10-13
+updated: 2026-10-15
 labels:
   Summary: SUMMARY
   Core strengths: CORE STRENGTHS
   Experience: WORK EXPERIENCE
-  Selected projects: SELECTED PROJECTS
   Skills & tools: SKILLS & TOOLS
   Education: EDUCATION
   Side projects: SIDE PROJECTS
@@ -24,93 +23,114 @@ labels:
 
 ## Summary
 
-Five years as a UX consultant, two and a half as a Product Owner of an AI platform. One method runs through both: observe users directly, then turn what you learn into product decisions. Lately I have been applying the same method to enterprise AI-transformation proposals and executive AI education.
+Spent five years observing users and defining problems as a UX consultant, then 2.5 years solving those problems and improving products as an AI platform PO.
 
-I define user problems with video ethnography, usability tests, focus groups and heatmap analysis, carry them into design, and follow through until the proposed feature ships. At STUDIO, an AI training-data labeling platform, I owned strategy, roadmap, releases and operations end to end and made user feedback a **fixed step in the weekly release loop** rather than a separate activity (one PM session a week for 2.5 years; no weekly release ever missed).
+Experience defining user problems through Video Ethnography, UT, FGI, and heatmap analysis kept actual user needs at the center of feature planning and product operations. At STUDIO, an AI training data labeling platform, **led the full product lifecycle**, from strategy and roadmaps through planning, development, launch, and improvements after actual use.
 
-I turned requirements from global OEMs such as BMW, Bosch and Arbe into reusable task types instead of one-off customizations, which helped win new business, and packaged the SaaS tool for on-premise delivery to LG AI Research. Most recently I translated UX research methodology into an enterprise AI-transformation process to design the LG Chem SCM agent proposal, and I build Claude skills for my own repetitive work.
+Translated requirements from global manufacturers including BMW, Bosch, and Arbe into product features, contributing to **a five-year BMW contract and contracts of at least six months with Bosch and Arbe**. When LG AI Research, an existing SaaS customer, **switched to a package purchase**, delivered an on-premises version with minimal changes. Recently proposed a framework for building SCM AI agents for LG Chem based on UX research methods, and I am testing how work should be split between people and AI in my own work.
 
 ## Core strengths
 
-|  | What I do | Evidence |
-| --- | --- | --- |
-| **Research → product decisions** | Design and run qualitative and quantitative research, then convert findings into backlog priorities and design rules | XingXing video ethnography → shipped features, HCI 2020 talk / KGC usability tests & heatmaps → product-image rule / STUDIO weekly PM session → next week's release |
-| **Running a B2B AI product** | Own strategy, roadmap, backlog, releases and operations as one accountable person | Led an 8+ person TF · weekly releases for 2.5 years without a miss · 106 tasks in 2024 · multiple global customers incl. a 5-year BMW program |
-| **Designing AI transformation** | Translate practitioners' tacit knowledge into agent requirements and build consensus with demos attached to the proposal | LG Chem SCM orchestrator proposal (IDI · walkthrough · CI → 5 agents) · 4-stage AX framework · 6 custom Claude skills |
+### Find real needs through research and observation
+#### Start by observing users' actual work
+Use research methods developed over five years as a UX consultant to identify causes in actual work settings instead of taking requirements at face value. Observed reviewers leaving and returning to the viewer, then cut the review process from six steps to three. For the LG AI Research delivery, first mapped the work process and made minimal changes to the existing tool.
+
+### Build systems for continuous product improvement
+#### Turn user feedback into weekly product improvements
+Designed a weekly session with project PMs to consolidate scattered requests from operational teams, then established it as a regular team process with consistent PM participation. This aligned PM and development priorities. A task force of more than eight people maintained weekly releases without a single missed release for 2.5 years and handled 106 improvements and support cases in 2024 alone.
+
+### Validate on a small scale, then expand into the product
+#### Turn one customer's request into a product all customers can use
+Release MVPs into actual work environments, confirm their effectiveness, then expand. Refined a feature built for a Bosch demo into a standard feature and reused it in BMW's five-year project. Turned Arbe's requirements into a new task type that other customers could also use.
 
 ## Experience
 
-### Team J-Curve — AX Consultant (UX Research · AX Consulting) · Jun 2026 ~ Aug 2026 · 3-month contract
+### Corporate AI Instructor and Technical Tutor (freelance) · May 2026 ~ present
 
-B2B AI education and consulting firm. Role: design the enterprise AI-transformation process from UX research methodology.
+- **Designed and taught two Claude Code courses as lead instructor**
+  - 1:1 course for a public enterprise practitioner (Jul 2026 ~ ongoing, week 8): Claude Code literacy, design and procurement review automation, and exercises updating unit prices in design cost breakdowns for an electrical practitioner at Korea Rural Community Corporation
+  - One-day class for HRD instructors (Sep 2026): Claude Code fundamentals and hands-on exercises, building tools for immediate use in training
+- **Technical tutor for 35 corporate AI training sessions** — LG 18, SK Innovation 11, Hana Financial Group 2, Hana Capital 2, LX MDI 1, D&O CM 1
+  - LX MDI (Sep 2026): Claude Code training for LX Group executives
+  - Hana Capital (Sep 2026): Gemini fundamentals, MCP, and vibe coding
+  - SK Innovation AI Agent course for team leaders (Aug ~ Sep 2026): Literacy in the internal AI tool Innohub, work redesign, and AI agent creation
+  - Hana Financial Group executives (Jul ~ Sep 2026): First session on Gemini, second session on Claude Code
+  - LG executive AI for Company and AI for Leaders programs (May ~ Sep 2026): AI fundamentals, Claude Code exercises, and vibe coding. Supported participating teams in creating presentation videos by connecting Claude Code and Higgsfield during a three-day MBA new business AI hackathon
+  - D&O CM AI for Company leadership workshop (Aug 2026)
 
-- **LG Chem SCM scheduling orchestrator agent — proposal design** — Structured two client meetings and the requirement emails first, and diagnosed that "what is missing is not technology but the judgment logic in the planners' heads." Put a Discover phase that extracts tacit knowledge through IDI, walkthrough, contextual inquiry and an AI pre-interview at the center of the proposal, and wrote and presented the 44-page proposal body that runs from a 7-step AS-IS workflow → pain points → 5 agents (Production · Sales · Orchestrator · Profit Scoring · Monitoring) → phase-1 scope. Built prototype v0.1–0.3 with Claude so scope could be agreed on screens rather than text (not awarded — project size unresolved on both sides)
-- **AX consulting framework built on UX methodology** — Four stages: Diagnose → Work Re-Design → Build (Discover → Define → Develop → Deliver) → Re-Architect, with AI roles (augment / delegate / autonomous) mapped to every stage. Validated on a purchase-order automation case for Sinsun P&F
-- Analyzed 12 inbound inquiries to prioritize 10 improvements for the company website; Claude API live-diagnosis prototype
+### Team J-Curve — AX Consultant (UX Research, AX Consulting) · Jun 2026 ~ Aug 2026 · 3-month contract
 
-### Corporate AI education — tech tutor / facilitator (freelance) · May 2026 ~ present
-
-- **LG**: AI for Company (Inhwawon), AI for Leaders (Namsan and Inhwawon, multiple cohorts, PRD coaching for executives), MBA new-business AI hackathon (3 days) — May–Aug 2026
-- **Hana Financial Group** executive AI program, rounds 1 and 2 (Jul, Sep) · **LX MDI**, **D&O CM**, **SK** tech tutoring · planned and ran a **Claude Code one-day class** for HRD staff (Sep)
-- Observed where participants get stuck with AI tools in every program → turned the coaching into Claude skills such as PRDmaker
+- **LG Chem SCM AI agent proposal — designed the proposal structure, wrote and presented the proposal**
+  - Problem definition: Reframed the core task from adopting technology to making practitioners' decision logic explicit in a form AI could understand
+  - Proposal structure: Centered interviews and observation of operational teams, mapping seven workflow stages → five AI agent types → initial implementation scope
+  - Client discussions: Used a prototype to discuss implementation scope, held two client meetings and delivered the final presentation (contract not awarded)
+- **Documented an AX consulting framework based on UX methods**
+  - Structured corporate AI transformation into four stages: diagnosis → work redesign → implementation → organizational restructuring
+  - Defined AI's role at each stage: assistance, delegation, or autonomy
 
 ### Career break (extended stay abroad) · Jun 2025 ~ Mar 2026
 
-Automated a one-person content production workflow with AI tools while abroad (Claude skills for multilingual subtitles and localization)
-
 ### AIMMO — Product Owner, AI Data Labeling ‘STUDIO’ · Nov 2022 ~ May 2025 · full-time
 
-Labeling platform for building AI training datasets (image, sequence, point cloud, sensor fusion, OCR). Owned strategy, roadmap, backlog, releases and operations end to end; led an operations TF of 8+ (PO/PD/FE/BE/QA).
+A labeling platform for creating AI training data for autonomous driving, OCR, and other applications.\
+Oversaw product strategy and roadmaps through launch and operations; led a task force of more than eight people across planning, design, development, and QA.
 
-- **Made user feedback a fixed step of the release loop** — Designed and led a weekly session with project PMs for 2.5 years. Heard the reaction to what had just shipped and the next bottleneck in the same room, and agreed next week's release priorities on the spot → no weekly release missed, 106 support/improvement/issue tasks in 2024, all 10 improvements for the Hyundai Motor project came out of these sessions
-- **Redesigned the review workflow (inline editing in the thumbnail viewer)** — Observed the 6-step cycle in which reviewers left the viewer to request fixes → reduced it to 3 steps by editing inside the viewer. Under infrastructure constraints, narrowed the MVP to "single scene file, review stage only," shipped first, confirmed value, then expanded to all resource types. Adopted by every reviewer; 3+ review PMs confirmed time savings directly
-- **Turned global OEM requirements into reusable task types** — Shipped a Bosch demo feature to production (polyline point), applied it to the 5-year BMW BEV program, developed a point-cloud polygon task type for Arbe → contributed to winning global projects worth hundreds of millions of KRW
-- **Packaged the SaaS tool for on-premise delivery (LG AI Research SI)** — After using the tool on an AIMMO project, LG AI Research decided to buy the tool itself; as dedicated PO I defined the packaging scope. Understood LG's work process first, then implemented with minimal changes to the existing tool (Aug 2024–Feb 2025, 240 PO hours) → service opened Mar 2025, converted to a 1-year maintenance contract
-- **Led the roadmap** — Image ↔ reference-view project sync (phase 1 → sequence expansion), the decision to put point-cloud performance and structure ahead of new features, and a restructure of API validation from per-project settings into an extensible design
+- **Contributed to major global project contracts** — five-year BMW contract and contracts of at least six months with Bosch and Arbe
+  - Added customer demo features to the roadmap as standard features and turned them into general-purpose task types for other customers
+- **Improved labeling efficiency** — cut review steps from 6 to 3
+  - Released an MVP for editing directly within the thumbnail viewer, adopted by all reviewers
+  - Prioritized point cloud performance improvements and refactoring ahead of new features
+- **Expanded business scope** — supported new data types and on-premises sales
+  - Developed new task types — point cloud 3D polygons for the Arbe project and text labeling for the Naver project
+  - Took sole responsibility for on-premises packaging for LG AI Research, launched in Mar 2025, and converted to a one-year maintenance contract
+- **Built an operating process that turned operational requests into product improvements** — no missed weekly releases over 2.5 years; 106 improvements and support cases in 2024
+  - Designed weekly project PM sessions and established them as a regular team process, connecting them to three-month roadmaps to reflect operational requests in that week's priorities
 
-### Freelance — Service Planning Lead / UX Consultant · Apr 2022 ~ Oct 2022
+### Freelance — Service Planning PL and UX Consultant · Jun 2022 ~ Oct 2022
 
-- Shinhan Bank SOL MyData-linked app build (completed after leaving IXI) · CJ ENM website Beusable heatmap analysis (setup to report, solo) · SK groupware mobile 2.0 redesign, planning lead
+- Planning PL for the SK Groupware Mobile 2.0 redesign (Jul ~ Oct 2022)
+- Independently handled Beusable heatmap analysis for the CJ ENM website, from setup through reporting (Jun ~ Jul 2022)
 
 ### IXI — Senior UX Consultant, UX Strategy Division · Aug 2019 ~ Mar 2022 · full-time
 
-- **XingXing shared e-scooter UX research (PM)** — Mapped three questions (first ride, geo-fence, lock-in) one-to-one to three studies: a 150-person survey, 7 heavy-user IDIs and 7 GoPro-helmet video ethnography sessions with retrospective think-aloud → proposed features shipped in the app; presented as a case study at HCI 2020
-- **Amway Hybris Enhancement (PM)** — Owned usability test design, moderation and reporting with ABOs; redesigned SOP/BSOP and Smart Dashboard UI → shipped to production
-- Jeju Genie UX consulting (PM; contextual inquiry, CJM, 255-person survey) · LG CES 2021 Virtual Exhibition (PM) · LG U+ IPTV UX consulting (lead) · LG Best Shop e-Catalog · DashingDiva EU commerce · GS Fresh app
+- **Research-based feature recommendations implemented in live services** — XingXing (personal mobility) app, Amway Hybris
+  - Amway Hybris Enhancement (PM, 2021): Solely responsible for designing and conducting UT and IDI with ABOs and writing reports; redesigned SOP/BSOP and Smart Dashboard UI
+  - XingXing UX Research (PM, 2019~2020): Matched research methods to three topics—First Ride, Geo-Fence, and Lock-In—using a survey of 150 participants, IDI with seven heavy users, and GoPro Video Ethnography with seven participants plus RTA; presented a case study at HCI 2020
+- **Led four consulting and implementation projects as PM and two as PL** — from scheduling and client communication to research and UI design
+  - Shinhan Bank SOL MyData-linked app implementation (PL, Dec 2021 ~ Mar 2022): App service planning and initial requirements discussions
+  - Jeju Genie app UX consulting (PM, 2021): Designed feature improvement proposals, new feature UI, and prototypes based on Contextual Inquiry, CJM, and a survey of 255 participants
+  - LG CES 2021 Virtual Exhibition (PM, 2020~2021): Designed UI flows and information architecture for the H&A, IT, and HE divisions
+  - LG U+ IPTV Seamless UX consulting (PL, 2020): Analyzed global competitors and proposed remote-control-based interactions
+- **Commerce and retail UX design** — DashingDiva EU commerce (Shopify), LG Best Shop e-Catalog, GS Fresh app
 
 ### Kitalk AI — Service Planner · Mar 2019 ~ Jul 2019
 
-- UX/UI planning and user research for the travel curation service 'My Bucket List'
+- UXUI planning and user research for the travel curation app 'My Bucket List'
 
 ### emotion global — UX Consultant, UX Division · Feb 2017 ~ Mar 2019 · full-time
 
-- **CheongKwanJang Mall UX/UI consulting** — Designed and ran a 200-person survey, 10 usability tests and Hotjar heatmap/funnel analysis → derived design rules such as "the first product image must show the dosage form," shipped to production
-- Samsung Welstory healthcare app build (challenge features, launched Mar 2019) · Hyundai Electric website UX consulting (FGI, IA) and ICT GUI guidelines · Nike new UX/UI roll-out
-
-## Selected projects
-
-| Project | The decision research made | Outcome |
-| --- | --- | --- |
-| STUDIO weekly user-session loop (AIMMO) | User feedback as a fixed step in the weekly release loop, not a separate research activity | Weekly for 2.5 years, no release missed, 10 Hyundai Motor improvements and more |
-| Inline editing in the thumbnail viewer (AIMMO) | Observed reviewer context switching → made "fix it where you review" the core value; answered infrastructure limits by narrowing MVP scope | 6 steps → 3, adopted by every reviewer |
-| LG AI Research on-premise packaging (AIMMO) | Understood LG's work process first, then scoped to minimal changes of the existing tool | Delivered, opened Mar 2025, 1-year maintenance |
-| LG Chem SCM orchestrator proposal (J-Curve) | Diagnosed "what's missing is tacit knowledge, not technology" → UX-research Discover at the center of the proposal | 44-page proposal, 5-agent architecture, presented (not awarded) |
-| XingXing UX research (IXI) | Mapped three studies to three problems; tested the geo-fence hypothesis with a video-ethnography task | Features shipped, HCI 2020 talk |
+- **Research-based feature recommendations implemented in the live service** — KGC (Cheong Kwan Jang) online mall UXUI improvement consulting (2018)
+  - Designed and conducted an online survey of 200 participants, UT with 10 participants (equal numbers with and without purchase experience), and Hotjar heatmap and funnel analysis
+  - Recommended features implemented, including showing product form in the first product image and providing symptom and ingredient information for users new to health supplements
+- **Planning PA for implementation and consulting projects**
+  - Planned the challenge section of the Samsung Welstory healthcare app (2018~2019, launched Mar 2019)
+  - Nike NEW UXUI Roll-out: Implemented and improved features for the Korean market based on global guidelines (2017~2018)
+  - Hyundai Electric website UX consulting: Defined departmental requirements through FGI, designed product category IA, and created ICT GUI guidelines (2017)
 
 ## Skills & tools
 
-- **Research**: in-depth interviews, FGI, usability testing, video ethnography (RTA), contextual inquiry, walkthrough, online surveys, CJM/personas, CTA/HTA, heatmap analysis (Beusable, Hotjar)
-- **Product**: product strategy and roadmap, backlog and prioritization, PRDs, MVP scoping, regular and hotfix release management, policy and feature specifications, Korean/English readme
-- **Design**: IA, storyboards, wireframes, prototypes — Figma, Adobe XD, Axure
-- **AI / tools**: custom Claude skills (ux-site-analysis, PRDmaker, youtube-multilang and more), vibe coding (React/Vercel), Asana, Notion, Todoist
-- **Domains**: AI training data (image, sequence, point cloud, sensor fusion, OCR), autonomous driving, B2B SaaS, e-commerce, finance, mobility, healthcare, manufacturing SCM
-- **Languages**: Korean (native), English (conversational; reads technical documents)
+- **Product**: Product strategy and roadmaps, backlogs and prioritization, PRD, MVP scoping, scheduled and hotfix release management, policy and feature specifications
+- **Research**: In-depth Interview, FGI, UT, Video Ethnography (RTA), Contextual Inquiry, Online Survey, CJM and personas, CTA and HTA, heatmap analysis (Beusable, Hotjar)
+- **AI**: Claude Code, MCP, AI agent workflow design, vibe coding (React, Vercel), Gemini
+- **Design and collaboration**: IA, storyboards, wireframes, prototypes — Figma, Axure, Slack, Notion
+- **Domains**: AI training data (images, sequences, Point Cloud, sensor fusion, OCR), autonomous driving, B2B SaaS, e-Commerce, finance, mobility, healthcare, manufacturing SCM
+- **Languages**: English — basic conversation, reading English documents
 
 ## Education
 
-- Seoul National University of Science and Technology — B.S. in Mechanical System Design Engineering · entered 2010 · graduated Aug 2016
+- Seoul National University of Science and Technology, Dept. of Mechanical System Design Engineering, entered 2010, graduated Aug 2016
 
 ## Side projects
 
-- **howmuchbook** (howmuchbook.vercel.app) — Started from the small annoyance of comparing used and e-book prices; connected several platform APIs and planned, built and deployed it alone
-- **Claude skill library** — Productized repetitive work as skills: UX site diagnosis, PRD coaching, 14-language YouTube subtitle and title localization, SVG flow animation
+- **Independently planned, developed, and released four macOS menu bar apps** — [Snackbar](https://zzanggi-haki.github.io/snackbar/): Audio routing, work time tracking, icon organization, and cursor highlighting. Automated site updates on release; collected feedback through GitHub Discussions
+- **Independently planned, developed, and released a book price comparison web service** — [howmuchbook](https://howmuchbook.vercel.app): Connected APIs from used-book and ebook platforms
