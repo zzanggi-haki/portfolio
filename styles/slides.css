@@ -85,7 +85,7 @@ body.slides-body { background: #e9e8e3; }
 .slide.l-dark .prose { color: var(--on-dark); }
 .slide.l-dark .prose li::marker { color: var(--on-dark-muted); }
 .slide.l-dark .prose h4 { color: var(--on-dark-muted); }
-.slide.l-dark .hero { width: 100%; border-radius: 0.3em; border: 1px solid #2a2a2a; }
+.slide.l-dark .hero { width: 100%; border-radius: 0.3em; border: 1px solid #2a2a2a; display: block; margin-bottom: 1.4em; }
 .slide.l-dark .foot { color: var(--on-dark-muted); }
 .slide.l-dark .foot .next b { color: var(--on-dark); }
 .slide.l-dark .idx { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2em; margin-top: 1.4em; font-size: 0.82em; }
@@ -117,6 +117,13 @@ body.slides-body { background: #e9e8e3; }
 .slide .prose .grid4 h4 { font-size: 1.05em; text-transform: none; letter-spacing: -0.01em; color: var(--ink); font-weight: 800; margin: 0 0 0.25em; }
 .slide .prose .grid4 .m { font-size: 0.85em; color: var(--muted); margin: 0 0 0.4em; }
 .slide .prose .grid4 p { margin: 0; color: var(--ink-soft); }
+
+/* 흐름 다이어그램 (detail 본문) */
+.slide .prose .flow { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5em; margin: 0.1em 0 0.3em; }
+.slide .prose .flow span { border: 1px solid var(--ink); border-radius: 999px; padding: 0.3em 0.9em; font-weight: 600; background: var(--bg); }
+.slide .prose .flow span.hl { background: var(--ink); color: var(--bg); }
+.slide .prose .flow b { width: 4.2em; font-size: 0.78em; letter-spacing: 0.08em; color: var(--muted); font-weight: 500; }
+.slide .prose .flow i { font-style: normal; color: var(--accent); font-weight: 700; }
 
 /* ── 화면 전용 컨트롤 ── */
 .deck-nav { position: fixed; right: 1rem; top: 50%; transform: translateY(-50%); flex-direction: column; z-index: 50; display: flex; gap: 0.4rem; font-size: 0.8rem; }

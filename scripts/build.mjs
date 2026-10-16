@@ -197,7 +197,7 @@ ${fm.subtitle ? `<p class="sub">${md.renderInline(fm.subtitle)}</p>` : ''}
 ${fm.subtitle ? `<p class="sub">${md.renderInline(fm.subtitle)}</p>` : ''}
 <div class="body ${img || right ? '' : 'no-image'}">
   <div class="prose">${md.render((left || '').trim())}</div>
-  ${img || (right ? `<div class="prose">${md.render(right.trim())}</div>` : '')}
+  ${img || right ? `<div class="side">${img}${right ? `<div class="prose">${md.render(right.trim())}</div>` : ''}</div>` : ''}
 </div>${foot}`;
       break;
     }

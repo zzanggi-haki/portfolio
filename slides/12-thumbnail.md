@@ -3,6 +3,7 @@ layout: detail
 label: WORK EXPERIENCE_AIMMO · PROJECT_02
 title: 검수 과정 6단계 → 3단계
 subtitle: 썸네일 뷰어 안에서 바로 수정하는 기능을 MVP로 먼저 출시해 검수자 전원이 사용했고, 인프라팀 협업을 끌어내 시퀀스·포인트클라우드까지 확장했습니다.
+image: assets/img/aimmo-thumbnail-edit.jpg
 next: PROJECT_03
 ---
 ## 프로젝트 배경
@@ -19,4 +20,7 @@ AI 학습 데이터 라벨링 툴 'STUDIO'의 PO로서, 라벨링 작업자와 �
 
 ## 결과
 
-AS-IS 6단계 → TO-BE 3단계 (뷰어 내 다중/단일 선택 수정 → 저장). 2024.09 싱글 이미지 → 2024.11 씬 파일(시퀀스·포인트클라우드) 순차 배포. 검수 담당 PM 3명 이상에게 검수 시간 단축 확인, 이전에 없던 기능이라 검수자 전원 사용, 건당 최소 10초 이상 감소.
+<div class="flow"><b>AS-IS</b><span>오류 발견</span><i>→</i><span>스튜디오 재진입</span><i>→</i><span>담당자 변경</span><i>→</i><span>수정</span><i>→</i><span>필터 재설정</span><i>→</i><span>검수 재시작</span></div>
+<div class="flow"><b>TO-BE</b><span class="hl">오류 발견</span><i>→</i><span class="hl">뷰어 안에서 다중/단일 선택 수정</span><i>→</i><span class="hl">저장</span></div>
+
+2024.09 싱글 이미지 → 2024.11 씬 파일(시퀀스·포인트클라우드) 순차 배포. 검수 담당 PM 3명 이상에게 검수 시간 단축 확인, 이전에 없던 기능이라 검수자 전원 사용, 건당 최소 10초 이상 감소.
