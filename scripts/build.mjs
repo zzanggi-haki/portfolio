@@ -171,7 +171,11 @@ function renderSlide(fm, body, i, total) {
     fm.next ? `<span class="next"><b>Next.</b>${esc(fm.next)}</span>` : ''
   }</div>`;
   const label = fm.label ? `<div class="label top">${esc(fm.label)}</div>` : '';
-  const img = fm.image ? `<img class="hero" src="${esc(fm.image)}" alt="">` : '';
+  // image: "placeholder: 설명" → 이미지 넣을 자리 표시 (점선 박스)
+  const ph = typeof fm.image === 'string' && fm.image.match(/^placeholder:\s*(.*)$/);
+  const img = ph
+    ? `<div class="hero placeholder"><span>이미지 자리</span>${esc(ph[1])}</div>`
+    : fm.image ? `<img class="hero" src="${esc(fm.image)}" alt="">` : '';
   let inner = '';
 
   switch (fm.layout) {
@@ -222,8 +226,10 @@ ${fm.subtitle ? `<p class="sub">${md.renderInline(fm.subtitle)}</p>` : ''}
 
     case 'two-col': {
       const [left, right] = body.split(/^---$/m);
-      inner = `${label}<h2>${md.renderInline(fm.title || '')}</h2>
-${fm.subtitle ? `<p class="sub">${md.renderInline(fm.subtitle)}</p>` : ''}
+      inner = `${label}<div class="head ${img ? '' : 'no-image'}">
+  <div><h2>${md.renderInline(fm.title || '')}</h2>${fm.subtitle ? `<p class="sub">${md.renderInline(fm.subtitle)}</p>` : ''}</div>
+  ${img}
+</div>
 <div class="cols2"><div class="prose">${md.render((left || '').trim())}</div><div class="prose">${md.render((right || '').trim())}</div></div>${foot}`;
       break;
     }
