@@ -76,7 +76,7 @@ Oversaw product strategy and roadmaps through launch and operations; led a task 
   - Released an MVP for editing directly within the thumbnail viewer, adopted by all reviewers
   - Prioritized point cloud performance improvements and refactoring ahead of new features
 - **Expanded business scope** — supported new data types and on-premises sales
-  - Developed new task types — point cloud 3D polygons for the Arbe project and text labeling for the Naver project
+  - Developed new task types — point cloud 2D polygons for the Arbe project and text labeling for the Naver project
   - Took sole responsibility for on-premises packaging for LG AI Research, launched in Mar 2025, and converted to a one-year maintenance contract
 - **Built an operating process that turned operational requests into product improvements** — no missed weekly releases over 2.5 years; 106 improvements and support cases in 2024
   - Designed weekly project PM sessions and established them as a regular team process, connecting them to three-month roadmaps to reflect operational requests in that week's priorities
