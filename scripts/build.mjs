@@ -234,6 +234,31 @@ ${fm.subtitle ? `<p class="sub">${md.renderInline(fm.subtitle)}</p>` : ''}
       break;
     }
 
+    // showcase: 왼쪽 개요 + 오른쪽 큰 이미지 (프로젝트 첫 장, 상세는 다음 detail 장)
+    // split: 왼쪽 제목·본문 rows(세로 쌓기) + 오른쪽 큰 이미지 (한 장에 모두)
+    case 'showcase':
+    case 'split':
+      inner = `${label}
+<div class="sc">
+  <div class="sc-text">
+    <h2>${md.renderInline(fm.title || '')}</h2>${fm.subtitle ? `<p class="sub">${md.renderInline(fm.subtitle)}</p>` : ''}
+    <div class="sc-rows">${splitSections(body, 2)
+      .map(({ heading, body }) => `${heading ? `<div class="label">${esc(heading)}</div>` : ''}<div class="prose">${md.render(body)}</div>`)
+      .join('')}</div>
+  </div>
+  <div class="sc-img">${img}</div>
+</div>${foot}`;
+      break;
+
+    // band: 제목 → 전체 폭 큰 이미지 → 아래 3열 요약 (## 섹션 = 열)
+    case 'band':
+      inner = `${label}<h2>${md.renderInline(fm.title || '')}</h2>${fm.subtitle ? `<p class="sub">${md.renderInline(fm.subtitle)}</p>` : ''}
+<div class="band-img">${img}</div>
+<div class="band-cols">${splitSections(body, 2)
+        .map(({ heading, body }) => `<div>${heading ? `<div class="label">${esc(heading)}</div>` : ''}<div class="prose">${md.render(body)}</div></div>`)
+        .join('')}</div>${foot}`;
+      break;
+
     case 'detail':
     default:
       // imageWide: true → 이미지를 제목 아래 전체 폭으로
@@ -290,5 +315,7 @@ console.log('build →', DIST);
 buildResume('content/resume.ko.md', 'resume.html');
 buildResume('content/resume.en.md', 'resume.en.html');
 const n = buildSlides('slides', 'portfolio.html');
+// 레이아웃 시안 확인용 (slides-demo/ 가 있을 때만)
+if (fs.existsSync(path.join(ROOT, 'slides-demo'))) buildSlides('slides-demo', 'layout-demo.html');
 buildIndex();
 console.log(`done. slides: ${n}`);

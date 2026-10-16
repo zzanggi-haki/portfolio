@@ -8,7 +8,7 @@
 
 - **이력서 v1.0** (국문 완성, 태그 `v1.0`, 배포됨). 10/15 수정: 프리랜서 2022.06~10, 신한 SOL→IXI(2021.12~2022.03), 교육 경력 = 주 강사 2과정 + 기술 튜터 35회, J-Curve 직함에서 교육 분리. 10/16: Arbe 작업 유형 **2D 폴리곤**으로 정정(국·영문)
 - **포트폴리오 슬라이드 재구성** (브랜치 `claude/portfolio-slides-ac53cf`, **main 미머지·미배포** — 사용자 확인 후 한 번에 배포하기로 함)
-  - 19장 → 21장. 순서: 표지 → About → 경력 목차 → 대표 프로젝트 표 → AIMMO(커버+5) → J-Curve(커버+2) → AI 교육 → UX(커버+씽씽·Amway·정관장+기타 8건) → 사이드 → Contact
+  - 19장 → 32장 (10/17: 이미지 있는 프로젝트 11개를 개요 장 + 상세 장으로 분리, 사용자가 시안 A 선택). 순서: 표지 → About → 경력 목차 → 대표 프로젝트 표 → AIMMO(커버+5) → J-Curve(커버+2) → AI 교육 → UX(커버+씽씽·Amway·정관장+기타 8건) → 사이드 → Contact
   - 사실을 이력서 v1.0에 맞춤. 노션 카드 값이 이력서와 어긋나는 곳은 `{{card:}}` 대신 슬라이드 본문에 직접 씀 (노션은 미수정)
   - 이미지 `assets/img/` 13장: STUDIO 화면·백로그(동료 이름 영역은 잘라냄), 썸네일 뷰어 설명회 PDF, Arbe 폴리곤 시안, LG화학 제안서 3장(LibreOffice 렌더, SUIT 폰트를 Pretendard로 바꿔 렌더), 2022 UX 포트폴리오 PDF 결과물 3장, 사이드 프로젝트 2곳 스크린샷
   - 이미지 자리(점선 박스) 3곳: LG AI연구원(Figma), 로드맵(RV 연동·성능 개선), AI 교육(현장 사진) — **사용자가 이미지 찾아 주기로 함**
@@ -88,9 +88,10 @@ portfolio/
 │   └── resume.en.md        # 영문 (번역 완료, 사용자 미검토)
 ├── slides/                 # 1파일 = 1슬라이드, 파일명 숫자순
 │   01-cover 02-about 03-index 04-key-projects(표)
-│   10-aimmo-cover(dark) 11-session-loop 12-thumbnail 13-global-oem 14-lg-onprem 15-roadmap(two-col)
-│   20-jcurve-cover(dark) 21-lgchem 22-ax-framework  30-ai-education
-│   40-ux-cover(dark) 41-xingxing 42-amway 43-kgc 44-other-projects(그리드)  80-side(two-col) 90-contact
+│   10-aimmo-cover(dark) 11~15 (session-loop, thumbnail, global-oem, lg-onprem, roadmap)
+│   20-jcurve-cover(dark) 21 lgchem, 22 ax-framework   30 ai-education
+│   40-ux-cover(dark) 41 xingxing, 42 amway, 43 kgc, 44-other-projects(그리드)  80-side(two-col) 90-contact
+│   ※ 프로젝트 장은 NN-1-*(showcase: 개요+큰 이미지) + NN-2-*(detail: 상세, 이미지 없음) 2장 구성
 ├── styles/theme.css        # 키노트 톤 변수(:root) + 공용 .label/.row/.prose/.site-nav
 ├── styles/resume.css       # A4 인쇄: 인쇄 시 grid→float 전환(페이지 분할 때문)
 ├── styles/slides.css       # 16:9, font-size = 슬라이드 폭/80 (1280px 기준 16px), @page 338.67×190.5mm
@@ -101,14 +102,14 @@ portfolio/
 └── .github/workflows/deploy.yml  # npm ci → playwright install → build → pdf → upload-pages-artifact → deploy-pages
 ```
 
-슬라이드 frontmatter: `layout, label, title(HTML 허용), subtitle, image, imageWide(detail: 이미지를 제목 아래 전체 폭), next, kicker(dark 전용)`. `image: "placeholder: 설명"`이면 점선 이미지 자리. dark는 이미지+오른쪽 본문을 함께 표시. 본문에서 `<div class="flow">`(흐름 알약), `<div class="grid4">`(4열 카드), 마크다운 표 사용 가능. 본문 규칙: about/detail은 `## 라벨` 단위로 왼쪽 라벨/오른쪽 본문; dark/two-col은 `---`로 좌/우 분할; index는 `## 연도 | 설명` + `- 기간 :: 내용`.
+레이아웃 추가: `showcase`(왼쪽 역할·결정·결과 요약 + 오른쪽 큰 이미지), `split`, `band`(시안용, 현재 미사용). 슬라이드 frontmatter: `layout, label, title(HTML 허용), subtitle, image, imageWide(detail: 이미지를 제목 아래 전체 폭), next, kicker(dark 전용)`. `image: "placeholder: 설명"`이면 점선 이미지 자리. dark는 이미지+오른쪽 본문을 함께 표시. 본문에서 `<div class="flow">`(흐름 알약), `<div class="grid4">`(4열 카드), 마크다운 표 사용 가능. 본문 규칙: about/detail은 `## 라벨` 단위로 왼쪽 라벨/오른쪽 본문; dark/two-col은 `---`로 좌/우 분할; index는 `## 연도 | 설명` + `- 기간 :: 내용`.
 
 ---
 
 ## 4. 현재 빌드 결과
 
 - 이력서 PDF: 국문 4p, 영문 5p (1p 하단 여백이 조금 큼 — 경력 첫 불릿이 길어서 넘어감. 다듬기 필요)
-- 포트폴리오 PDF: 21p, 1장=1페이지 정상 (10/16)
+- 포트폴리오 PDF: 32p, 1장=1페이지 정상 (10/17)
 - 이미지 13장 + 이미지 자리 3곳. 로컬 `~/Desktop/ZZANGGI/Portfolio/_build/`에 최신 PDF 3개 있음
 
 ---

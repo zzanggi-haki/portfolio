@@ -1,9 +1,8 @@
 ---
 layout: detail
-label: WORK EXPERIENCE_J-CURVE · PROJECT_01
+label: WORK EXPERIENCE_J-CURVE · PROJECT_01 · DETAIL
 title: 비어 있는 건 기술이 아니라 담당자 머릿속의 판단 로직
 subtitle: "{{card:jcurve-lgchem-scm-orchestrator.title}}"
-image: assets/img/jcurve-prototype-iteration.jpg
 next: PROJECT_AX FRAMEWORK
 ---
 ## 문제 정의

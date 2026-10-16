@@ -1,9 +1,8 @@
 ---
 layout: detail
-label: WORK EXPERIENCE_AIMMO · PROJECT_01
+label: WORK EXPERIENCE_AIMMO · PROJECT_01 · DETAIL
 title: 사용자 피드백을 매주 배포 루프의 고정 단계로
 subtitle: "{{card:aimmo-ux-automation-program.oneLiner}}"
-image: assets/img/aimmo-backlog.jpg
 next: PROJECT_02
 ---
 ## 운영 루프
