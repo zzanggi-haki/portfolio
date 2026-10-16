@@ -16,5 +16,5 @@ next: DETAIL
 
 ## 결과
 
-- 제안 기능 실제 App 반영 (이미지)
+- 제안 기능 실제 App 반영
 - HCI 2020 Case Study 발표
