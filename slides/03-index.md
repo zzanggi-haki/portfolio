@@ -1,7 +1,7 @@
 ---
 layout: index
 label: WORK EXPERIENCE
-next: WORK EXPERIENCE_AIMMO
+next: KEY PROJECTS
 ---
 ## 2026 | AI Education / AX Consulting
 

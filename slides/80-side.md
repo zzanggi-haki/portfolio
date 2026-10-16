@@ -1,8 +1,8 @@
 ---
 layout: about
-label: ABOUT ME
+label: SIDE PROJECT
 title: 문제를 보면 직접 풀어보는 습관
-next: WORK EXPERIENCE
+next: CONTACT
 ---
 ## SIDE PROJECT
 

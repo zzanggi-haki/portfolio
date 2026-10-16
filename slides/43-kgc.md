@@ -3,7 +3,7 @@ layout: detail
 label: WORK EXPERIENCE_EMOTION · PROJECT_01
 title: 서베이 200명 · UT 10명 · 히트맵 → 설계 규칙
 subtitle: "{{card:emo-kgc-mall.oneLiner}}"
-next: CONTACT
+next: OTHER PROJECTS
 ---
 ## 설계
 

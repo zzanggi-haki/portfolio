@@ -104,6 +104,20 @@ body.slides-body { background: #e9e8e3; }
 .slide.l-two-col h2 { font-size: 1.75em; }
 .slide.l-two-col .cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3em; margin-top: 1.8em; align-items: start; }
 
+/* ── 표 (KEY PROJECTS) · 카드 그리드 (OTHER PROJECTS) ── */
+.slide .rows .lead-prose { grid-column: 1 / -1; }
+.slide .prose table { width: 100%; border-collapse: collapse; font-size: 0.95em; line-height: 1.5; }
+.slide .prose th { text-align: left; font-size: 0.78em; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding: 0 1em 0.7em 0; border-bottom: 1px solid var(--ink); }
+.slide .prose td { vertical-align: top; padding: 0.85em 1.2em 0.85em 0; border-bottom: 1px solid var(--line); }
+.slide .prose td:first-child { width: 22%; }
+.slide .prose td:last-child { width: 30%; font-weight: 600; }
+.slide .prose td small { color: var(--muted); font-size: 0.85em; }
+.slide .prose .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.6em 2em; }
+.slide .prose .grid4 > div { border-top: 1px solid var(--ink); padding-top: 0.7em; }
+.slide .prose .grid4 h4 { font-size: 1.05em; text-transform: none; letter-spacing: -0.01em; color: var(--ink); font-weight: 800; margin: 0 0 0.25em; }
+.slide .prose .grid4 .m { font-size: 0.85em; color: var(--muted); margin: 0 0 0.4em; }
+.slide .prose .grid4 p { margin: 0; color: var(--ink-soft); }
+
 /* ── 화면 전용 컨트롤 ── */
 .deck-nav { position: fixed; right: 1rem; top: 50%; transform: translateY(-50%); flex-direction: column; z-index: 50; display: flex; gap: 0.4rem; font-size: 0.8rem; }
 .deck-nav button { border: 1px solid var(--line); background: var(--bg); border-radius: 999px; padding: 0.3rem 0.8rem; cursor: pointer; font: inherit; color: var(--ink); }

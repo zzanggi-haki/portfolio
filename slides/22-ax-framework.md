@@ -3,7 +3,7 @@ layout: detail
 label: WORK EXPERIENCE_J-CURVE · PROJECT_02
 title: 기업 AI 전환 4단계 컨설팅 프레임워크
 subtitle: 진단 → 업무 재설계 → 구축 → 구조 재편. 단계별 AI 역할(보조·위임·자율)을 정의하고, 구축 단계에 UX 리서치 방법론(Discover → Define → Develop → Deliver)을 적용했습니다.
-next: AI EDUCATION
+next: WORK EXPERIENCE_AI EDUCATION
 ---
 ## 구조
 

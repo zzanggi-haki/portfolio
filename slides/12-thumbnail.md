@@ -1,9 +1,9 @@
 ---
 layout: detail
-label: WORK EXPERIENCE_AIMMO · PROJECT_01
+label: WORK EXPERIENCE_AIMMO · PROJECT_02
 title: 검수 과정 6단계 → 3단계
 subtitle: 썸네일 뷰어 안에서 바로 수정하는 기능을 MVP로 먼저 출시해 검수자 전원이 사용했고, 인프라팀 협업을 끌어내 시퀀스·포인트클라우드까지 확장했습니다.
-next: PROJECT_02
+next: PROJECT_03
 ---
 ## 프로젝트 배경
 

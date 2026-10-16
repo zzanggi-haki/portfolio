@@ -1,9 +1,9 @@
 ---
 layout: detail
-label: WORK EXPERIENCE_AIMMO · PROJECT_03
+label: WORK EXPERIENCE_AIMMO · PROJECT_04
 title: SaaS 툴을 온프레미스로 패키징해 LG AI연구원에 납품
 subtitle: "{{card:aimmo-lg-onprem-packaging.oneLiner}}"
-next: PROJECT_04
+next: PROJECT_05
 ---
 ## 배경과 난제
 
