@@ -1,7 +1,7 @@
 ---
 layout: showcase
 label: WORK EXPERIENCE_J-CURVE · PROJECT_01
-title: 비어 있는 건 기술이 아니라 담당자 머릿속의 판단 로직
+title: 현업 인터뷰·관찰에서 AI 에이전트 5종까지, LG화학 SCM 제안
 subtitle: LG화학 SCM AI 에이전트 제안서 44p 중 본문 약 20p를 작성하고, 고객 미팅 2회와 최종 발표를 진행했습니다.
 image: assets/img/jcurve-prototype-iteration.jpg
 next: DETAIL
