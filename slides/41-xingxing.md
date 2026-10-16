@@ -3,6 +3,7 @@ layout: detail
 label: WORK EXPERIENCE_IXI · PROJECT_01
 title: 문제 인식 3가지에 리서치 3종을 1:1로 매핑
 subtitle: "{{card:ixi-xingxing-ux-research.oneLiner}}"
+image: assets/img/ixi-xingxing-output.jpg
 next: PROJECT_AMWAY
 ---
 ## 설계
