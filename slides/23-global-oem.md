@@ -15,4 +15,4 @@ next: PROJECT_03
 
 ## 결과
 
-{{card:aimmo-polyline-point.metrics}} · {{card:aimmo-pointcloud-polygon.metrics}}
+BMW 5개년, Bosch·Arbe 6개월 이상 계약. 데모 기능을 정식 기능으로 편입해 다른 고객사도 사용

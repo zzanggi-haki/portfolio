@@ -14,7 +14,7 @@ next: PROJECT_01
 
 <div class="idx">
 <div><h4>01_작업 효율 개선</h4><p>검수 과정 단축 '썸네일 뷰어 인라인 수정' · 주간 사용자 세션 루프</p></div>
-<div><h4>02_신규 작업 유형 개발 총괄</h4><p>글로벌 제조사 요구사항 대응 신규 기능 개발 · BMW · Bosch · Arbe 수주</p></div>
+<div><h4>02_신규 작업 유형 개발 총괄</h4><p>글로벌 제조사 요구사항 대응 신규 기능 개발 · BMW 5개년, Bosch·Arbe 6개월 이상 계약</p></div>
 <div><h4>03_SaaS 툴 패키징</h4><p>LG AI연구원 온프레미스 SI — 납품·유지보수 전환</p></div>
 </div>
 
@@ -22,5 +22,7 @@ next: PROJECT_01
 
 #### 운영 지표
 
-- {{card:aimmo-studio-overview.metrics}}
+- 2.5년간 매주 정기 배포 무결손
+- 2024년 개선·서포트 106건
+- 기획·디자인·개발·QA 8명 이상 TF
 - 고객사: BMW · Bosch · Continental · Magna · Arbe · 현대자동차 · 카카오모빌리티 · 스트라드비전 · LG AI연구원
