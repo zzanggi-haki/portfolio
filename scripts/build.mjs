@@ -236,11 +236,12 @@ ${fm.subtitle ? `<p class="sub">${md.renderInline(fm.subtitle)}</p>` : ''}
 
     case 'detail':
     default:
+      // imageWide: true → 이미지를 제목 아래 전체 폭으로
       inner = `${label}
-<div class="head ${img ? '' : 'no-image'}">
+<div class="head ${img && !fm.imageWide ? '' : 'no-image'}">
   <div><h2>${md.renderInline(fm.title || '')}</h2>${fm.subtitle ? `<p class="sub">${md.renderInline(fm.subtitle)}</p>` : ''}</div>
-  ${img}
-</div>
+  ${fm.imageWide ? '' : img}
+</div>${fm.imageWide ? `<div class="wide">${img}</div>` : ''}
 <div class="rows">${renderRows(body, { numbered: false })}</div>${foot}`;
   }
   return `<div class="slide-wrap" id="s${i + 1}"><section class="slide l-${fm.layout || 'detail'}"><div class="slide-inner">${inner}</div></section></div>`;

@@ -3,6 +3,7 @@ layout: detail
 label: WORK EXPERIENCE_J-CURVE · PROJECT_01
 title: 비어 있는 건 기술이 아니라 담당자 머릿속의 판단 로직
 subtitle: "{{card:jcurve-lgchem-scm-orchestrator.title}}"
+image: assets/img/jcurve-prototype-iteration.jpg
 next: PROJECT_AX FRAMEWORK
 ---
 ## 문제 정의
@@ -11,7 +12,7 @@ next: PROJECT_AX FRAMEWORK
 
 ## 리서치가 만든 결정
 
-고객이 이미 목표(적시생산 Agent)와 데이터(Excel backbone)를 가지고 있어, 제안의 중심을 기능 스펙이 아니라 SCM 담당자와 고참의 판단 로직을 꺼내는 Discover 단계에 두었습니다. 그 결과물(업무 흐름 7단계·Painpoint)이 그대로 AI 에이전트 5종과 1차 구축 범위로 이어지도록 설계했습니다.
+그래서 제안의 중심을 기능 스펙이 아니라 SCM 담당자와 고참의 판단 로직을 꺼내는 Discover 단계에 두었습니다. 그 결과물(업무 흐름 7단계·Painpoint)이 그대로 AI 에이전트 5종과 1차 구축 범위로 이어지도록 설계했습니다.
 
 ## 어떻게 했나
 

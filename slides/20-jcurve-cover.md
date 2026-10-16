@@ -4,6 +4,7 @@ kicker: UX 리서치 방법론을 기업 AI 전환 프로세스로
 label: WORK EXPERIENCE_J-CURVE · 2026
 title: AX 컨설턴트 — LG화학 SCM AI 에이전트 제안 설계
 subtitle: B2B AI 교육·컨설팅 회사 Team J-Curve와 3개월 계약 (2026.06 ~ 08). 현업 담당자의 판단 로직을 꺼내는 인터뷰·관찰 단계를 AX 프레임워크의 중심에 두었습니다.
+image: assets/img/jcurve-ax-concept.jpg
 next: PROJECT_LG CHEM
 ---
 #### 여기서 내가 진행한 업무들
