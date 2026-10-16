@@ -2,13 +2,13 @@
 layout: showcase
 label: WORK EXPERIENCE_AIMMO · PROJECT_05
 title: 로드맵 주도 — 기능 추가보다 구조 개선을 먼저
-subtitle: 본인이 발의·주도한 로드맵 결정 2건과, 프로젝트별 설정을 확장 가능한 구조로 바꾼 API 유효성 검사
+subtitle: 직접 발의한 로드맵 결정 2건(포인트클라우드 성능 개선, 이미지↔RV 연동)과 API 유효성 검사 구조 전환
 image: "placeholder: RV 연동 · 포인트클라우드 성능 개선 화면"
 next: DETAIL
 ---
 ## 역할
 
-Product Owner — 로드맵 발의·주도 · 2024 ~ 2025
+Product Owner — 로드맵 발의·주도 · 2024.01 ~ 2025.03
 
 ## 제품 결정
 

@@ -1,7 +1,7 @@
 ---
 layout: showcase
 label: WORK EXPERIENCE_AIMMO · PROJECT_04
-title: SaaS 툴을 온프레미스로 패키징해 LG AI연구원에 납품
+title: LG AI연구원 온프레미스 납품, 1년 유지보수 계약 전환
 subtitle: 기존 SaaS 고객이던 LG AI연구원이 패키지 구매로 전환하자, 온프레미스 버전을 최소 수정으로 납품했습니다.
 image: "placeholder: LG AI연구원 납품 화면 (Figma)"
 next: DETAIL
@@ -17,5 +17,5 @@ next: DETAIL
 ## 결과
 
 - 2025.03 LG 내 서비스 오픈
-- 1년 유지보수 계약 전환
+- 기존 툴 최소 수정으로 LG 요건 구현
 - PD 1·FE 2·QA 2·BD 1 프로젝트 보드 운영
