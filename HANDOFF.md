@@ -1,10 +1,22 @@
 # HANDOFF — Claude Code로 이어서 진행하기 위한 세션 정리
 
-작성: 2026-10-13 · 갱신: 2026-10-14 (claude.ai 세션 → Claude Code 인계)
+작성: 2026-10-13 · 갱신: 2026-10-16 (이력서 v1.0 이후 포트폴리오 슬라이드 재구성)
 
 ---
 
-## 0. 현재 상태 (2026-10-14 기준) — 사이트 배포 완료 ✅
+## 0-1. 2026-10-16 현재 상태
+
+- **이력서 v1.0** (국문 완성, 태그 `v1.0`, 배포됨). 10/15 수정: 프리랜서 2022.06~10, 신한 SOL→IXI(2021.12~2022.03), 교육 경력 = 주 강사 2과정 + 기술 튜터 35회, J-Curve 직함에서 교육 분리. 10/16: Arbe 작업 유형 **2D 폴리곤**으로 정정(국·영문)
+- **포트폴리오 슬라이드 재구성** (브랜치 `claude/portfolio-slides-ac53cf`, **main 미머지·미배포** — 사용자 확인 후 한 번에 배포하기로 함)
+  - 19장 → 21장. 순서: 표지 → About → 경력 목차 → 대표 프로젝트 표 → AIMMO(커버+5) → J-Curve(커버+2) → AI 교육 → UX(커버+씽씽·Amway·정관장+기타 8건) → 사이드 → Contact
+  - 사실을 이력서 v1.0에 맞춤. 노션 카드 값이 이력서와 어긋나는 곳은 `{{card:}}` 대신 슬라이드 본문에 직접 씀 (노션은 미수정)
+  - 이미지 `assets/img/` 13장: STUDIO 화면·백로그(동료 이름 영역은 잘라냄), 썸네일 뷰어 설명회 PDF, Arbe 폴리곤 시안, LG화학 제안서 3장(LibreOffice 렌더, SUIT 폰트를 Pretendard로 바꿔 렌더), 2022 UX 포트폴리오 PDF 결과물 3장, 사이드 프로젝트 2곳 스크린샷
+  - 이미지 자리(점선 박스) 3곳: LG AI연구원(Figma), 로드맵(RV 연동·성능 개선), AI 교육(현장 사진) — **사용자가 이미지 찾아 주기로 함**
+  - PDF 21쪽, 1장=1페이지 확인
+- 사용자 결정(10/16): 썸네일 "건당 최소 10초 이상 감소"는 쓰되 "보수적 추정"은 빼기, 배포 횟수는 "매주 1회"만(약 120회 X), J-Curve 웹사이트 개선·신선피엔에프는 제외, LG화학 Discover의 Walkthrough 표기는 유지
+- 노션은 여전히 10/13 스냅샷 — 10/15·10/16 수정 미반영
+
+## 0. 이전 상태 (2026-10-14 기준) — 사이트 배포 완료 ✅
 
 - **GitHub Pages 활성화 완료** (Source: GitHub Actions), 첫 배포 성공 (run 38398558510, 2026-10-13 21:37 KST)
 - 공개 URL: https://zzanggi-haki.github.io/portfolio/
@@ -75,35 +87,42 @@ portfolio/
 │   ├── resume.ko.md        # 이력서 본문 (frontmatter: name, tagline, phone, email, links, experience, updated, labels)
 │   └── resume.en.md        # 영문 (번역 완료, 사용자 미검토)
 ├── slides/                 # 1파일 = 1슬라이드, 파일명 숫자순
-│   01-cover 02-about 03-about-side 04-index
-│   10-jcurve-cover(dark) 11-lgchem 12-ax-framework 13-ai-education
-│   20-aimmo-cover(dark) 21-thumbnail 22-session-loop 23-global-oem 24-lg-onprem 25-roadmap(two-col)
-│   30-ux-cover(dark) 31-xingxing 32-amway 33-kgc  90-contact
+│   01-cover 02-about 03-index 04-key-projects(표)
+│   10-aimmo-cover(dark) 11-session-loop 12-thumbnail 13-global-oem 14-lg-onprem 15-roadmap(two-col)
+│   20-jcurve-cover(dark) 21-lgchem 22-ax-framework  30-ai-education
+│   40-ux-cover(dark) 41-xingxing 42-amway 43-kgc 44-other-projects(그리드)  80-side(two-col) 90-contact
 ├── styles/theme.css        # 키노트 톤 변수(:root) + 공용 .label/.row/.prose/.site-nav
 ├── styles/resume.css       # A4 인쇄: 인쇄 시 grid→float 전환(페이지 분할 때문)
 ├── styles/slides.css       # 16:9, font-size = 슬라이드 폭/80 (1280px 기준 16px), @page 338.67×190.5mm
 ├── scripts/build.mjs       # md→html. splitSections('## ')로 라벨|본문 행 생성, {{card:}} 치환, 경력 헤딩은 " · YYYY." 앞에서 제목/기간 분리
 ├── scripts/pdf.mjs         # Playwright. CHROME_PATH로 실행파일 지정 가능, SHOTS=1이면 dist/shots/*.png
 ├── scripts/sync-notion.mjs # Notion REST (2025-09-03, data_sources query). 미실행(토큰 없음) — 첫 실행 시 필드명 확인 필요
-├── assets/img/             # 비어 있음 — 슬라이드 이미지 넣을 곳
+├── assets/img/             # 슬라이드 이미지 (aimmo-*, jcurve-*, ixi-*, emo-*, side-*)
 └── .github/workflows/deploy.yml  # npm ci → playwright install → build → pdf → upload-pages-artifact → deploy-pages
 ```
 
-슬라이드 frontmatter: `layout, label, title(HTML 허용), subtitle, image, next, kicker(dark 전용)`. 본문 규칙: about/detail은 `## 라벨` 단위로 왼쪽 라벨/오른쪽 본문; dark/two-col은 `---`로 좌/우 분할; index는 `## 연도 | 설명` + `- 기간 :: 내용`.
+슬라이드 frontmatter: `layout, label, title(HTML 허용), subtitle, image, imageWide(detail: 이미지를 제목 아래 전체 폭), next, kicker(dark 전용)`. `image: "placeholder: 설명"`이면 점선 이미지 자리. dark는 이미지+오른쪽 본문을 함께 표시. 본문에서 `<div class="flow">`(흐름 알약), `<div class="grid4">`(4열 카드), 마크다운 표 사용 가능. 본문 규칙: about/detail은 `## 라벨` 단위로 왼쪽 라벨/오른쪽 본문; dark/two-col은 `---`로 좌/우 분할; index는 `## 연도 | 설명` + `- 기간 :: 내용`.
 
 ---
 
 ## 4. 현재 빌드 결과
 
 - 이력서 PDF: 국문 4p, 영문 5p (1p 하단 여백이 조금 큼 — 경력 첫 불릿이 길어서 넘어감. 다듬기 필요)
-- 포트폴리오 PDF: 19p, 1장=1페이지 정상
-- 이미지 없이 텍스트만. 로컬 `~/Desktop/ZZANGGI/Portfolio/_build/`에 최신 PDF 3개 있음
+- 포트폴리오 PDF: 21p, 1장=1페이지 정상 (10/16)
+- 이미지 13장 + 이미지 자리 3곳. 로컬 `~/Desktop/ZZANGGI/Portfolio/_build/`에 최신 PDF 3개 있음
 
 ---
 
 ## 5. 남은 일 (우선순위)
 
-### 바로
+### 바로 (10/16 기준)
+- [ ] 이미지 자리 3곳 채우기 (사용자가 이미지 전달): `14-lg-onprem`, `15-roadmap`, `30-ai-education`
+- [ ] 슬라이드 문구 다듬기 — 카드에서 끌어온 긴 문장·따옴표(11 세션 루프 '왜 이렇게 했나', 13 OEM 부제, 41~43 UX 카드 rd/oneLiner), 21 제목 "비어 있는 건 기술이 아니라…" 대비 문장. 2~3안 보여 주고 고르기
+- [ ] 사용자 검토 후 `claude/portfolio-slides-ac53cf` → main 머지·푸시(=배포)
+- [ ] 영문 슬라이드는 국문 확정 후
+- [ ] 노션 카드 역반영 (10/15 이력서 수정 + Arbe 2D + 교육 35회 등) — 사용자 확인 후
+
+### 이전 목록 (10/14)
 - [x] Pages 활성화 → 배포 확인 (2026-10-13 완료)
 - [ ] **사용자 수정 요청 반영** — 사용자가 배포본을 보고 "몇 가지 수정할 게 있다"고 함. 세션 시작 시 먼저 물어볼 것
 - [ ] 슬라이드 이미지: 키노트에서 스크린샷 추출 → `assets/img/` → 각 md `image:` 지정. 키노트 렌더 참고본은 `~/Desktop/ZZANGGI/Portfolio/_work/design/p-01..19.jpg`. 에이모 원천 이미지는 `Portfolio/` 하위 `이미지/*.png, *.mkv`, `썸네일 뷰어 _ 클래스_속성 수정.pdf`
