@@ -1,7 +1,7 @@
 ---
 layout: detail
 label: WORK EXPERIENCE_IXI · PROJECT_01 · DETAIL
-title: 문제 인식 3가지에 리서치 3종을 1:1로 매핑
+title: 문제 3가지에 리서치 3종을 대응해, 제안 기능 App 반영
 subtitle: "{{card:ixi-xingxing-ux-research.oneLiner}}"
 next: PROJECT_AMWAY
 ---

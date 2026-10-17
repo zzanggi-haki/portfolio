@@ -1,7 +1,7 @@
 ---
 layout: detail
 label: WORK EXPERIENCE_IXI · PROJECT_02 · DETAIL
-title: UT에서 본 장면을 UI 요구사항으로
+title: ABO 영업 주문 경험 UT, 제안 기능 실제 서비스 반영
 subtitle: "{{card:ixi-amway-hybris.oneLiner}}"
 next: PROJECT_KGC
 ---
