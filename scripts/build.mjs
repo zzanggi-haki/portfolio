@@ -189,7 +189,7 @@ function renderSlide(fm, body, i, total) {
       break;
 
     case 'about':
-      inner = `${label}<h2>${md.renderInline(fm.title || '')}</h2>
+      inner = `${label}${fm.eyebrow ? `<p class="eyebrow">${md.renderInline(fm.eyebrow)}</p>` : ''}<h2>${md.renderInline(fm.title || '')}</h2>
 ${fm.subtitle ? `<p class="sub">${md.renderInline(fm.subtitle)}</p>` : ''}
 <div class="rows">${renderRows(body)}</div>${foot}`;
       break;

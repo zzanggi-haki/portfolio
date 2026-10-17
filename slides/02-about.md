@@ -1,7 +1,8 @@
 ---
 layout: about
 label: ABOUT ME
-title: UX 리서치로 문제를 찾고,<br>그 답을 AI 제품으로 만드는<br>Product Owner입니다.
+eyebrow: UX 리서처 5년, AI 플랫폼 PO 2.5년
+title: 사용자에게서 문제를 찾고,<br>그 답을 제품으로 푸는<br>Product Owner입니다.
 next: WORK EXPERIENCE
 ---
 ## BACKGROUND
