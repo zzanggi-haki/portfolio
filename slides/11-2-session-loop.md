@@ -3,17 +3,22 @@ layout: detail
 label: WORK EXPERIENCE_AIMMO · PROJECT_01 · DETAIL
 title: 사용자 피드백을 매주 배포 루프의 고정 단계로
 subtitle: "{{card:aimmo-ux-automation-program.oneLiner}}"
+dense: true
 next: PROJECT_02
 ---
-## 운영 루프
+## 배경
 
-<div class="flow"><span class="hl">주간 PM 세션</span><i>→</i><span>MVP 개발</span><i>→</i><span>매주 1회 정기 배포</span><i>→</i><span>다음 세션에서 반응 확인</span><i>→</i><span>다른 프로젝트로 확장</span></div>
+작업자가 라벨링·검수·납품하는 과정을 조금이라도 효율적으로 만들어 작업 시간과 단가를 줄이는 것이 목표였습니다. 기능을 애자일하게 계속 개선해야 했지만, 사용자 리서치를 할 수 있는 자리가 부족했습니다.
 
 ## 세션 설계
 
-- 참여: 메인 프로젝트 PM(고정)·PO·PD, 주 1회 30분~1시간
-- 순서: 신규 배포 기능 피드백 → 진행 중 프로젝트의 병목 수집 → 해결 방법 제시 → 다음 주 배포 우선순위 합의
-- 3개월 단위 로드맵과 연결해 현업 요청을 그 주 우선순위에 반영
+- 프로젝트 PM과 실제 작업자를 매주 초대하는 세션을 직접 설계·진행 (주 1회 30분~1시간)
+- 실제 작업의 니즈와 불편을 듣고, 해당 기능을 함께 써 보며 개선 방향을 매주 수집
+- 수집한 내용을 PD와 바로 기능으로 설계해 다음 정기 배포에 반영하고, 효과를 보며 다시 업데이트
+
+## 운영 루프
+
+<div class="flow"><span class="hl">사용자 조사 세션</span><i>→</i><span>MVP 개발</span><i>→</i><span>매주 1회 정기 배포</span><i>→</i><span>다음 세션에서 실제 효과 확인</span><i>→</i><span class="fork"><span>기능 고도화</span><span>다른 프로젝트로 확장</span></span></div>
 
 ## 성과
 

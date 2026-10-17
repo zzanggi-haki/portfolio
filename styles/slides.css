@@ -132,6 +132,8 @@ body.slides-body { background: #e9e8e3; }
 .slide .prose .flow span { border: 1px solid var(--ink); border-radius: 999px; padding: 0.3em 0.9em; font-weight: 600; background: var(--bg); }
 .slide .prose .flow span.hl { background: var(--ink); color: var(--bg); }
 .slide .prose .flow b { width: 4.2em; font-size: 0.78em; letter-spacing: 0.08em; color: var(--muted); font-weight: 500; }
+.slide .prose .flow span.fork { border: 0; padding: 0; background: none; display: inline-flex; flex-direction: column; gap: 0.3em; }
+.slide .prose .flow span.fork > span { border: 1px solid var(--ink); border-radius: 999px; padding: 0.2em 0.9em; font-weight: 600; }
 .slide .prose .flow i { font-style: normal; color: var(--accent); font-weight: 700; }
 
 /* ── showcase / split: 텍스트 왼쪽 + 큰 이미지 오른쪽 ── */
@@ -159,6 +161,11 @@ body.slides-body { background: #e9e8e3; }
 .slide.l-band .band-cols .prose p { margin: 0; }
 
 .slide .prose .note-ref { color: var(--muted); font-size: 0.92em; margin-top: 0.6em; }
+
+/* dense: true → 내용 많은 상세 장 간격 축소 */
+.slide.dense .sub { margin-top: 0.6em; font-size: 0.92em; }
+.slide.dense .rows { row-gap: 1.05em; margin-top: 1.3em; }
+.slide.dense .prose li { margin: 0.12em 0; }
 
 /* ── 화면 전용 컨트롤 ── */
 .deck-nav { position: fixed; right: 1rem; top: 50%; transform: translateY(-50%); flex-direction: column; z-index: 50; display: flex; gap: 0.4rem; font-size: 0.8rem; }

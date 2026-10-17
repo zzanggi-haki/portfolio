@@ -269,7 +269,7 @@ ${fm.subtitle ? `<p class="sub">${md.renderInline(fm.subtitle)}</p>` : ''}
 </div>${fm.imageWide ? `<div class="wide">${img}</div>` : ''}
 <div class="rows">${renderRows(body, { numbered: false })}</div>${foot}`;
   }
-  return `<div class="slide-wrap" id="s${i + 1}"><section class="slide l-${fm.layout || 'detail'}"><div class="slide-inner">${inner}</div></section></div>`;
+  return `<div class="slide-wrap" id="s${i + 1}"><section class="slide l-${fm.layout || 'detail'}${fm.dense ? ' dense' : ''}"><div class="slide-inner">${inner}</div></section></div>`;
 }
 
 function buildSlides(dir, out, lang = 'ko') {
