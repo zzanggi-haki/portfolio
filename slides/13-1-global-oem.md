@@ -2,7 +2,7 @@
 layout: showcase
 label: WORK EXPERIENCE_AIMMO · PROJECT_03
 title: BMW 5개년 계약 수주 기여, 요구사항 검토부터 데모까지
-subtitle: BMW의 자율주행 데이터 요구사항을 검토해 즉시 가능한 기능과 개발할 기능을 나누고, 개발할 기능은 데모로 만들어 시연했습니다.<br>Bosch·Arbe 수주도 같은 방식으로 진행했습니다.
+subtitle: BMW의 자율주행 데이터 요구사항을 검토해 즉시 가능한 기능과 개발할 기능을 나누고, 개발할 기능은 데모로 만들어 시연했습니다.<br>Bosch도 같은 과정으로 수주에 기여했습니다.
 image: assets/img/aimmo-pointcloud-polygon.jpg
 next: DETAIL
 ---
