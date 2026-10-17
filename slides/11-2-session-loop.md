@@ -2,7 +2,7 @@
 layout: detail
 label: WORK EXPERIENCE_AIMMO · PROJECT_01 · DETAIL
 title: 사용자 피드백을 매주 배포 루프의 고정 단계로
-subtitle: "{{card:aimmo-ux-automation-program.oneLiner}}"
+subtitle: 작업자·검수자 효율을 위해 프로젝트 PM과의 주 1회 사용자 세션을 직접 설계·주도해 약 1년간 운영했습니다.<br>세션에서 나온 병목을 다음 주 배포로 연결하는 루프를 만들어, 실제 작업 효율을 높이는 기능을 계속 배포했습니다.
 dense: true
 next: PROJECT_02
 ---
@@ -29,4 +29,4 @@ next: PROJECT_02
 - **큐보이드·폴리라인** — 플랫큐보이드 확장면 시작점 조정, 폴리라인 첫째 선 표시
 - **썸네일 뷰어** — 인스턴스 크기(넓이·너비·높이)를 뷰어에서 바로 확인
 
-<p class="note-ref">참고: 주 1회 세션 × 2.5년 · 매주 1회 정기 배포 무결손 · 2024년 개선·서포트 106건 (BMW 35, 현대자동차 10, Arbe 8 등)</p>
+<p class="note-ref">참고: 주 1회 세션 약 1년 · 매주 1회 정기 배포 무결손 · 2024년 개선·서포트 106건 (BMW 35, 현대자동차 10, Arbe 8 등)</p>

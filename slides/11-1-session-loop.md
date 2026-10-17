@@ -8,7 +8,7 @@ next: DETAIL
 ---
 ## 역할
 
-Product Owner — 세션 설계·주도 · 2022.11 ~ 2025.05
+Product Owner — 세션 설계·주도 · 약 1년 운영
 
 ## 리서치가 만든 결정
 
