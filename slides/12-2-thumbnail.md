@@ -1,7 +1,7 @@
 ---
 layout: detail
 label: WORK EXPERIENCE_AIMMO · PROJECT_02 · DETAIL
-title: 검수 과정 6단계 → 3단계
+title: 6단계였던 검수 과정을 3단계로 줄여 검수 효율 개선
 subtitle: 썸네일 뷰어 안에서 바로 수정하는 기능을 MVP로 먼저 출시해 검수자 전원이 사용했고, 인프라팀 협업을 끌어내 시퀀스·포인트클라우드까지 확장했습니다.
 next: PROJECT_03
 ---
