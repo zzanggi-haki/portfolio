@@ -168,6 +168,20 @@ body.slides-body { background: #e9e8e3; }
 .slide.dense .rows { row-gap: 1.05em; margin-top: 1.3em; }
 .slide.dense .prose li { margin: 0.12em 0; }
 
+/* 단계 타임라인 (확장 과정) */
+.slide .prose .steps { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5em; padding-top: 1.2em; max-width: 44em; }
+.slide .prose .steps::before { content: ''; position: absolute; top: 0.35em; left: 0.35em; right: 0; height: 2px; background: var(--line); }
+.slide .prose .step { position: relative; display: flex; flex-direction: column; gap: 0.1em; }
+.slide .prose .step::before { content: ''; position: absolute; top: -1.2em; left: 0; width: 0.7em; height: 0.7em; border-radius: 50%; background: var(--bg); border: 2px solid var(--ink); }
+.slide .prose .step small { color: var(--muted); font-size: 0.85em; letter-spacing: 0.04em; }
+.slide .prose .step b { font-size: 1.1em; }
+.slide .prose .step span { color: var(--ink-soft); }
+.slide .prose .step.hl::before { background: var(--accent); border-color: var(--accent); }
+.slide .prose .step.hl b { color: var(--accent); }
+/* 흐름도 아래 본문과 간격, 단계 타임라인 행은 위로 여백 */
+.slide .prose .flow + p, .slide .prose .flow + ul { margin-top: 0.9em; }
+.slide .rows .label:has(+ .prose .steps), .slide .rows .label:has(+ .prose .steps) + .prose { margin-top: 0.8em; }
+
 /* ── 화면 전용 컨트롤 ── */
 .deck-nav { position: fixed; right: 1rem; top: 50%; transform: translateY(-50%); flex-direction: column; z-index: 50; display: flex; gap: 0.4rem; font-size: 0.8rem; }
 .deck-nav button { border: 1px solid var(--line); background: var(--bg); border-radius: 999px; padding: 0.3rem 0.8rem; cursor: pointer; font: inherit; color: var(--ink); }

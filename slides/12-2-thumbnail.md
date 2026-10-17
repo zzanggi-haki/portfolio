@@ -22,8 +22,16 @@ next: PROJECT_03
 
 <div class="flow"><b>TO-BE</b><span class="hl">오류 발견</span><i>→</i><span class="hl">뷰어 안에서 다중/단일 선택 수정</span><i>→</i><span class="hl">저장</span></div>
 
-검수 담당 PM 3명 이상에게 검수 시간 단축 확인, 이전에 없던 기능이라 검수자 전원 사용, 건당 최소 10초 이상 감소.
+## 효과
+
+- 검수 담당 PM 3명 이상에게 검수 시간 단축 확인
+- 이전에 없던 기능이라 검수자 전원 사용
+- 건당 최소 10초 이상 감소
 
 ## 확장
 
-<div class="flow"><span>싱글 이미지 MVP<br><small>2024.09</small></span><i>→</i><span>씬 파일: 시퀀스·포인트클라우드<br><small>2024.11</small></span><i>→</i><span class="hl">전체 리소스 유형</span></div>
+<div class="steps">
+<div class="step"><small>2024.09</small><b>싱글 이미지</b><span>MVP 출시</span></div>
+<div class="step"><small>2024.11</small><b>씬 파일</b><span>시퀀스·포인트클라우드</span></div>
+<div class="step hl"><small>이후</small><b>전체 리소스 유형</b><span>모든 프로젝트 검수에 적용</span></div>
+</div>
