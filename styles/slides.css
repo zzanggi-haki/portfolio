@@ -134,6 +134,7 @@ body.slides-body { background: #e9e8e3; }
 .slide .prose .flow b { width: 4.2em; font-size: 0.78em; letter-spacing: 0.08em; color: var(--muted); font-weight: 500; }
 .slide .prose .flow span.fork { border: 0; padding: 0; background: none; display: inline-flex; flex-direction: column; gap: 0.3em; }
 .slide .prose .flow span.fork > span { border: 1px solid var(--ink); border-radius: 999px; padding: 0.2em 0.9em; font-weight: 600; }
+.slide .prose .flow span small { display: block; font-size: 0.78em; font-weight: 500; opacity: 0.7; text-align: center; }
 .slide .prose .flow i { font-style: normal; color: var(--accent); font-weight: 700; }
 
 /* ── showcase / split: 텍스트 왼쪽 + 큰 이미지 오른쪽 ── */
