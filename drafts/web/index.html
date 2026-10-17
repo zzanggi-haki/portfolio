@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>학장기 — Product Manager (웹 초안)</title>
+<link rel="stylesheet" href="../../styles/theme.css">
+<style>
+  :root { --wrap: 68rem; --gutter: clamp(1rem, 4vw, 2.5rem); }
+  body { font-size: 16px; }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+  section { padding: clamp(3rem, 8vw, 6rem) 0; border-top: 1px solid var(--line); }
+  section:first-of-type { border-top: 0; }
+
+  /* hero */
+  .hero { padding-top: clamp(6rem, 14vw, 9rem); }
+  .hero .eyebrow { color: var(--muted); font-size: 0.95rem; margin: 0 0 1rem; }
+  .hero h1 { font-size: clamp(2rem, 5.4vw, 3.6rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin: 0; }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero .who { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; align-items: baseline; color: var(--ink-soft); }
+  .hero .who b { font-size: 1.15rem; color: var(--ink); }
+  .hero .cta { margin-top: 1.75rem; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .pill { border: 1px solid var(--line); border-radius: 999px; padding: 0.45rem 1rem; font-size: 0.9rem; background: transparent; }
+  .pill.solid { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .pill:hover { text-decoration: none; border-color: var(--ink); }
+
+  /* summary */
+  .summary .lead { font-size: clamp(1.05rem, 2vw, 1.25rem); line-height: 1.75; color: var(--ink-soft); max-width: 46rem; margin: 0; }
+  .summary .lead b { color: var(--ink); }
+  .ways { margin-top: 2.5rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .way { border-top: 2px solid var(--ink); padding-top: 1rem; }
+  .way h3 { font-size: 1.05rem; margin: 0 0 0.4rem; font-weight: 700; }
+  .way p { margin: 0; color: var(--ink-soft); font-size: 0.95rem; }
+  .way a { display: inline-block; margin-top: 0.7rem; font-size: 0.85rem; color: var(--accent); }
+
+  /* numbers */
+  .numbers .grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 2rem; align-items: stretch; }
+  .big { display: flex; flex-direction: column; justify-content: center; }
+  .num { font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
+  .big .num { font-size: clamp(4rem, 11vw, 7.5rem); }
+  .num small { font-size: 0.42em; font-weight: 700; letter-spacing: -0.01em; margin-left: 0.08em; }
+  .lbl { margin-top: 0.6rem; font-weight: 600; font-size: 1rem; }
+  .src { margin-top: 0.3rem; color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
+  .groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .group { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 1.25rem 1.4rem 1.4rem; }
+  .group > .label { margin-bottom: 1rem; }
+  .group .item + .item { margin-top: 1.4rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
+  .group .num { font-size: clamp(2.4rem, 5vw, 3.2rem); }
+  .group.product { background: var(--ink); color: var(--on-dark); border-color: var(--ink); }
+  .group.product .label, .group.product .src { color: var(--on-dark-muted); }
+  .group.product .item + .item { border-top-color: #2c2c2c; }
+
+  /* career */
+  .career .era { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 1rem 2rem; padding: 1.5rem 0; border-top: 1px solid var(--line); }
+  .career .era:first-child { border-top: 0; padding-top: 0; }
+  .career .year { font-weight: 800; font-size: 1.4rem; letter-spacing: -0.02em; line-height: 1.2; }
+  .career .year span { display: block; font-size: 0.8rem; font-weight: 500; color: var(--muted); letter-spacing: 0; margin-top: 0.25rem; }
+  .job { display: grid; grid-template-columns: 9rem minmax(0, 1fr) auto; gap: 0.25rem 1.25rem; padding: 0.55rem 0; align-items: baseline; }
+  .job .when { color: var(--muted); font-size: 0.85rem; font-variant-numeric: tabular-nums; }
+  .job .what b { font-weight: 700; }
+  .job .what span { color: var(--ink-soft); }
+  .job a { font-size: 0.85rem; color: var(--accent); white-space: nowrap; }
+  .job.muted .what { color: var(--muted); }
+  .job.muted .what b { font-weight: 500; }
+
+  .draft-note { text-align: center; color: var(--muted); font-size: 0.8rem; padding: 2rem 0 3rem; }
+
+  @media (max-width: 760px) {
+    .ways { grid-template-columns: 1fr; gap: 1.5rem; }
+    .numbers .grid { grid-template-columns: 1fr; }
+    .groups { grid-template-columns: 1fr; }
+    .career .era { grid-template-columns: 1fr; gap: 0.75rem; }
+    .job { grid-template-columns: 1fr auto; }
+    .job .when { grid-column: 1 / -1; }
+    .site-nav .links { gap: 0.8rem; }
+  }
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a class="brand" href="#top">학장기 Jangki Hak</a>
+  <div class="links">
+    <a href="#summary">요약</a>
+    <a href="#career">경력</a>
+    <a href="../../dist/resume.html">이력서</a>
+  </div>
+</nav>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">UX 리서처 5년, AI 플랫폼 PO 2.5년</p>
+      <h1>사용자에게서 문제를 찾고,<br>그 답을 제품으로 푸는<br><em>Product Manager</em>입니다.</h1>
+      <div class="who"><b>학장기</b><span>010.4013.2425</span><a href="mailto:zzanggi91@gmail.com">zzanggi91@gmail.com</a></div>
+      <div class="cta">
+        <a class="pill solid" href="#career">대표 사례 보기</a>
+        <a class="pill" href="../../dist/resume.html">이력서</a>
+        <a class="pill" href="https://github.com/zzanggi-haki">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="summary" id="summary">
+    <div class="wrap">
+      <p class="lead">UX 컨설턴트로 5년간 사용자를 관찰해 문제를 정의했고, AI 플랫폼 PO로 2.5년간 그 문제들을 제품 안에서 직접 풀고 개선해 왔습니다. AIMMO에서는 AI 학습 데이터 라벨링 플랫폼 <b>STUDIO</b>의 전략과 로드맵 수립부터 기획·개발·출시, 실제 사용 이후의 개선까지 제품의 전 주기를 주도했고, 최근에는 기업 AI 전환 제안과 기업 AI 교육에서 사람과 AI가 일을 나누는 방식을 직접 적용하고 있습니다.</p>
+      <div class="ways">
+        <div class="way">
+          <h3>리서치와 관찰로 진짜 니즈를 찾습니다</h3>
+          <p>요구사항을 그대로 받기보다 실제 작업 장면에서 원인을 찾습니다.</p>
+          <a href="#">→ 사례 · 썸네일 뷰어 인라인 수정</a>
+        </div>
+        <div class="way">
+          <h3>제품이 계속 나아지는 시스템을 만듭니다</h3>
+          <p>사용자 피드백이 매주 제품 개선으로 이어지는 구조를 만듭니다.</p>
+          <a href="#">→ 사례 · 사용자 조사 세션과 매주 배포</a>
+        </div>
+        <div class="way">
+          <h3>작게 검증하고, 제품으로 확장합니다</h3>
+          <p>한 고객의 요구를 모든 고객이 쓰는 제품으로 만듭니다.</p>
+          <a href="#">→ 사례 · 글로벌 고객사 데모와 작업 유형</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="numbers" id="numbers" aria-label="숫자로 보는 경력">
+    <div class="wrap grid">
+      <div class="big">
+        <div class="num">9<small>년 차</small></div>
+        <div class="lbl">사용자 리서치에서 AI 제품까지</div>
+        <div class="src">UX 컨설팅 5년 · AI 데이터 플랫폼 PO 2.5년 · 기업 AI 교육</div>
+      </div>
+      <div class="groups">
+        <div class="group">
+          <div class="label">리서치</div>
+          <div class="item">
+            <div class="num">17<small>건</small></div>
+            <div class="lbl">UX 컨설팅·서비스 기획 프로젝트</div>
+            <div class="src">정관장 · Nike · Amway · 신한은행 · LG전자 등 15개 브랜드</div>
+          </div>
+          <div class="item">
+            <div class="num">620<small>명+</small></div>
+            <div class="lbl">직접 설계·진행한 리서치 참여자</div>
+            <div class="src">서베이 · IDI · UT · Video Ethnography</div>
+          </div>
+        </div>
+        <div class="group product">
+          <div class="label">제품</div>
+          <div class="item">
+            <div class="num">2.5<small>년</small></div>
+            <div class="lbl">매주 정기 배포, 한 번도 거르지 않음</div>
+            <div class="src">AIMMO STUDIO · 2022.11 ~ 2025.05</div>
+          </div>
+          <div class="item">
+            <div class="num">200<small>건+</small></div>
+            <div class="lbl">제품 개선·운영 태스크</div>
+            <div class="src">2024년 한 해 106건 기록</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="career" id="career">
+    <div class="wrap">
+      <div class="era">
+        <div class="year">2026<span>AI 교육 · AX 컨설팅</span></div>
+        <div>
+          <div class="job"><span class="when">2026.05 ~ 현재</span><span class="what"><b>기업 AI 교육 강사, 기술 튜터</b> <span>· Claude Code 과정 주 강사 2개 · LG · SK이노베이션 · 하나금융그룹 등 35회</span></span><a href="#">사례 →</a></div>
+          <div class="job"><span class="when">2026.06 ~ 2026.08</span><span class="what"><b>Team J-Curve</b> <span>· AX 컨설턴트 · LG화학 SCM AI 에이전트 제안</span></span><a href="#">사례 →</a></div>
+        </div>
+      </div>
+      <div class="era">
+        <div class="year">2022 – 2025<span>Product Owner</span></div>
+        <div>
+          <div class="job"><span class="when">2022.11 ~ 2025.05</span><span class="what"><b>AIMMO</b> <span>· Product Owner · AI 학습 데이터 라벨링 플랫폼 STUDIO 총괄</span></span><a href="#">사례 →</a></div>
+          <div class="job muted"><span class="when">2025.06 ~ 2026.03</span><span class="what"><b>커리어 브레이크</b> · 장기 해외 체류</span><span></span></div>
+        </div>
+      </div>
+      <div class="era">
+        <div class="year">2017 – 2022<span>UX 컨설팅 · 서비스 기획</span></div>
+        <div>
+          <div class="job"><span class="when">2022.06 ~ 2022.10</span><span class="what"><b>프리랜서</b> <span>· SK 그룹웨어 모바일 개편 · CJ ENM 히트맵 분석</span></span><span></span></div>
+          <div class="job"><span class="when">2019.08 ~ 2022.03</span><span class="what"><b>IXI</b> <span>· UX 컨설턴트 · 씽씽, Amway, 신한은행, LG전자, LG U+, 제주지니</span></span><a href="#">사례 →</a></div>
+          <div class="job"><span class="when">2019.03 ~ 2019.07</span><span class="what"><b>키토크에이아이</b> <span>· 여행 큐레이션 앱 기획</span></span><span></span></div>
+          <div class="job"><span class="when">2017.02 ~ 2019.03</span><span class="what"><b>이모션글로벌</b> <span>· UX 컨설턴트 · 정관장, 삼성웰스토리, Nike, 현대일렉트릭</span></span><a href="#">사례 →</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <p class="draft-note">웹 초안 · 도입부만 (사례 링크는 아직 연결 전)</p>
+</main>
+</body>
+</html>
