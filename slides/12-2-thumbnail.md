@@ -10,8 +10,6 @@ next: PROJECT_03
 
 기존 뷰어는 작업 결과물을 한 눈에 보는 단방향 도구였습니다. 검수 중 수정이 필요하면 뷰어를 벗어나 별도 경로로 요청을 전달해야 했고, 작업자는 다시 라벨링 작업 화면으로 돌아가 수정한 뒤 재제출해야 했습니다.
 
-<div class="flow"><b>AS-IS</b><span>오류 발견</span><i>→</i><span>스튜디오 재진입</span><i>→</i><span>담당자 변경</span><i>→</i><span>수정</span><i>→</i><span>필터 재설정</span><i>→</i><span>검수 재시작</span></div>
-
 ## 해결 과정
 
 - **관찰** — 검수자는 뷰어와 작업 화면을 왕복했고, 작업자는 검수자 확인을 받은 뒤 다시 수정해야 했습니다.
@@ -20,6 +18,7 @@ next: PROJECT_03
 
 ## 결과
 
+<div class="flow"><b>AS-IS</b><span>오류 발견</span><i>→</i><span>스튜디오 재진입</span><i>→</i><span>담당자 변경</span><i>→</i><span>수정</span><i>→</i><span>필터 재설정</span><i>→</i><span>검수 재시작</span></div>
 <div class="flow"><b>TO-BE</b><span class="hl">오류 발견</span><i>→</i><span class="hl">뷰어 안에서 다중/단일 선택 수정</span><i>→</i><span class="hl">저장</span></div>
 
 ## 효과
