@@ -4,6 +4,12 @@
 
 ---
 
+## 0-00. ▶ 2026-10-17 밤 이후 — 레퍼런스 분석·전체 검토 완료, 1장부터 다시
+
+- portfolio-v0.2 배포됨 (main = eaec691, 태그 `portfolio-v0.2`)
+- **`docs/portfolio-review-2026-10-17.md`**: 국내외 포트폴리오 21건 + 채용 가이드 9건 분석, v0.2 32장 장별 검토, 24장 구성안. 수정은 아직 안 함
+- 다음: 이 문서 §5 구성안을 사용자와 확인 → **1장(표지) 포지셔닝 한 줄부터** 한 장씩 수정. §6 확인 질문 먼저
+
 ## 0-0. ▶ 여기서 이어서 (2026-10-17 밤 중단 → 다음 세션에서 11번부터)
 
 - 브랜치 `claude/portfolio-slides-ac53cf` (워크트리 `~/2026-portfolio/.claude/worktrees/portfolio-slides-ac53cf`), main 미머지·미배포. 미리보기: `npm run dev` → http://localhost:5173/portfolio.html
