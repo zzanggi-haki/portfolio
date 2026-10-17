@@ -1,8 +1,8 @@
 ---
 layout: showcase
 label: WORK EXPERIENCE_AIMMO · PROJECT_03
-title: 요구사항 검토부터 데모 시연까지 주도해 BMW 5개년 계약 수주 기여
-subtitle: Bosch 데모 기능을 정식 기능으로 다듬어 BMW 5개년 프로젝트에 다시 적용했고, Arbe의 요구는 다른 고객사도 쓸 수 있는 새로운 작업 유형으로 만들었습니다.
+title: BMW 5개년 계약 수주 기여, 요구사항 검토부터 데모까지
+subtitle: BMW의 자율주행 데이터 요구사항을 검토해 즉시 가능한 기능과 개발할 기능을 나누고, 개발할 기능은 데모로 만들어 시연했습니다.<br>Bosch·Arbe 수주도 같은 방식으로 진행했습니다.
 image: assets/img/aimmo-pointcloud-polygon.jpg
 next: DETAIL
 ---
