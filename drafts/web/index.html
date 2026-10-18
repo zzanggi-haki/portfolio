@@ -310,6 +310,7 @@
   .two-axis > div.hl { border-top-color: var(--accent); }
   .two-axis > div.hl .label { color: var(--accent); }
   .two-axis b { display: block; margin: 0.3rem 0 0.5rem; font-size: 1.05rem; }
+  .imp-t td:last-child { white-space: nowrap; }
   .draft-note { text-align: center; color: var(--muted); font-size: 0.8rem; padding: 2rem 0 3rem; }
 
   @media (max-width: 760px) {
@@ -652,19 +653,18 @@
   <section class="case case-cont" id="case-session-2">
     <div class="wrap">
       <p class="kicker">AIMMO · 사례 03 · 해결 과정과 결과</p>
-      <h3>세션에서 나온 개선으로<br>현대자동차 프로젝트의 작업 효율을 끌어올렸습니다</h3>
-      <div class="flow loop slim"><span class="hl">사용자 조사 세션</span><i>→</i><span>MVP 개발</span><i>→</i><span>매주 정기 배포</span><i>→</i><span>다음 세션에서 효과 확인</span></div>
-      <p class="res-lead">세션 출신 개선 10건(2024.03 ~ 2024.07) · 요청부터 배포까지 평균 약 2주 · 난이도가 높고 오래 걸리는 <b>세그멘테이션 작업에서 효과가 가장 컸습니다</b></p>
-      <div class="two-axis">
-        <div><span class="label">더 빠르게</span><b>작업 범위를 빨리 잡도록</b><ul class="plain">
-          <li>포인트클라우드 세그멘테이션: 누락 포인트 시인성 개선, 인스턴스 숨김·z값 필터·올가미 선택으로 작업 범위를 빠르게 지정</li>
-        </ul></div>
-        <div class="hl"><span class="label">다시 하지 않게</span><b>오류를 줄여 재작업이 없도록</b><ul class="plain">
-          <li>이미지 세그멘테이션: 검수 전에 픽셀 누락 자동 검출, 최대 확대 단축키·엣지 표시로 객체 핏 확인</li>
-          <li>큐보이드·폴리라인: 첫 번째 선 표시로 객체를 다시 만드는 일 방지</li>
-          <li>썸네일 뷰어: 인스턴스 크기(넓이·너비·높이)를 바로 확인</li>
-        </ul></div>
-      </div>
+      <h3>빠르게 하는 것만큼 다시 하지 않게,<br>세그멘테이션 작업부터 효율을 올렸습니다</h3>
+      <p class="sub">작업을 빨리 하는 것도 중요하지만, 정확도를 높여 재작업이 없게 하는 것도 효율입니다. 세션에서 나온 현대자동차 프로젝트 개선 10건은 난이도가 높고 작업 시간이 긴 세그멘테이션에서 효과가 가장 컸습니다.</p>
+      <table class="req imp-t">
+        <thead><tr><th>작업</th><th>세션에서 나온 개선</th><th>줄인 것</th></tr></thead>
+        <tbody>
+          <tr><td><b>이미지 세그멘테이션</b></td><td>검수 전 픽셀 누락 자동 검출, 최대 확대 단축키·엣지 표시로 객체 핏 확인</td><td>재작업</td></tr>
+          <tr><td><b>포인트클라우드 세그멘테이션</b></td><td>누락 포인트 시인성, 인스턴스 숨김·z값 필터·올가미 선택</td><td>작업 범위 잡는 시간</td></tr>
+          <tr><td><b>큐보이드 · 폴리라인</b></td><td>첫 번째 선 표시, 플랫큐보이드 확장면 시작점 조정</td><td>객체를 다시 만드는 일</td></tr>
+          <tr><td><b>썸네일 뷰어</b></td><td>인스턴스 크기(넓이·너비·높이) 바로 확인</td><td>크기 오류 확인 시간</td></tr>
+        </tbody>
+      </table>
+      <p class="note-ref">세션 출신 개선 10건 (2024.03 ~ 2024.07) · 요청부터 배포까지 평균 약 2주 · 운영 루프: 세션 → MVP 개발 → 매주 정기 배포 → 다음 세션에서 효과 확인</p>
     </div>
   </section>
 
