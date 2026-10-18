@@ -294,6 +294,22 @@
   body.only .pg { position: absolute; right: 40px; bottom: 22px; font-size: 12px; color: var(--muted); letter-spacing: 0.06em; font-variant-numeric: tabular-nums; }
   body.only .fit { position: absolute; left: 40px; bottom: 22px; font-size: 11px; color: #b23b2a; }
 
+  .find2 { margin-top: 1.5rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .find2 > div { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.2rem; }
+  .find2 .n { display: block; color: var(--accent); font-weight: 700; font-size: 0.8rem; margin-bottom: 0.4rem; }
+  .find2 b { display: block; font-size: 1.05rem; line-height: 1.5; }
+  .find2 p { margin: 0.5rem 0 0; color: var(--ink-soft); font-size: 0.9rem; line-height: 1.6; }
+  .so { margin: 1.25rem 0 0; color: var(--ink-soft); }
+  .so b { color: var(--ink); }
+  .flow.slim { margin-top: 1rem; }
+  .flow.slim span { font-size: 0.82rem; padding: 0.3rem 0.75rem; }
+  .res-lead { margin: 1rem 0 0; color: var(--ink-soft); }
+  .res-lead b { color: var(--accent); }
+  .two-axis { margin-top: 1.25rem; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 1rem; }
+  .two-axis > div { border-top: 2px solid var(--ink); padding-top: 0.8rem; }
+  .two-axis > div.hl { border-top-color: var(--accent); }
+  .two-axis > div.hl .label { color: var(--accent); }
+  .two-axis b { display: block; margin: 0.3rem 0 0.5rem; font-size: 1.05rem; }
   .draft-note { text-align: center; color: var(--muted); font-size: 0.8rem; padding: 2rem 0 3rem; }
 
   @media (max-width: 760px) {
@@ -623,38 +639,31 @@
   <section class="case case-cont" id="case-session-problem">
     <div class="wrap">
       <p class="kicker">AIMMO · 사례 03 · 문제</p>
-      <h3>작업자는 익숙한 방식 안에서<br>불편을 스스로 알아차리기 어려웠습니다</h3>
-      <p class="sub">라벨링 작업 단가를 낮추는 것은 에이모의 미션 중 하나였고, 그러려면 기능을 계속 개선해야 했습니다. 하지만 현업 요청은 여러 경로로 흩어져 들어왔고, 작업자가 불편을 꺼내 놓을 자리도 마땅치 않았습니다.</p>
-      <div class="why3">
-        <div><span class="n">목표</span><p>라벨링 작업 단가를 낮추기 위해 <b>작업 효율을 계속 높이는 것</b></p></div>
-        <div><span class="n">막힌 지점</span><p>작업자는 익숙해진 방식의 비효율을 알아차리기 어렵고, 요청은 <b>흩어져 우선순위가 서지 않음</b></p></div>
-        <div class="hl"><span class="n">그래서 필요한 것</span><p>실제 작업자의 불편을 <b>정해진 주기로 듣고</b>, 바로 배포로 잇는 고정된 자리</p></div>
+      <h3>작업자는 익숙한 방식 안에서<br>불편과 비효율을 알아차리기 어려웠습니다</h3>
+      <p class="sub">라벨링 작업 단가를 낮추려면 기능을 계속 개선해야 했지만, 작업자는 익숙해진 방식의 비효율을 스스로 말하기 어려웠습니다. 그래서 실제 작업 환경에 들어가 프로젝트 교육부터 실제 작업까지 함께 하며, 어디서 비효율이 생기는지 직접 겪어 봤습니다.</p>
+      <div class="find2">
+        <div><span class="n">발견 1</span><b>잘하는 작업자는 자기만의 단축키를 따로 만들어 쓰고 있었습니다</b><p>그만큼 작업 효율을 더 끌어올릴 여지가 크고, 제품으로 개선할 수 있다는 신호였습니다.</p></div>
+        <div><span class="n">발견 2</span><b>기능 하나로 풀 수 있는 문제가, 기능이 없어 큰 비효율로 이어지고 있었습니다</b><p>예: 누락을 자동으로 찾지 못해 눈으로 하나씩 확인, 선의 첫 시작점이 표시되지 않아 객체를 다시 만들어야 하는 경우</p></div>
       </div>
-      <p class="ex"><span>세션 전 작업 예</span>라벨링이 빠진 포인트를 화면에서 하나씩 눈으로 찾아야 했음</p>
+      <p class="so">그래서 작업자의 불편을 <b>정해진 주기로 듣고 바로 배포로 잇는 자리</b>가 필요했습니다.</p>
     </div>
   </section>
 
   <section class="case case-cont" id="case-session-2">
     <div class="wrap">
       <p class="kicker">AIMMO · 사례 03 · 해결 과정과 결과</p>
-      <h3>듣고, 만들고, 다음 주에 확인하는 1주 단위 개선 루프</h3>
-      <div class="sol-grid">
-        <div class="blk"><div class="label">세션 설계</div><ul class="plain">
-          <li>프로젝트 PM과 실제 작업자를 매주 초대해, 작업의 니즈와 불편을 듣고 해당 기능을 함께 써 보며 개선 방향을 모았습니다.</li>
-          <li>모은 내용은 PD와 바로 기능으로 설계해 다음 정기 배포에 넣고, 다음 세션에서 효과를 확인해 다시 고쳤습니다.</li>
+      <h3>세션에서 나온 개선으로<br>현대자동차 프로젝트의 작업 효율을 끌어올렸습니다</h3>
+      <div class="flow loop slim"><span class="hl">사용자 조사 세션</span><i>→</i><span>MVP 개발</span><i>→</i><span>매주 정기 배포</span><i>→</i><span>다음 세션에서 효과 확인</span></div>
+      <p class="res-lead">세션 출신 개선 10건(2024.03 ~ 2024.07) · 요청부터 배포까지 평균 약 2주 · 난이도가 높고 오래 걸리는 <b>세그멘테이션 작업에서 효과가 가장 컸습니다</b></p>
+      <div class="two-axis">
+        <div><span class="label">더 빠르게</span><b>작업 범위를 빨리 잡도록</b><ul class="plain">
+          <li>포인트클라우드 세그멘테이션: 누락 포인트 시인성 개선, 인스턴스 숨김·z값 필터·올가미 선택으로 작업 범위를 빠르게 지정</li>
         </ul></div>
-        <div class="blk"><div class="label">운영 루프</div>
-          <div class="flow loop"><span class="hl">사용자 조사 세션</span><i>→</i><span>MVP 개발</span><i>→</i><span>매주 1회 정기 배포</span><i>→</i><span>다음 세션에서 효과 확인</span></div>
-          <p class="loop-out">효과가 확인된 기능은 <b>고도화</b>하거나 <b>다른 프로젝트로 확장</b></p>
-        </div>
-      </div>
-      <div class="blk tobe-blk"><div class="label">세션에서 나온 개선 · 현대자동차 프로젝트 10건 (2024.03 ~ 2024.07)</div>
-        <div class="imp4">
-          <div><b>포인트클라우드 세그멘테이션</b><p>누락 포인트 시인성 개선, 인스턴스 숨김·z값 필터·올가미 선택으로 작업 범위를 빠르게 지정</p></div>
-          <div><b>이미지 세그멘테이션</b><p>검수 전에 픽셀 누락 자동 검출, 최대 확대 단축키·엣지 표시로 객체 핏 확인</p></div>
-          <div><b>큐보이드 · 폴리라인</b><p>플랫큐보이드 확장면 시작점 조정, 폴리라인 첫 번째 선 표시</p></div>
-          <div><b>썸네일 뷰어</b><p>인스턴스 크기(넓이·너비·높이)를 뷰어에서 바로 확인</p></div>
-        </div>
+        <div class="hl"><span class="label">다시 하지 않게</span><b>오류를 줄여 재작업이 없도록</b><ul class="plain">
+          <li>이미지 세그멘테이션: 검수 전에 픽셀 누락 자동 검출, 최대 확대 단축키·엣지 표시로 객체 핏 확인</li>
+          <li>큐보이드·폴리라인: 첫 번째 선 표시로 객체를 다시 만드는 일 방지</li>
+          <li>썸네일 뷰어: 인스턴스 크기(넓이·너비·높이)를 바로 확인</li>
+        </ul></div>
       </div>
     </div>
   </section>
