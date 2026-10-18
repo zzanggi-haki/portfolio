@@ -116,6 +116,15 @@
   .trio .ph { display: flex; align-items: center; justify-content: center; border-style: dashed; color: var(--muted); font-size: 0.85rem; background: #fff; }
   .trio figcaption { margin-top: 0.5rem; font-size: 0.85rem; color: var(--ink-soft); }
   .trio figcaption b { color: var(--ink); margin-right: 0.3rem; }
+  .req { margin-top: 1.75rem; width: 100%; border-collapse: collapse; }
+  .req th { text-align: left; font-size: 0.75rem; letter-spacing: 0.08em; color: var(--muted); font-weight: 500; padding: 0 0 0.6rem; border-bottom: 2px solid var(--ink); }
+  .req td { padding: 0.85rem 0; border-bottom: 1px solid var(--line); color: var(--ink-soft); }
+  .req td:first-child { width: 8rem; color: var(--ink); }
+  .req td:last-child { color: var(--accent); font-weight: 600; }
+  .must { margin-top: 1.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+  .must .label { margin-right: 0.5rem; }
+  .must .chip { border: 1.5px solid var(--ink); border-radius: 999px; padding: 0.35rem 0.9rem; font-weight: 600; font-size: 0.9rem; }
+  .steps.steps4 { grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: none; }
   /* case 01 three-part layout */
   .cover-grid { margin-top: 0.4rem; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 3rem; align-items: center; }
   .case-cover h3 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); }
@@ -224,6 +233,7 @@
     .case .row { grid-template-columns: 1fr; gap: 0.5rem; }
     .cover-grid, .sol-grid, .oem-head { grid-template-columns: minmax(0, 1fr); gap: 1.75rem; }
     .trio { grid-template-columns: minmax(0, 1fr); }
+    .steps.steps4 { grid-template-columns: minmax(0, 1fr); }
     .tb-lane { grid-template-columns: minmax(0, 1fr); gap: 0.5rem; }
     .tb-flow { flex-direction: column; align-items: flex-start; row-gap: 0; }
     .tb-flow i { width: 1.5px; height: 0.9rem; margin-left: 1.5rem; }
@@ -464,6 +474,49 @@
         <figure><div class="ph">이미지 준비 중</div><figcaption><b>BMW</b> BEV 프로젝트 데모</figcaption></figure>
         <figure><div class="ph">이미지 준비 중</div><figcaption><b>Bosch</b> 폴리라인 포인트</figcaption></figure>
         <figure><img src="../../assets/img/aimmo-arbe-radar.jpg" alt="Arbe 레이더 포인트클라우드 위 2D 폴리곤 결과 화면"><figcaption><b>Arbe</b> 레이더 포인트클라우드 2D 폴리곤</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="case case-cont" id="case-oem-problem">
+    <div class="wrap">
+      <p class="kicker">AIMMO · 사례 02 · 문제</p>
+      <h3>고객이 요구한 작업 유형과 방식이<br>스튜디오에 없었습니다</h3>
+      <p class="sub">글로벌 고객사들은 3D 큐보이드 중심이던 스튜디오로는 할 수 없는 작업 유형과 방식을 요구했습니다. 새로운 기술이 여럿 들어가야 했고, 그에 따라 제약 상황과 작업 방식, 프로젝트 진행 방식까지 먼저 정해야 했습니다. 요구 기한은 짧았습니다.</p>
+      <table class="req">
+        <thead><tr><th>고객사</th><th>요구한 작업 유형</th><th>당시 스튜디오</th></tr></thead>
+        <tbody>
+          <tr><td><b>Bosch</b></td><td>이미지 폴리라인 포인트</td><td>지원하지 않음</td></tr>
+          <tr><td><b>BMW</b></td><td>BEV 프로젝트 · 폴리라인 포인트 기반 작업</td><td>지원하지 않음</td></tr>
+          <tr><td><b>Arbe</b></td><td>레이더 포인트클라우드 위 2D 폴리곤</td><td>포인트클라우드는 3D 큐보이드 중심</td></tr>
+        </tbody>
+      </table>
+      <div class="must"><span class="label">먼저 정해야 했던 것</span><span class="chip">제약 상황</span><span class="chip">작업 방식</span><span class="chip">프로젝트 진행 방식</span></div>
+    </div>
+  </section>
+
+  <section class="case case-cont" id="case-oem-2">
+    <div class="wrap">
+      <p class="kicker">AIMMO · 사례 02 · 해결 과정과 결과</p>
+      <h3>개발팀과 바로 붙어<br>최소 기능 데모로 먼저 보여 주기</h3>
+      <div class="sol-grid">
+        <div class="blk"><div class="label">해결 과정</div><ul class="plain">
+          <li><b>파악</b> — 요구사항을 리소스·작업 방식·필요 기능 기준으로 검토해 바로 가능한 것과 개발 후 가능한 것을 나눴습니다.</li>
+          <li><b>판단</b> — 기한이 짧아 개발팀과 바로 붙어 요구사항을 빠르게 파악하고, 최소 기능으로 데모를 구현해 바로 시연했습니다.</li>
+          <li><b>확장</b> — 데모 기능을 정식 작업 유형으로 다듬어, 다른 고객사 프로젝트에서도 쓰게 했습니다.</li>
+        </ul></div>
+        <div class="blk"><div class="label">결과</div><ul class="plain">
+          <li><b>사업</b> — BMW 5개년 계약 · Bosch 수주 기여 · Arbe 추가 계약</li>
+          <li><b>제품</b> — 데모 기능 2종(폴리라인 포인트, 포인트클라우드 2D 폴리곤)을 정식 작업 유형으로 편입</li>
+        </ul></div>
+      </div>
+      <div class="blk tobe-blk"><div class="label">데모에서 정식 작업 유형까지</div>
+        <div class="steps steps4">
+          <div class="step"><small>2023.11</small><b>Bosch 데모</b><span>폴리라인 포인트</span></div>
+          <div class="step"><small>2024.01</small><b>운영 배포</b><span>폴리라인 포인트 정식 기능</span></div>
+          <div class="step"><small>2024.03</small><b>BMW BEV 적용</b><span>프로젝트 타임라인 매핑</span></div>
+          <div class="step hl"><small>2024.03 ~ 2024.06</small><b>Arbe 데모 → 신규 작업 유형</b><span>포인트클라우드 2D 폴리곤</span></div>
+        </div>
       </div>
     </div>
   </section>
