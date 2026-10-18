@@ -145,8 +145,17 @@
   .why3 p { margin: 0; color: var(--ink-soft); line-height: 1.7; }
   .why3 b { color: var(--ink); }
   .map-shot { margin: 0; }
-  .map-shot img { width: 100%; height: 16.5rem; object-fit: cover; object-position: left top; border-radius: 10px; border: 1px solid var(--line); }
+  .map-shot img { width: 100%; height: 13rem; object-fit: cover; object-position: left top; border-radius: 10px; border: 1px solid var(--line); }
   .map-shot figcaption { margin-top: 0.4rem; font-size: 0.8rem; color: var(--muted); }
+  #case-oem-2 .sol-grid { margin-top: 1.25rem; }
+  #case-oem-2 .res-row { margin-top: 1rem; padding-top: 0.75rem; }
+  .ops { margin-top: 1rem; padding: 0.9rem 1.1rem; border-radius: 12px; background: #fff; border: 1px solid var(--line); }
+  .ops .label { display: block; margin-bottom: 0.6rem; color: var(--accent); }
+  .ops-chips { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.5rem; }
+  .ops-chips span { border: 1.5px solid var(--ink); border-radius: 999px; padding: 0.3rem 0.85rem; font-weight: 600; font-size: 0.88rem; }
+  .ops-chips small { color: var(--muted); font-weight: 500; margin-right: 0.4rem; }
+  .ops-chips i { font-style: normal; color: var(--accent); font-weight: 700; }
+  .ops p { margin: 0.6rem 0 0; color: var(--ink-soft); font-size: 0.92rem; }
   .res-row { margin-top: 1.25rem; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 3rem; border-top: 1px solid var(--line); padding-top: 1rem; }
   .res-row .label { display: block; margin-bottom: 0.4rem; }
   .res-row p { margin: 0; color: var(--ink); font-weight: 600; line-height: 1.6; }
@@ -533,17 +542,22 @@
       <h3>데모 기능으로 작업자와 함께 실제 작업 과정을 검증하고 출시</h3>
       <div class="sol-grid">
         <div class="blk"><div class="label">해결 과정</div><ul class="plain">
-          <li><b>데모</b> — 기한이 짧아 개발팀과 바로 붙어, 해석한 세 가지(선 · 포인트별 클래스·속성 · 원본 이미지 매핑)만 담은 최소 기능 데모를 만들었습니다.</li>
-          <li><b>검증</b> — 실제 작업자들과 데모 기능으로 작업과 검수를 해 보며, 실제 작업 환경과 과정에서 정확하게 판단하고 라벨링할 수 있는지 확인했습니다.</li>
-          <li><b>출시</b> — 검증한 방식 그대로 폴리라인 포인트를 정식 작업 유형으로 출시하고, BMW BEV 프로젝트에 적용한 뒤 자르기 등 운영 중 나온 요청을 보완했습니다.</li>
+          <li><b>데모</b> — 해석한 세 가지(선 · 포인트별 클래스·속성 · 원본 이미지 매핑)만 담은 최소 기능 데모를 짧은 기한 안에 만들어, <b>고객이 새 작업 방식을 화면으로 직접 확인하고 계약을 판단할 수 있게</b> 했습니다.</li>
+          <li><b>검증</b> — 실제 작업자와 데모로 작업·검수를 해 보며 원본 이미지 없이는 판단이 엇갈리는 지점을 확인했고, <b>원본 매핑을 선택 기능이 아닌 기본 작업 방식으로 확정</b>했습니다.</li>
+          <li><b>출시</b> — 검증한 방식 그대로 폴리라인 포인트를 <b>정식 작업 유형으로 출시(2024.01)</b>하고, BMW BEV 프로젝트에 적용(2024.03)했습니다.</li>
         </ul></div>
         <div class="blk"><div class="label">포인트 ↔ 원본 주행 이미지 매핑 · 실제 화면</div>
           <figure class="map-shot"><img src="../../assets/img/aimmo-polyline-rv-mapping.jpg" alt="폴리라인 포인트에서 포인트를 선택하면 매핑된 RV 이미지로 이동하는 스튜디오 화면"><figcaption>포인트를 선택하면 왼쪽 위 참조 화면(RV)이 그 지점의 원본 이미지로 바뀜 · 정책 문서 예시</figcaption></figure>
         </div>
       </div>
+      <div class="ops">
+        <span class="label">출시 후 운영 · 작업 효율 개선</span>
+        <div class="ops-chips"><span><small>2024.02</small>썸네일 뷰어</span><i>→</i><span><small>2024.03</small>원본 이미지 매핑 · 포인트 지름</span><i>→</i><span><small>2024.04</small>자르기 개선</span><i>→</i><span><small>2024.05</small>첫 번째 선 표시</span></div>
+        <p>출시로 끝내지 않고 작업 현장의 요청을 매주 배포로 반영해, 같은 작업을 더 빠르고 정확하게 하도록 다듬었습니다.</p>
+      </div>
       <div class="res-row">
         <div><span class="label">결과 · 사업</span><p>BMW 5개년 계약 · Bosch 수주 기여</p></div>
-        <div><span class="label">결과 · 제품</span><p>폴리라인 포인트를 정식 작업 유형으로 출시(2024.01)하고 BMW BEV 프로젝트에 적용(2024.03), 이후 다른 고객사 프로젝트에서도 사용</p></div>
+        <div><span class="label">결과 · 제품</span><p>폴리라인 포인트를 스튜디오 정식 작업 유형으로 편입, 이후 다른 고객사 프로젝트에서도 사용</p></div>
       </div>
     </div>
   </section>
