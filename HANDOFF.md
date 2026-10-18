@@ -4,6 +4,13 @@
 
 ---
 
+## 0-0000. ▶ 2026-10-19 — 19 ~ 20쪽 확정, 다음은 21쪽(AI 사례 02 교육)
+
+- 19 AI 전환 표지(A안): 제목 "UX 리서치로 AI 전환의 출발점을 찾습니다", 사례 3개 → 2개(사례 01 LG화학 제안+4단계 프레임워크 합본, 사례 02 교육). 비교안 `drafts/web/variants-ai.html`
+- 20 AI 사례 01(A안, 기존 LG화학·프레임워크 2장을 1장으로): 왼쪽 제목·근거·본문·4단계 흐름(구축 강조)·역할 한 줄, 오른쪽에 제안서 16쪽 AX Goal 도식(`jcurve-lgchem-ax-goal.jpg`)과 22쪽 AX 브리프 표(`jcurve-lgchem-ax-brief.jpg`)를 슬라이드 내용만 잘라 반쯤 겹침. 비교안 `variants-ai-case.html`, `variants-ai-case2.html`, 제안서 리서치 장표 검토 `lgchem-research-pages.html`(v0.51 16 ~ 23쪽)
+- 사용자 확인: 제안서 20쪽 Walkthrough 사진 = 진행 방식 예시(LG화학 현장 아님) / 22쪽 AX 브리프 = 제안 단계 가설(고객사 요구로 가정해 먼저 분석). 미수주 사유 줄은 뺐음
+- 전체 29장. AI 장은 컴팩트하게(사용자 요청)
+
 ## 0-000. ▶ 2026-10-18 밤 — 웹 초안 1 ~ 18쪽 검토 완료, 다음은 19쪽(02 AI 전환 장 표지)부터
 
 - 작업 위치: 브랜치 `claude/continue-session-ca1975` (워크트리 `.claude/worktrees/continue-session-ca1975`), **main 미머지·미배포**. 슬라이드 보기 http://localhost:5180/drafts/web/deck (launch.json `web-draft`), 전체 30장, 모든 장 16:9 한 장에 들어감

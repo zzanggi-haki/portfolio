@@ -419,6 +419,23 @@
     .job .when { grid-column: 1 / -1; }
     .site-nav .links { gap: 0.8rem; }
   }
+  /* AI 사례 01: 제안서 이미지 겹침 */
+  .stack { position: relative; }
+  .stack figure { margin: 0; position: relative; }
+  .stack img { display: block; width: 100%; background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 0.6rem; box-sizing: border-box; }
+  .stack .front img { box-shadow: 0 10px 28px rgba(0,0,0,0.14); }
+  .stack figcaption { margin-top: 0.35rem; font-size: 0.76rem; color: var(--muted); }
+  .stack figcaption b { color: var(--accent); margin-right: 0.3rem; }
+  .stack.v .back { width: 86%; display: flex; flex-direction: column-reverse; }
+  .stack.v .back figcaption { margin: 0 0 0.35rem; }
+  .stack.v .front { width: 84%; margin: -15% 0 0 auto; }
+  .cg-a { margin-top: 0.4rem; display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.25fr); gap: 2.5rem; align-items: center; }
+  @media (max-width: 760px) { .cg-a { grid-template-columns: minmax(0, 1fr); gap: 1.75rem; } }
+  .fw { margin-top: 1.1rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; }
+  .fw > small { color: var(--muted); font-size: 0.8rem; font-weight: 700; }
+  .fw .flow.mini { margin-top: 0; }
+  .meta-line { margin-top: 1rem; color: var(--muted); font-size: 0.85rem; }
+  .meta-line b { color: var(--ink); font-weight: 600; margin-right: 0.3rem; }
 </style>
 </head>
 <body>
@@ -861,42 +878,18 @@
   <section class="case case-cover" id="case-lgchem">
     <div class="wrap">
       <p class="kicker">AI 전환 · 사례 01 · Team J-Curve</p>
-      <div class="cover-grid">
+      <div class="cg-a">
         <div>
-          <h3>AI 에이전트를 만들기 전에,<br>담당자의 판단 로직부터<br>꺼내는 제안</h3>
+          <h3>AI 에이전트를 만들기 전에,<br>담당자의 판단 로직부터<br>꺼내는 AI 전환 제안</h3>
           <p class="hit">LG화학 SCM AI 에이전트 · 제안서 44p 중 본문 약 20p 작성 · 최종 발표 · 미수주</p>
-          <p class="sub">고객은 이미 목표(적시 생산 에이전트)와 데이터(엑셀 기반)를 갖고 있었습니다. 부족한 건 SCM 담당자와 고참의 머릿속에 있는 판단 로직이라고 보고, 현업 인터뷰·관찰 단계를 제안의 중심에 두었습니다.</p>
-          <div class="flow mini"><span>현업 관찰·인터뷰</span><i>→</i><span>업무 흐름 7단계</span><i>→</i><span>AI 에이전트 5종</span><i>→</i><span class="hl">1차 구축 범위</span></div>
-          <dl class="meta-dl"><dt>역할</dt><dd>AX 컨설턴트 · 제안 구조·프로세스 설계, 본문 작성, 고객 미팅 2회</dd><dt>기간</dt><dd>2026.06</dd></dl>
+          <p class="sub">고객이 요구한 목표를 에이전트 구조로 다시 그리고, 업무 흐름을 먼저 가정해 문제와 기회를 분석했습니다. 이 가설을 현업 관찰·인터뷰로 검증하는 단계를 제안의 중심에 두었습니다.</p>
+          <div class="fw"><small>4단계 프레임워크</small><div class="flow mini"><span>진단</span><i>→</i><span>업무 재설계</span><i>→</i><span class="hl">구축</span><i>→</i><span>구조 재편</span></div></div>
+          <p class="meta-line"><b>역할</b>AX 컨설턴트 · 제안 구조 설계, 본문 작성, 고객 미팅 2회 · 2026.06</p>
         </div>
-        <figure>
-          <img src="../../assets/img/jcurve-prototype-iteration.jpg" alt="Claude로 만든 가상 데이터 기반 프로토타입 v0.1부터 v0.3까지">
-          <figcaption>Claude로 만든 가상 데이터 기반 프로토타입 v0.1 ~ v0.3 · 구축 범위를 화면으로 협의하기 위한 예시</figcaption>
-        </figure>
-      </div>
-      <p class="note-ref">미수주 사유 · J-Curve 측 전체 AX 프로젝트 수행 여력, LG화학 측 예산 규모 미확정</p>
-    </div>
-  </section>
-
-  <section class="case case-cover" id="case-ax">
-    <div class="wrap">
-      <p class="kicker">AI 전환 · 사례 02 · Team J-Curve</p>
-      <div class="cover-grid">
-        <div>
-          <h3>UX 리서치 방법을<br>기업 AI 전환 과정으로 옮긴<br>4단계 프레임워크</h3>
-          <p class="hit">LG화학 SCM AI 에이전트 제안서 본문(10 ~ 29p)에 전체 적용</p>
-          <p class="sub">AX 프로젝트에서 시간이 가장 많이 드는 곳은 현업 담당자의 암묵지와 업무 맥락을 꺼내는 일이라고 보고, UX 리서치의 발견·정의 단계를 프레임워크 중심에 두었습니다. 내부 리뷰에서 AI 활용이 부족하다는 의견을 받아, 단계마다 AI의 역할(보조·위임·자율)을 붙였습니다.</p>
+        <div class="stack v">
+          <figure class="back"><img src="../../assets/img/jcurve-lgchem-ax-goal.jpg" alt="LG화학 AX 목표를 데이터 입력, 에이전트 파이프라인, 의사결정으로 정리한 도식"><figcaption><b>①</b>고객 목표를 에이전트 구조로 재정의 · 제안서 16p</figcaption></figure>
+          <figure class="front"><img src="../../assets/img/jcurve-lgchem-ax-brief.jpg" alt="AS-IS 업무 흐름 7단계, 핵심 문제 5개, AI 에이전트 기회 5종을 정리한 AX 브리프"><figcaption><b>②</b>AX 브리프 · 고객 요구로 가정해 먼저 분석한 가설 · 제안서 22p</figcaption></figure>
         </div>
-        <figure>
-          <img src="../../assets/img/jcurve-ai-native-process.jpg" alt="진단, 업무 재설계, 구축, 구조 재편으로 이어지는 4단계 AI 전환 프로세스">
-          <figcaption>4단계 AI 전환 프로세스 · 제안서 화면</figcaption>
-        </figure>
-      </div>
-      <div class="steps steps4 ax4">
-        <div class="step"><small>1</small><b>진단</b><span>참여형 진단, 조직의 AI 역량 수준 파악</span></div>
-        <div class="step"><small>2</small><b>업무 재설계</b><span>업무 분해, 흐름 시각화, 자동화·보조 영역 구분</span></div>
-        <div class="step hl"><small>3</small><b>구축</b><span>인터뷰 앱으로 발견 → 데모로 합의 → 담당자와 3일 ~ 1주 단위 공동 제작 → AI 코치로 인계</span></div>
-        <div class="step"><small>4</small><b>구조 재편</b><span>역할·인원·조직 구조를 현업과 함께 설계</span></div>
       </div>
     </div>
   </section>
