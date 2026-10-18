@@ -102,6 +102,17 @@
   .flow span.hl { background: var(--ink); color: var(--bg); }
   .flow i { font-style: normal; color: var(--accent); font-weight: 700; }
   .flow span.fork { border: 0; padding: 0; background: none; display: inline-flex; flex-direction: column; gap: 0.35rem; }
+  .flow b { width: 4.2rem; font-size: 0.75rem; letter-spacing: 0.08em; color: var(--muted); font-weight: 500; }
+  .flow + .flow { margin-top: 0.7rem; }
+  .steps { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; padding-top: 1.4rem; max-width: 44rem; }
+  .steps::before { content: ''; position: absolute; top: 0.4rem; left: 0.4rem; right: 0; height: 2px; background: var(--line); }
+  .step { position: relative; display: flex; flex-direction: column; gap: 0.1rem; }
+  .step::before { content: ''; position: absolute; top: -1.4rem; left: 0; width: 0.8rem; height: 0.8rem; border-radius: 50%; background: var(--bg); border: 2px solid var(--ink); }
+  .step small { color: var(--muted); font-size: 0.8rem; }
+  .step b { color: var(--ink); font-size: 1.05rem; }
+  .step span { color: var(--ink-soft); font-size: 0.9rem; }
+  .step.hl::before { background: var(--accent); border-color: var(--accent); }
+  .step.hl b { color: var(--accent); }
   .note-ref { color: var(--muted); font-size: 0.85rem; margin-top: 1rem; }
 
   .draft-note { text-align: center; color: var(--muted); font-size: 0.8rem; padding: 2rem 0 3rem; }
@@ -110,6 +121,9 @@
     .co-head { grid-template-columns: 1fr; gap: 1.5rem; }
     .case-index { grid-template-columns: 1fr; }
     .case .row { grid-template-columns: 1fr; gap: 0.5rem; }
+    .steps { grid-template-columns: 1fr; gap: 1.6rem; padding-top: 0; padding-left: 1.6rem; }
+    .steps::before { top: 0.4rem; bottom: 0; left: 0.35rem; right: auto; width: 2px; height: auto; }
+    .step::before { top: 0.25rem; left: -1.6rem; }
     .ways { grid-template-columns: 1fr; gap: 1.5rem; }
     .numbers .grid { grid-template-columns: 1fr; }
     .groups { grid-template-columns: 1fr; }
@@ -153,7 +167,7 @@
         <div class="way">
           <h3>리서치와 관찰로 진짜 니즈를 찾습니다</h3>
           <p>요구사항을 그대로 받기보다 실제 작업 장면에서 원인을 찾습니다.</p>
-          <a href="#">→ 사례 · 썸네일 뷰어 인라인 수정</a>
+          <a href="#case-inspection">→ 사례 · 썸네일 뷰어 인라인 수정</a>
         </div>
         <div class="way">
           <h3>제품이 계속 나아지는 시스템을 만듭니다</h3>
@@ -263,9 +277,45 @@
         <img src="../../assets/img/aimmo-studio-pointcloud.jpg" alt="STUDIO 포인트클라우드 라벨링 화면">
       </div>
       <div class="case-index">
-        <a href="#"><small>사례 01</small><b>6단계였던 검수 과정을 3단계로 줄여 검수 효율 개선</b></a>
+        <a href="#case-inspection"><small>사례 01</small><b>6단계였던 검수 과정을 3단계로 줄여 검수 효율 개선</b></a>
         <a href="#"><small>사례 02</small><b>경쟁 수주에서 데모로 증명해 BMW 5개년 계약 기여</b></a>
         <a href="#case-session"><small>사례 03</small><b>사용자 조사 세션으로 지속적인 개선 시스템 만들기</b></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="case" id="case-inspection">
+    <div class="wrap">
+      <p class="kicker">AIMMO · 사례 01</p>
+      <h3>6단계였던 검수 과정을<br>3단계로 줄여 검수 효율 개선</h3>
+      <p class="sub">썸네일 뷰어 안에서 바로 수정하는 기능을 MVP로 먼저 출시해 검수자 전원이 사용했습니다. 작업 효율을 검증한 결과로 유관 팀 협업을 끌어내, 다른 작업 리소스 유형까지 확장했습니다.</p>
+      <div class="meta"><span><b>역할</b>Product Owner (프로젝트 리드)</span><span><b>기간</b>2024.03 ~ 11</span></div>
+      <figure>
+        <img src="../../assets/img/aimmo-thumbnail-edit.jpg" alt="썸네일 뷰어에서 바로 수정하는 화면">
+        <figcaption>썸네일 뷰어 안에서 다중/단일 선택으로 바로 수정하는 화면</figcaption>
+      </figure>
+      <div class="rows">
+        <div class="row"><div class="label">문제</div><div class="prose"><p>기존 뷰어는 작업 결과물을 한 눈에 보는 단방향 도구였습니다. 검수 중 수정이 필요하면 뷰어를 벗어나 별도 경로로 요청을 전달해야 했고, 작업자는 다시 라벨링 작업 화면으로 돌아가 수정한 뒤 재제출해야 했습니다.</p></div></div>
+        <div class="row"><div class="label">해결 과정</div><div class="prose"><ul>
+          <li><b>발견</b> — 작업 단가 효율을 높이기 위해 라벨링부터 재검수까지 전체 흐름을 살펴보다가, 검수와 수정 사이의 반복 작업에서 비효율이 생기는 것을 발견했습니다.</li>
+          <li><b>판단</b> — 효과가 가장 클 것으로 본 방식을 MVP로 기획·개발해 실제 작업에 먼저 적용하고 테스트했습니다.</li>
+          <li><b>확장</b> — 테스트에서 확인한 효과를 근거로 유관 팀의 협업을 이끌어내, 전체 리소스 유형으로 확장했습니다.</li>
+        </ul></div></div>
+        <div class="row"><div class="label">결과</div><div class="prose">
+          <div class="flow"><b>AS-IS</b><span>오류 발견</span><i>→</i><span>스튜디오 재진입</span><i>→</i><span>담당자 변경</span><i>→</i><span>수정</span><i>→</i><span>필터 재설정</span><i>→</i><span>검수 재시작</span></div>
+          <div class="flow"><b>TO-BE</b><span class="hl">오류 발견</span><i>→</i><span class="hl">뷰어 안에서 다중/단일 선택 수정</span><i>→</i><span class="hl">저장</span></div>
+        </div></div>
+        <div class="row"><div class="label">효과</div><div class="prose"><ul>
+          <li>건당 검수 시간 <b>최소 10초 단축</b></li>
+          <li>검수자 <b>100% 사용</b></li>
+        </ul></div></div>
+        <div class="row"><div class="label">확장</div><div class="prose">
+          <div class="steps">
+            <div class="step"><small>2024.09</small><b>싱글 이미지</b><span>MVP 출시</span></div>
+            <div class="step"><small>2024.11</small><b>씬 파일</b><span>시퀀스·포인트클라우드</span></div>
+            <div class="step hl"><small>이후</small><b>전체 리소스 유형</b><span>모든 프로젝트 검수에 적용</span></div>
+          </div>
+        </div></div>
       </div>
     </div>
   </section>
@@ -302,7 +352,7 @@
     </div>
   </section>
 
-  <p class="draft-note">웹 초안 · 도입부 + AIMMO 사례 03 (나머지 사례 링크는 아직 연결 전)</p>
+  <p class="draft-note">웹 초안 · 도입부 + AIMMO 사례 01·03 (나머지 사례 링크는 아직 연결 전)</p>
 </main>
 </body>
 </html>
