@@ -185,6 +185,17 @@
   .lg-pts li .n { color: var(--muted); font-size: 0.8rem; padding-top: 0.15rem; }
   .lg-pts li b { color: var(--ink); }
   .lg-pts li p { margin: 0; }
+  .lg-grid.one { grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 2.75rem; }
+  .lg-grid.one .lg-pts { margin-top: 1.5rem; }
+  .scope3 { margin-top: 1.75rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .scope3 > div { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 1.1rem 1.25rem 1.25rem; }
+  .scope3 > div.hl { border-color: var(--accent); }
+  .scope3 .n { display: block; font-size: 0.8rem; color: var(--muted); letter-spacing: 0.04em; }
+  .scope3 b { display: block; margin-top: 0.3rem; font-size: 2.6rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; color: var(--ink); }
+  .scope3 .hl b { color: var(--accent); }
+  .scope3 p { margin: 0.6rem 0 0; font-size: 0.9rem; line-height: 1.65; color: var(--ink-soft); }
+  .scope-foot { margin: 1.25rem 0 0; font-size: 0.85rem; color: var(--muted); }
+  @media (max-width: 760px) { .scope3 { grid-template-columns: minmax(0, 1fr); } .lg-grid, .lg-grid.one { grid-template-columns: minmax(0, 1fr); } }
   .case .lg-shots figure { margin: 0 0 1rem; }
   .case .lg-shots figure:last-child { margin-bottom: 0; }
   .case .lg-shots img { width: 100%; max-height: none; display: block; border-radius: 8px; }
@@ -688,17 +699,11 @@
 
   <section class="case case-cont" id="case-lg">
     <div class="wrap">
-      <div class="lg-grid">
+      <div class="lg-grid one">
         <div>
           <p class="kicker">AIMMO · 첫 온프레미스 납품</p>
-          <h3>SaaS로 쓰던 라벨링 툴을<br>처음 패키지로 납품하며, 기존 기능을 살려<br>분자 구조 라벨링 툴로 만들었습니다</h3>
+          <h3>SaaS로만 팔던 라벨링 툴을<br>처음 온프레미스 패키지로 납품해,<br>LG 내 서비스 오픈과 유지보수 계약까지</h3>
           <p class="hit">LG AI연구원 · 에이모 첫 툴 패키지 납품 · 2025.03 LG 내 서비스 오픈 · 1년 유지보수 계약</p>
-          <div class="lg-reuse">
-            <div><b>33</b><span>정의한 기능</span></div>
-            <div class="hl"><b>12</b><span>기존 기능 그대로 3 · 수정 9</span></div>
-            <div><b>21</b><span>분자 전용 신규</span></div>
-          </div>
-          <p class="lg-reuse-note">원자·결합을 확인·생성·수정하는 기본 기능 6개는 모두 기존 기능으로 만들고, 새로 만든 21개는 잘린 선·괄호·결과 미리보기처럼 분자 구조에만 필요한 것으로 좁혔습니다.</p>
           <ul class="lg-pts">
             <li><span class="n">역할</span><p>수주 이후 프로젝트를 맡아 기획부터 납품까지 리드했습니다. PD·FE·QA·BD 6명과 보드를 운영하고 기능·단축키·산출물 정의서를 썼습니다.</p></li>
             <li><span class="n">추론 기능</span><p>이미지 속 원자 표기 텍스트(Et, NH 등)를 <b>추론해 분자식으로 입력</b>하는 기능을 새로 넣었습니다. 작업자가 표기를 하나씩 입력하던 일을 확인하는 일로 바꿨습니다.</p></li>
@@ -707,10 +712,23 @@
           <dl class="meta-dl inline"><dt>역할</dt><dd>프로젝트 리드 PO</dd><dt>기간</dt><dd>2024.08 ~ 2025.02 개발 · 2025.03 오픈</dd></dl>
         </div>
         <div class="lg-shots">
-          <figure><img src="../../assets/img/aimmo-lg-molecule-bond.jpg" alt="결합 모드에서 결합 종류를 클래스로 라벨링하는 분자 구조 라벨링 화면"><figcaption>결합(Bond) 모드 · 결합 종류를 클래스로 라벨링, 오른쪽 아래 결과 미리보기</figcaption></figure>
-          <figure><img src="../../assets/img/aimmo-lg-molecule-atom.jpg" alt="원자 모드에서 원자 클래스를 고르는 분자 구조 라벨링 화면"><figcaption>원자(Atom) 모드 · 원자와 텍스트 표기에 클래스 지정</figcaption></figure>
+          <figure><img src="../../assets/img/aimmo-lg-molecule-bond.jpg" alt="결합 모드에서 결합 종류를 클래스로 라벨링하는 분자 구조 라벨링 화면"><figcaption>납품한 분자 구조 라벨링 툴 · 결합 종류를 클래스로 라벨링하고 오른쪽 아래에서 결과 확인</figcaption></figure>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="case case-cont" id="case-lg-2">
+    <div class="wrap">
+      <p class="kicker">AIMMO · 첫 온프레미스 납품 · 납품 범위</p>
+      <h3>새로 만들기 전에 기존 기능으로 되는 것부터 걸러,<br>신규 개발은 분자 구조에만 필요한 것으로 좁혔습니다</h3>
+      <p class="sub">LG의 요구를 기능 목록 그대로 만들지 않고, 기능정의서에서 항목마다 기존 기능을 그대로 쓸지, 조금 고쳐 쓸지, 새로 만들지를 먼저 나눴습니다.</p>
+      <div class="scope3">
+        <div><span class="n">그대로 사용</span><b>3</b><p>키보드 단축키 · 원자 생성 · 이미지 보기 범위 표시</p></div>
+        <div class="hl"><span class="n">최소 수정</span><b>9</b><p>공통 헤더 · 히스토리 · 모드별 툴바 · 원자 확인·수정 · 결합 확인·생성·수정 · 분자 목록 패널</p></div>
+        <div><span class="n">새로 개발</span><b>21</b><p>잘린 선 · 괄호 · 원자·결합 클래스 수정 · 분자 목록·모드 선택 · 결과 미리보기 · 모드별 속성 패널</p></div>
+      </div>
+      <p class="scope-foot">원자·결합을 확인·생성·수정하는 기본 기능 6개는 모두 기존 기능으로 해결 · 기능정의서 v1.3 기준 33개 항목</p>
     </div>
   </section>
 
