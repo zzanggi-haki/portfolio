@@ -82,6 +82,10 @@
   .case-index a:hover b { text-decoration: underline; text-underline-offset: 0.15em; }
   .case-index small { color: var(--accent); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.04em; }
   .case-index b { display: block; margin-top: 0.3rem; font-size: 1rem; line-height: 1.45; }
+  .case-index em { display: block; margin-top: 0.35rem; font-style: normal; font-size: 0.85rem; color: var(--accent); }
+  .case .hit { margin: 0.6rem 0 0; color: var(--accent); font-weight: 700; font-size: 1.05rem; }
+  .case .why { color: var(--muted); }
+  .case .prose p + .steps { margin-top: 1.2rem; }
   .case-index .soon { border-top-color: var(--line); color: var(--muted); }
   .case-index .soon small { color: var(--muted); }
 
@@ -277,7 +281,7 @@
         <img src="../../assets/img/aimmo-studio-pointcloud.jpg" alt="STUDIO 포인트클라우드 라벨링 화면">
       </div>
       <div class="case-index">
-        <a href="#case-inspection"><small>사례 01</small><b>6단계였던 검수 과정을 3단계로 줄여 검수 효율 개선</b></a>
+        <a href="#case-inspection"><small>사례 01</small><b>6단계였던 검수 과정을 3단계로 줄여 검수 효율 대폭 개선</b><em>검수 1건당 최소 10초 이상 단축</em></a>
         <a href="#"><small>사례 02</small><b>경쟁 수주에서 데모로 증명해 BMW 5개년 계약 기여</b></a>
         <a href="#case-session"><small>사례 03</small><b>사용자 조사 세션으로 지속적인 개선 시스템 만들기</b></a>
       </div>
@@ -287,11 +291,12 @@
   <section class="case" id="case-inspection">
     <div class="wrap">
       <p class="kicker">AIMMO · 사례 01</p>
-      <h3>6단계였던 검수 과정을<br>3단계로 줄여 검수 효율 개선</h3>
-      <p class="sub">썸네일 뷰어 안에서 바로 수정하는 기능을 MVP로 먼저 출시해 검수자 전원이 사용했습니다. 작업 효율을 검증한 결과로 유관 팀 협업을 끌어내, 다른 작업 리소스 유형까지 확장했습니다.</p>
+      <h3>6단계였던 검수 과정을 3단계로 줄여<br>검수 효율 대폭 개선</h3>
+      <p class="hit">검수 1건당 최소 10초 이상 단축</p>
+      <p class="sub">검수는 모든 라벨링 작업이 반드시 거치는 단계입니다. 작업 건당 단가를 낮추기 위해 검수 화면에서 바로 수정하는 기능을 MVP로 내놓았고, 검수자 전원이 쓰는 기능이 되어 모든 리소스 유형의 검수로 확장했습니다.</p>
       <div class="meta"><span><b>역할</b>Product Owner (프로젝트 리드)</span><span><b>기간</b>2024.03 ~ 11</span></div>
       <figure>
-        <img src="../../assets/img/aimmo-thumbnail-edit.jpg" alt="썸네일 뷰어에서 바로 수정하는 화면">
+        <img src="../../assets/img/aimmo-thumbnail-edit-clean.jpg" alt="썸네일 뷰어에서 바로 수정하는 화면">
         <figcaption>썸네일 뷰어 안에서 다중/단일 선택으로 바로 수정하는 화면</figcaption>
       </figure>
       <div class="rows">
@@ -306,10 +311,11 @@
           <div class="flow"><b>TO-BE</b><span class="hl">오류 발견</span><i>→</i><span class="hl">뷰어 안에서 다중/단일 선택 수정</span><i>→</i><span class="hl">저장</span></div>
         </div></div>
         <div class="row"><div class="label">효과</div><div class="prose"><ul>
-          <li>건당 검수 시간 <b>최소 10초 단축</b></li>
-          <li>검수자 <b>100% 사용</b></li>
+          <li>건당 검수 시간 <b>최소 10초 단축</b> <span class="why">(작업 단가 낮춤)</span></li>
+          <li>검수자 <b>100% 사용</b> <span class="why">(효용성 검증)</span></li>
         </ul></div></div>
         <div class="row"><div class="label">확장</div><div class="prose">
+          <p>작업 효율을 검증한 뒤 전체 리소스 유형으로 확장했습니다.</p>
           <div class="steps">
             <div class="step"><small>2024.09</small><b>싱글 이미지</b><span>MVP 출시</span></div>
             <div class="step"><small>2024.11</small><b>씬 파일</b><span>시퀀스·포인트클라우드</span></div>
