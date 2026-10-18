@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>실제 작업 시간 블록 — 레이아웃 3안</title>
+<link rel="stylesheet" href="../../styles/theme.css">
+<style>
+  body { font-size: 16px; }
+  .wrap { max-width: 68rem; margin: 0 auto; padding: 0 clamp(1rem, 4vw, 2.5rem); }
+  .opt { padding: 3.5rem 0; border-top: 1px solid var(--line); }
+  .opt:first-of-type { border-top: 0; padding-top: 2.5rem; }
+  .opt-name { display: inline-block; font-size: 0.8rem; color: var(--accent); font-weight: 700; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+  .opt-desc { color: var(--muted); font-size: 0.85rem; margin: 0 0 2rem; }
+  h4 { margin: 0 0 1rem; font-size: 1.1rem; font-weight: 800; letter-spacing: -0.01em; }
+  .tag { color: var(--accent); font-weight: 700; font-size: 0.85rem; }
+  .note { color: var(--muted); font-size: 0.82rem; }
+
+  /* 1안 — 슬라이드 디자인 시스템: 왼쪽 회색 대문자 라벨 | 본문 2단, 얇은 선, 합계는 같은 표의 마지막 행 */
+  .v1 { display: grid; grid-template-columns: 11em minmax(0, 1fr); gap: 1.5em 2em; }
+  .v1 .label { padding-top: 0.2em; }
+  .v1 h4 { font-size: 1.25rem; }
+  .v1 table { width: 100%; border-collapse: collapse; }
+  .v1 td { padding: 0.7rem 0; border-bottom: 1px solid var(--line); vertical-align: baseline; color: var(--ink-soft); }
+  .v1 td.t { width: 6.5rem; }
+  .v1 td.s { text-align: right; color: var(--ink); font-weight: 700; white-space: nowrap; padding-left: 1rem; }
+  .v1 tr.total td { border-bottom: 0; border-top: 2px solid var(--ink); padding-top: 0.9rem; color: var(--ink); font-weight: 700; }
+  .v1 tr.total td.s { color: var(--accent); }
+
+  /* 2안 — 비율 막대: 4개 구간을 초 단위 비율로 한 줄에 */
+  .v2 .bar { display: flex; height: 2.6rem; border-radius: 8px; overflow: hidden; border: 1px solid var(--line); background: #fff; }
+  .v2 .seg { display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; color: var(--ink); border-right: 1px solid var(--line); white-space: nowrap; }
+  .v2 .seg:last-child { border-right: 0; }
+  .v2 .seg.wait { background: var(--accent-soft); color: var(--accent); }
+  .v2 .legend { display: flex; margin-top: 0.6rem; }
+  .v2 .legend > div { padding-right: 0.6rem; font-size: 0.85rem; line-height: 1.45; color: var(--ink-soft); }
+  .v2 .legend .tag { display: block; font-size: 0.8rem; }
+  .v2 .sum { margin-top: 1.5rem; display: flex; align-items: baseline; gap: 0.75rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+  .v2 .sum b { font-size: 1.3rem; font-weight: 800; }
+
+  /* 3안 — 4칸 카드: 지연 지점마다 +초, 아래 한 줄 합계 */
+  .v3 .cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; }
+  .v3 .card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.1rem 1.1rem; }
+  .v3 .card .plus { display: block; margin-top: 0.4rem; font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; color: var(--ink); }
+  .v3 .card .plus small { font-size: 0.55em; font-weight: 700; color: var(--muted); margin-right: 0.15em; }
+  .v3 .card p { margin: 0.4rem 0 0; color: var(--ink-soft); font-size: 0.9rem; line-height: 1.55; }
+  .v3 .sum { margin-top: 1rem; padding: 0.9rem 1.1rem; border-radius: 12px; background: #fff; border: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; align-items: baseline; }
+  .v3 .sum b { font-weight: 800; }
+
+  @media (max-width: 760px) {
+    .v1 { grid-template-columns: 1fr; gap: 0.6rem; }
+    .v2 .legend { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+    .v2 .legend > div { width: auto !important; }
+    .v3 .cards { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <section class="opt">
+    <span class="opt-name">1안 · 슬라이드 디자인 시스템</span>
+    <p class="opt-desc">왼쪽 회색 소라벨 | 본문 2단, 얇은 구분선. 합계는 표의 마지막 행으로 넣고 주황은 합계 숫자에만.</p>
+    <div class="v1">
+      <div class="label">실제 작업 시간</div>
+      <div>
+        <h4>간단한 수정 작업에도 오래 걸렸던 실제 작업 시간</h4>
+        <table>
+          <tr><td class="t"><span class="tag">화면 전환</span></td><td>검수 화면에서 작업 화면으로 넘어가는 시간</td><td class="s">최소 5초</td></tr>
+          <tr><td class="t"><span class="tag">작업자 변경</span></td><td>작업자가 할당을 확인할 때까지 대기</td><td class="s">최소 5초</td></tr>
+          <tr><td class="t"><span class="tag">작업자 변경</span></td><td>작업자가 수정을 마칠 때까지 대기<br><span class="note">* 간단한 수정은 검수자가 바로 고치는 편이 더 빠름</span></td><td class="s">최소 30초</td></tr>
+          <tr><td class="t"><span class="tag">화면 전환</span></td><td>수정 완료 후 검수자가 다시 확인하기까지</td><td class="s">최소 10초</td></tr>
+          <tr class="total"><td class="t">합계</td><td>간단한 수정 1건마다 더 들던 작업 시간</td><td class="s">약 50초 ~ 1분</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="opt">
+    <span class="opt-name">2안 · 비율 막대</span>
+    <p class="opt-desc">네 구간을 초 단위 비율로 한 줄에 그려, 작업자를 기다리는 시간(30초)이 대부분이라는 게 한눈에 보이게.</p>
+    <h4>간단한 수정 작업에도 오래 걸렸던 실제 작업 시간</h4>
+    <div class="v2">
+      <div class="bar">
+        <div class="seg" style="width:10%">5초</div>
+        <div class="seg wait" style="width:10%">5초</div>
+        <div class="seg wait" style="width:60%">30초</div>
+        <div class="seg" style="width:20%">10초</div>
+      </div>
+      <div class="legend">
+        <div style="width:10%"><span class="tag">화면 전환</span>작업 화면 진입</div>
+        <div style="width:10%"><span class="tag">작업자 변경</span>할당 확인 대기</div>
+        <div style="width:60%"><span class="tag">작업자 변경</span>작업자가 수정을 마칠 때까지 대기<br><span class="note">* 간단한 수정은 검수자가 바로 고치는 편이 더 빠름</span></div>
+        <div style="width:20%"><span class="tag">화면 전환</span>검수자 재확인</div>
+      </div>
+      <div class="sum"><span>간단한 수정 1건마다</span><b>약 50초 ~ 1분</b><span class="note">작업 시간이 더 들었습니다 (최소 시간 합산)</span></div>
+    </div>
+  </section>
+
+  <section class="opt">
+    <span class="opt-name">3안 · 4칸 카드</span>
+    <p class="opt-desc">AS-IS 다이어그램의 주황 표시 지점과 1:1로 맞는 카드 4개. 숫자는 "+초"로 통일하고, 합계는 아래 한 줄.</p>
+    <h4>간단한 수정 작업에도 오래 걸렸던 실제 작업 시간</h4>
+    <div class="v3">
+      <div class="cards">
+        <div class="card"><span class="tag">화면 전환</span><span class="plus"><small>최소</small>+5초</span><p>검수 화면에서 작업 화면으로 넘어가는 시간</p></div>
+        <div class="card"><span class="tag">작업자 변경</span><span class="plus"><small>최소</small>+5초</span><p>작업자가 할당을 확인할 때까지 대기</p></div>
+        <div class="card"><span class="tag">작업자 변경</span><span class="plus"><small>최소</small>+30초</span><p>작업자가 수정을 마칠 때까지 대기</p><p class="note">* 간단한 수정은 검수자가 바로 고치는 편이 더 빠름</p></div>
+        <div class="card"><span class="tag">화면 전환</span><span class="plus"><small>최소</small>+10초</span><p>수정 완료 후 검수자가 다시 확인하기까지</p></div>
+      </div>
+      <div class="sum"><span>간단한 수정 1건마다</span><b>약 50초 ~ 1분</b><span class="note">작업 시간이 더 들었습니다 (최소 시간 합산)</span></div>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>
