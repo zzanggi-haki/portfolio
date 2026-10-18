@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 470" font-family="Pretendard Variable, Pretendard, -apple-system, system-ui, sans-serif">
+  <defs>
+    <pattern id="dash" width="1" height="1"><rect width="1" height="1" fill="none"/></pattern>
+  </defs>
+  <!-- panel 1: polyline -->
+  <text x="0" y="18" font-size="17" font-weight="800" fill="#111">폴리라인</text>
+  <text x="84" y="18" font-size="14" fill="#6b6b6b">특정 경로를 표현하는 라벨링 방식</text>
+  <rect x="0" y="32" width="640" height="170" rx="12" fill="#2b2b2b"/>
+  <g stroke="#4a4a4a" stroke-width="3" stroke-dasharray="18 14">
+    <line x1="20" y1="70" x2="620" y2="70"/>
+    <line x1="20" y1="166" x2="620" y2="166"/>
+  </g>
+  <polyline points="40,140 170,128 300,118 430,110 600,96" fill="none" stroke="#6E6AE6" stroke-width="4" stroke-linejoin="round"/>
+  <g fill="#fff" stroke="#111" stroke-width="2">
+    <circle cx="40" cy="140" r="6"/><circle cx="170" cy="128" r="6"/><circle cx="300" cy="118" r="6"/><circle cx="430" cy="110" r="6"/><circle cx="600" cy="96" r="6"/>
+  </g>
+  <rect x="44" y="104" width="52" height="22" rx="4" fill="#6E6AE6"/><text x="70" y="120" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">차선</text>
+  <text x="620" y="190" text-anchor="end" font-size="12" fill="#9a9a9a">선 하나에 클래스·속성 하나</text>
+
+  <!-- panel 2: polyline point -->
+  <text x="0" y="248" font-size="17" font-weight="800" fill="#111">폴리라인 포인트</text>
+  <text x="134" y="248" font-size="14" fill="#6b6b6b">특정 경로 + 포인트별 정보를 표기하는 라벨링 방식</text>
+  <rect x="0" y="262" width="640" height="200" rx="12" fill="#2b2b2b"/>
+  <g stroke="#4a4a4a" stroke-width="3" stroke-dasharray="18 14">
+    <line x1="20" y1="300" x2="620" y2="300"/>
+    <line x1="20" y1="430" x2="620" y2="430"/>
+  </g>
+  <!-- main lane: solid then dashed -->
+  <polyline points="40,392 170,380 300,370" fill="none" stroke="#6E6AE6" stroke-width="4" stroke-linejoin="round"/>
+  <polyline points="300,370 430,362 600,350" fill="none" stroke="#6E6AE6" stroke-width="4" stroke-dasharray="12 9"/>
+  <!-- branch -->
+  <polyline points="170,380 300,404 430,418 600,424" fill="none" stroke="#6E6AE6" stroke-width="4" stroke-linejoin="round"/>
+  <!-- occluding car -->
+  <rect x="402" y="342" width="56" height="32" rx="6" fill="#5c5c5c" stroke="#777"/>
+  <g fill="#fff" stroke="#111" stroke-width="2">
+    <circle cx="40" cy="392" r="6"/><circle cx="600" cy="350" r="6"/><circle cx="600" cy="424" r="6"/>
+  </g>
+  <!-- labeled points -->
+  <circle cx="170" cy="380" r="9" fill="#BF5B2C" stroke="#fff" stroke-width="2.5"/>
+  <circle cx="300" cy="370" r="7" fill="#F2E3A1" stroke="#111" stroke-width="2"/>
+  <circle cx="430" cy="362" r="7" fill="#F2E3A1" stroke="#111" stroke-width="2"/>
+  <g font-size="12" font-weight="700">
+    <rect x="128" y="334" width="84" height="24" rx="4" fill="#BF5B2C"/><text x="170" y="351" text-anchor="middle" fill="#fff">분기점</text>
+    <line x1="170" y1="358" x2="170" y2="371" stroke="#BF5B2C" stroke-width="2"/>
+    <rect x="252" y="322" width="96" height="24" rx="4" fill="#F2E3A1"/><text x="300" y="339" text-anchor="middle" fill="#3a3214">실선 → 점선</text>
+    <line x1="300" y1="346" x2="300" y2="363" stroke="#F2E3A1" stroke-width="2"/>
+    <rect x="404" y="306" width="52" height="24" rx="4" fill="#F2E3A1"/><text x="430" y="323" text-anchor="middle" fill="#3a3214">가려짐</text>
+    <line x1="430" y1="330" x2="430" y2="341" stroke="#F2E3A1" stroke-width="2"/>
+  </g>
+  <rect x="44" y="404" width="52" height="22" rx="4" fill="#6E6AE6"/><text x="70" y="420" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">차선</text>
+  <text x="620" y="452" text-anchor="end" font-size="12" fill="#9a9a9a">선은 그대로, 지점마다 클래스·속성</text>
+</svg>
