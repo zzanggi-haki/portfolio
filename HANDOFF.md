@@ -10,6 +10,7 @@
 - 20 AI 사례 01(A안, 기존 LG화학·프레임워크 2장을 1장으로): 왼쪽 제목·근거·본문·4단계 흐름(구축 강조)·역할 한 줄, 오른쪽에 제안서 16쪽 AX Goal 도식(`jcurve-lgchem-ax-goal.jpg`)과 22쪽 AX 브리프 표(`jcurve-lgchem-ax-brief.jpg`)를 슬라이드 내용만 잘라 반쯤 겹침. 비교안 `variants-ai-case.html`, `variants-ai-case2.html`, 제안서 리서치 장표 검토 `lgchem-research-pages.html`(v0.51 16 ~ 23쪽)
 - 사용자 확인: 제안서 20쪽 Walkthrough 사진 = 진행 방식 예시(LG화학 현장 아님) / 22쪽 AX 브리프 = 제안 단계 가설(고객사 요구로 가정해 먼저 분석). 미수주 사유 줄은 뺐음
 - 전체 29장. AI 장은 컴팩트하게(사용자 요청)
+- **portfolio-v1.0 배포(10/19)**: 웹 초안을 그대로 공개본으로 씀. `npm run build`가 `drafts/web/index.html`·`deck.html`을 `dist/web/`으로 복사(경로 ../../ → ../, "웹 초안" 표기·초안 안내 문구 제거, 비교안·검토 페이지는 안 올림). 사이트 Portfolio 메뉴·랜딩은 `web/`로 연결. `npm run pdf`의 portfolio.pdf = 웹 포트폴리오 29장(section 1개 = 1280×720). 첫·끝 장 버튼은 슬라이드(PDF) 보기에서만 숨김. 예전 slides/*.md 기반 `portfolio.html`은 빌드되지만 메뉴에서 뺌
 
 ## 0-000. ▶ 2026-10-18 밤 — 웹 초안 1 ~ 18쪽 검토 완료, 다음은 19쪽(02 AI 전환 장 표지)부터
 

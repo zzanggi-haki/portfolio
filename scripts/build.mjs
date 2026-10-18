@@ -74,7 +74,7 @@ const nav = (active, lang = 'ko') => {
   <a class="brand" href="./">학장기 Jangki Hak</a>
   <div class="links">
     <a href="resume.html" class="${active === 'resume' ? 'active' : ''}">Resume</a>
-    <a href="portfolio.html" class="${active === 'portfolio' ? 'active' : ''}">Portfolio</a>
+    <a href="web/" class="${active === 'portfolio' ? 'active' : ''}">Portfolio</a>
     ${active === 'resume' ? `<a href="${other.href}">${other.label}</a>` : ''}
     <button class="btn" onclick="window.print()">PDF</button>
   </div>
@@ -299,10 +299,30 @@ function buildIndex() {
     <p class="tagline">UX 리서치로 문제를 찾고, 그 답을 AI 제품으로 만드는 Product Owner</p>
   </header>
   <section class="row"><div class="label">RESUME</div><div class="prose"><p><a href="resume.html"><strong>이력서 (국문)</strong></a> · <a href="resume.en.html">Resume (English)</a> · <a href="resume.pdf">PDF</a></p></div></section>
-  <section class="row"><div class="label">PORTFOLIO</div><div class="prose"><p><a href="portfolio.html"><strong>포트폴리오 슬라이드</strong></a> · <a href="portfolio.pdf">PDF</a></p></div></section>
+  <section class="row"><div class="label">PORTFOLIO</div><div class="prose"><p><a href="web/"><strong>포트폴리오</strong></a> · <a href="web/deck.html">슬라이드 보기</a> · <a href="portfolio.pdf">PDF</a></p></div></section>
   <section class="row"><div class="label">CONTACT</div><div class="prose"><p><a href="mailto:zzanggi91@gmail.com">zzanggi91@gmail.com</a> · <a href="https://github.com/zzanggi-haki">github.com/zzanggi-haki</a></p></div></section>
 </main>`;
   write('index.html', page({ title: '학장기 Jangki Hak — Resume & Portfolio', css: ['resume.css'], body }));
+}
+
+// ───────────────────────── 웹 포트폴리오 (drafts/web → dist/web) ─────────────────────────
+// 웹 초안을 그대로 공개본으로 복사. 원본은 레포 루트 기준 ../../ 경로를 쓰므로 dist/web 기준 ../ 로 바꾸고,
+// "웹 초안" 표기와 초안 안내 문구는 공개본에서 뺀다. 비교안(variants-*)·검토용 페이지는 올리지 않음.
+function buildWebPortfolio() {
+  const src = path.join(ROOT, 'drafts/web');
+  if (!fs.existsSync(src)) return 0;
+  const files = ['index.html', 'deck.html'];
+  for (const f of files) {
+    const html = fs.readFileSync(path.join(src, f), 'utf8')
+      .replaceAll('../../dist/', '../')
+      .replaceAll('../../', '../')
+      .replace(/<p class="draft-note">[\s\S]*?<\/p>\n?/, '')
+      .replace(' (웹 초안)', '')
+      .replace('웹 초안 슬라이드 보기', '포트폴리오 슬라이드 보기')
+      .replace('웹 초안 · 슬라이드 보기', '슬라이드 보기');
+    write(path.join('web', f), html);
+  }
+  return files.length;
 }
 
 // ───────────────────────── run ─────────────────────────
@@ -318,4 +338,5 @@ const n = buildSlides('slides', 'portfolio.html');
 // 레이아웃 시안 확인용 (slides-demo/ 가 있을 때만)
 if (fs.existsSync(path.join(ROOT, 'slides-demo'))) buildSlides('slides-demo', 'layout-demo.html');
 buildIndex();
-console.log(`done. slides: ${n}`);
+const w = buildWebPortfolio();
+console.log(`done. slides: ${n}, web portfolio: ${w} files`);
