@@ -132,16 +132,19 @@
   .lane-key { margin: 0.6rem 0 0; font-size: 0.8rem; color: var(--muted); }
   .lane-key .k-swap { color: var(--accent); font-weight: 600; }
   .lane-key .k-band { color: var(--ink-soft); font-weight: 600; }
-  .delays { margin-top: 1.25rem; max-width: 52rem; }
-  .delays-h { margin: 0 0 0.6rem; font-weight: 700; color: var(--ink); }
-  .delays ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.2rem; }
-  .delays li { display: grid; grid-template-columns: 5.8rem minmax(0, 1fr) auto; gap: 0 0.75rem; align-items: baseline; padding: 0.45rem 0; border-bottom: 1px solid var(--line); color: var(--ink-soft); line-height: 1.6; }
+  .delays { margin-top: 1.5rem; }
+  .delays-h { margin: 0 0 0.8rem; font-weight: 800; font-size: 1.1rem; letter-spacing: -0.01em; color: var(--ink); }
+  .delays-grid { display: grid; grid-template-columns: minmax(0, 1fr) 15rem; gap: 1.5rem; align-items: stretch; }
+  .delays ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .delays li { display: grid; grid-template-columns: 5.8rem minmax(0, 1fr) auto; gap: 0 0.75rem; align-items: baseline; padding: 0.6rem 0; border-bottom: 1px solid var(--line); color: var(--ink-soft); line-height: 1.6; }
   .delays .tag { color: var(--accent); font-weight: 700; font-size: 0.85rem; }
   .delays .sec { color: var(--ink); font-weight: 700; white-space: nowrap; }
   .delays small { display: block; color: var(--muted); font-size: 0.82rem; }
-  .delays small::before { content: '* '; }
-  .delays-sum { margin: 0.8rem 0 0; color: var(--ink-soft); }
-  .delays-sum b { color: var(--accent); }
+  .delays li small::before { content: '* '; }
+  .delays-sum { background: var(--ink); color: var(--on-dark); border-radius: 14px; padding: 1.4rem 1.5rem; display: flex; flex-direction: column; justify-content: center; gap: 0.2rem; }
+  .delays-sum .k { color: var(--on-dark); font-weight: 600; font-size: 0.95rem; }
+  .delays-sum b { color: var(--accent); font-size: clamp(2rem, 3.6vw, 2.6rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin: 0.15rem 0; }
+  .delays-sum small { margin-top: 0.6rem; color: var(--on-dark-muted); }
   .note-ref { color: var(--muted); font-size: 0.85rem; margin-top: 1rem; }
 
   .draft-note { text-align: center; color: var(--muted); font-size: 0.8rem; padding: 2rem 0 3rem; }
@@ -150,6 +153,7 @@
     .co-head { grid-template-columns: 1fr; gap: 1.5rem; }
     .case-index { grid-template-columns: 1fr; }
     .case .row { grid-template-columns: 1fr; gap: 0.5rem; }
+    .delays-grid { grid-template-columns: 1fr; }
     .delays li { grid-template-columns: minmax(0, 1fr) auto; }
     .delays .tag { grid-column: 1 / -1; }
     .steps { grid-template-columns: 1fr; gap: 1.6rem; padding-top: 0; padding-left: 1.6rem; }
@@ -332,14 +336,21 @@
         <div class="lane-block">
           <div class="lane-wrap"><svg class="lane-flow" viewBox="0 0 1090 272" role="img" aria-labelledby="asis-t asis-d"><title id="asis-t">AS-IS 검수 수정 흐름</title><desc id="asis-d">검수자가 검수 화면에서 오류를 발견하면 작업 화면으로 넘어가 담당자를 바꾸고, 작업자가 할당을 확인해 수정한 뒤, 알림을 받은 검수자가 다시 검수 화면에서 확인해 제출한다. 화면이 두 번, 작업하는 사람이 두 번 바뀐다.</desc><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a8a8a"/></marker><marker id="aha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ff6a1a"/></marker></defs><rect x="98.0" y="66" width="212.0" height="196" rx="10" fill="#ffffff" stroke="#dedcd6"/><text x="204.0" y="52" text-anchor="middle" class="lf-band">검수 화면(썸네일 뷰어)</text><rect x="314.0" y="66" width="536.0" height="196" rx="10" fill="#e9e7e1" stroke="#dedcd6"/><text x="582.0" y="52" text-anchor="middle" class="lf-band">작업 화면(스튜디오)</text><rect x="854.0" y="66" width="212.0" height="196" rx="10" fill="#ffffff" stroke="#dedcd6"/><text x="960.0" y="52" text-anchor="middle" class="lf-band">검수 화면(썸네일 뷰어)</text><text x="20" y="133" class="lf-lane">검수자</text><line x1="98.0" y1="128" x2="1066.0" y2="128" stroke="#dedcd6" stroke-dasharray="3 4"/><text x="20" y="219" class="lf-lane">작업자</text><line x1="98.0" y1="214" x2="1066.0" y2="214" stroke="#dedcd6" stroke-dasharray="3 4"/><line x1="200.0" y1="128" x2="208.0" y2="128" stroke="#8a8a8a" stroke-width="1.4"/><line x1="308.0" y1="128" x2="316.0" y2="128" stroke="#8a8a8a" stroke-width="1.4"/><line x1="416.0" y1="128" x2="424.0" y2="128" stroke="#8a8a8a" stroke-width="1.4"/><text x="312.0" y="102" text-anchor="middle" class="lf-pain">화면 전환</text><path d="M526.0,128 H582 V194.0" fill="none" stroke="#ff6a1a" stroke-width="2" marker-end="url(#aha)"/><text x="590" y="169.0" class="lf-pain">작업자 변경</text><line x1="632.0" y1="214" x2="640.0" y2="214" stroke="#8a8a8a" stroke-width="1.4"/><line x1="740.0" y1="214" x2="748.0" y2="214" stroke="#8a8a8a" stroke-width="1.4"/><path d="M850.0,214 H906 V148.0" fill="none" stroke="#ff6a1a" stroke-width="2" marker-end="url(#aha)"/><text x="914" y="179.0" class="lf-pain">작업자 변경</text><text x="914" y="195.0" class="lf-note-g">알림으로 전달</text><text x="852.0" y="250" text-anchor="middle" class="lf-pain">화면 전환</text><line x1="956.0" y1="128" x2="964.0" y2="128" stroke="#8a8a8a" stroke-width="1.4"/><rect x="100.0" y="111.0" width="100" height="34" rx="17" fill="#f6f5f1" stroke="#111"/><text x="150" y="132.5" text-anchor="middle" class="lf-pill">검수 진행</text><rect x="208.0" y="111.0" width="100" height="34" rx="17" fill="#f6f5f1" stroke="#111"/><text x="258" y="132.5" text-anchor="middle" class="lf-pill">오류 발견</text><rect x="316.0" y="111.0" width="100" height="34" rx="17" fill="#f6f5f1" stroke="#111"/><text x="366" y="132.5" text-anchor="middle" class="lf-pill">작업 화면 진입</text><rect x="424.0" y="111.0" width="100" height="34" rx="17" fill="#f6f5f1" stroke="#111"/><text x="474" y="132.5" text-anchor="middle" class="lf-pill">담당자 변경</text><rect x="532.0" y="197.0" width="100" height="34" rx="17" fill="#111"/><text x="582" y="218.5" text-anchor="middle" class="lf-pill on">할당 확인</text><rect x="640.0" y="197.0" width="100" height="34" rx="17" fill="#111"/><text x="690" y="218.5" text-anchor="middle" class="lf-pill on">수정</text><rect x="748.0" y="197.0" width="100" height="34" rx="17" fill="#111"/><text x="798" y="218.5" text-anchor="middle" class="lf-pill on">완료</text><rect x="856.0" y="111.0" width="100" height="34" rx="17" fill="#f6f5f1" stroke="#111"/><text x="906" y="132.5" text-anchor="middle" class="lf-pill">수정 결과 확인</text><rect x="964.0" y="111.0" width="100" height="34" rx="17" fill="#f6f5f1" stroke="#111"/><text x="1014" y="132.5" text-anchor="middle" class="lf-pill">수정 완료(제출)</text></svg></div>
           <div class="delays">
-            <p class="delays-h">늘어나는 작업 시간</p>
-            <ul>
-              <li><span class="tag">화면 전환</span><span class="txt">검수 화면에서 작업 화면으로 넘어가는 시간만큼 작업 시간 추가</span><b class="sec">최소 5초</b></li>
-              <li><span class="tag">작업자 변경</span><span class="txt">작업자가 할당을 확인할 때까지 대기 시간 추가</span><b class="sec">최소 5초</b></li>
-              <li><span class="tag">작업자 변경</span><span class="txt">작업자가 수정을 마칠 때까지 대기 시간 추가<small>간단한 수정은 검수자가 바로 고치는 편이 더 빠름</small></span><b class="sec">최소 30초</b></li>
-              <li><span class="tag">화면 전환</span><span class="txt">수정 완료 후 검수자가 다시 확인하기까지 작업 시간 추가</span><b class="sec">최소 10초</b></li>
-            </ul>
-            <p class="delays-sum">간단한 수정 1건에 작업 시간이 <b>약 50초 ~ 1분</b> 더 들었습니다.</p>
+            <p class="delays-h">간단한 수정 작업에도 오래 걸렸던 실제 작업 시간</p>
+            <div class="delays-grid">
+              <ul>
+                <li><span class="tag">화면 전환</span><span class="txt">검수 화면에서 작업 화면으로 넘어가는 시간만큼 작업 시간 추가</span><b class="sec">최소 5초</b></li>
+                <li><span class="tag">작업자 변경</span><span class="txt">작업자가 할당을 확인할 때까지 대기 시간 추가</span><b class="sec">최소 5초</b></li>
+                <li><span class="tag">작업자 변경</span><span class="txt">작업자가 수정을 마칠 때까지 대기 시간 추가<small>간단한 수정은 검수자가 바로 고치는 편이 더 빠름</small></span><b class="sec">최소 30초</b></li>
+                <li><span class="tag">화면 전환</span><span class="txt">수정 완료 후 검수자가 다시 확인하기까지 작업 시간 추가</span><b class="sec">최소 10초</b></li>
+              </ul>
+              <div class="delays-sum">
+                <span class="k">간단한 수정 1건마다</span>
+                <b>50초 ~ 1분</b>
+                <span class="k">작업 시간이 더 들었습니다</span>
+                <small>최소 시간 합산 5 + 5 + 30 + 10초</small>
+              </div>
+            </div>
           </div>
         </div>
         </div>
