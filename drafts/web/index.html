@@ -223,6 +223,15 @@
   .dlog td .when { display: block; margin-top: 0.2rem; color: var(--muted); font-size: 0.8rem; font-variant-numeric: tabular-nums; }
   .meta-dl.inline { display: flex; flex-wrap: wrap; gap: 0.3rem 0.6rem; margin-top: 1.5rem; }
   .meta-dl.inline dd { margin-right: 1.25rem; }
+  .tasks { margin-top: 1.5rem; width: 100%; border-collapse: collapse; }
+  .tasks th { text-align: left; font-size: 0.75rem; letter-spacing: 0.08em; color: var(--muted); font-weight: 500; padding: 0 1rem 0.6rem 0; border-bottom: 2px solid var(--ink); }
+  .tasks td { vertical-align: top; padding: 0.85rem 1rem 0.85rem 0; border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: 0.92rem; line-height: 1.6; }
+  .tasks td:nth-child(1) { width: 15rem; } .tasks td:nth-child(1) b { color: var(--ink); }
+  .tasks td:nth-child(2) { width: 10rem; color: var(--ink); }
+  .tasks td:nth-child(4) { width: 18rem; color: var(--ink); }
+  .tasks .when { display: block; color: var(--muted); font-size: 0.8rem; font-variant-numeric: tabular-nums; }
+  .tasks .tbd { color: var(--accent); font-size: 0.82rem; border: 1px dashed var(--accent); border-radius: 4px; padding: 0 0.35rem; }
+  @media (max-width: 760px) { .tasks, .tasks tbody, .tasks tr, .tasks td { display: block; width: auto !important; } .tasks thead { display: none; } .tasks td { padding: 0.15rem 0; border: 0; } .tasks tr { padding: 0.8rem 0; border-bottom: 1px solid var(--line); } }
   .dlog { margin-top: 1.5rem; width: 100%; border-collapse: collapse; }
   .dlog th { text-align: left; font-size: 0.75rem; letter-spacing: 0.08em; color: var(--muted); font-weight: 500; padding: 0 1rem 0.6rem 0; border-bottom: 2px solid var(--ink); }
   .dlog td { vertical-align: top; padding: 0.8rem 1rem 0.8rem 0; border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: 0.92rem; line-height: 1.6; }
@@ -778,17 +787,18 @@
     </div>
   </section>
 
-  <section class="case case-cont" id="aimmo-decisions">
+  <section class="case case-cont" id="aimmo-tasks">
     <div class="wrap">
-      <p class="kicker">AIMMO · 제품 결정 기록</p>
-      <h3>기능을 더하기 전에 먼저 정한 것들</h3>
-      <table class="dlog">
-        <thead><tr><th>원칙</th><th>결정</th><th>그래서 가능해진 것</th></tr></thead>
+      <p class="kicker">AIMMO · 주요 태스크</p>
+      <h3>사례 밖에서 맡았던 주요 태스크</h3>
+      <table class="tasks">
+        <thead><tr><th>태스크</th><th>고객사 · 기간</th><th>설명</th><th>임팩트</th></tr></thead>
         <tbody>
-          <tr><td class="pr">확장되는 구조 먼저</td><td><b>유효성 검사를 프로젝트별 설정에서 프로젝트 자체 API 방식으로 바꿈</b><span class="when">2024.01 ~ 2024.02</span></td><td>고객사마다 다른 검출 규칙을 프로젝트 단위로 붙일 수 있게 됨. 현대자동차 무효 픽셀 검출, BMW 겹침·빈 픽셀 검출</td></tr>
-          <tr><td class="pr">기능보다 성능 먼저</td><td><b>포인트클라우드는 신규 기능보다 구조 개선을 로드맵 앞에 둠</b><span class="when">2024.06 ~</span></td><td>프레임이 많으면 느려지고 멈추던 문제를 먼저 다루고, 썸네일 뷰어 확장 같은 기능은 그 위에 올리는 순서가 됨</td></tr>
-          <tr><td class="pr">작게 나눠 출시</td><td><b>이미지 ↔ 참조 뷰(RV) 연동을 리소스 조합 4가지로 나눠 단계 출시</b><span class="when">2023.11 ~ 2025.03</span></td><td>싱글-싱글 조합을 먼저 쓰게 하고, 나머지 조합은 고객 일정에 맞춰 2025.03.31 정기 배포로 마무리</td></tr>
-          <tr><td class="pr">실사용으로 결정</td><td><b>클래스·속성 모달을 바로 바꾸지 않고, 기존안과 개선안을 전환해 쓰게 배포</b><span class="when">2025.01 ~ 2025.03</span></td><td>작업자와 검수자가 각자 맞는 안을 골라 쓰고, 대체 여부는 실사용 의견으로 정하는 구조 (2025.03.17 배포)</td></tr>
+          <tr><td><b>이미지 ↔ RV 프로젝트 연동</b></td><td>에이모<span class="when">2023.11 ~ 2025.03</span></td><td>작업 이미지 프로젝트와 참조 뷰(RV) 프로젝트를 연결. 리소스 조합(싱글·시퀀스) 4가지로 나눠 싱글-싱글부터 단계 출시</td><td>2025.03.31 시퀀스 조합까지 정기 배포 완료 · <span class="tbd">확인 필요</span></td></tr>
+          <tr><td><b>프로젝트 자체 API 유효성 검사</b></td><td>현대자동차 · BMW<span class="when">2024.01 ~ 2024.04</span></td><td>프로젝트마다 개별 설정하던 유효성 검사를 프로젝트별 API로 붙이는 구조로 변경</td><td>현대차 무효 픽셀, BMW 빈 픽셀·겹침 검출 등 고객사 규칙을 같은 구조로 확장</td></tr>
+          <tr><td><b>저조도 이미지 개선</b></td><td>에이모<span class="when">2024.01 ~ 2024.03</span></td><td>어두운 싱글 이미지를 스튜디오 설정에서 보정해 작업할 수 있게 함</td><td><span class="tbd">확인 필요</span></td></tr>
+          <tr><td><b>포인트클라우드 툴 성능 개선 로드맵</b></td><td>에이모<span class="when">2024.06 ~</span></td><td>프레임이 많아지면 툴이 느려지고 멈추는 문제를 인프라·백엔드·프론트 구조 개선 로드맵으로 정리</td><td><span class="tbd">확인 필요</span></td></tr>
+          <tr><td><b>클래스·속성 모달 개선</b></td><td>에이모<span class="when">2025.01 ~ 2025.03</span></td><td>작업자와 검수자가 같은 모달에서 서로 다른 이유로 불편을 겪어, 기존안과 개선안을 전환해 쓰게 배포</td><td>2025.03.17 배포 · <span class="tbd">확인 필요</span></td></tr>
         </tbody>
       </table>
     </div>
