@@ -131,7 +131,10 @@
   .why3 .hl .n { color: var(--accent); font-weight: 700; }
   .why3 p { margin: 0; color: var(--ink-soft); line-height: 1.7; }
   .why3 b { color: var(--ink); }
-  .res-row { margin-top: 1.75rem; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 3rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+  .map-shot { margin: 0; }
+  .map-shot img { width: 100%; height: 16.5rem; object-fit: cover; object-position: left top; border-radius: 10px; border: 1px solid var(--line); }
+  .map-shot figcaption { margin-top: 0.4rem; font-size: 0.8rem; color: var(--muted); }
+  .res-row { margin-top: 1.25rem; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 3rem; border-top: 1px solid var(--line); padding-top: 1rem; }
   .res-row .label { display: block; margin-bottom: 0.4rem; }
   .res-row p { margin: 0; color: var(--ink); font-weight: 600; line-height: 1.6; }
   .must { margin-top: 1.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
@@ -517,32 +520,8 @@
           <li><b>작업 방식</b> — 포인트의 timestamp 속성으로 원본 주행 이미지(참조 화면)를 연결했습니다. 포인트를 고르면 그 지점의 원본으로 참조 화면이 바뀌고, 참조 화면을 넘기면 해당 포인트가 선택됩니다.</li>
           <li><b>확장</b> — 짧은 기한 안에 최소 기능 데모로 시연한 뒤 정식 작업 유형으로 배포해, 다른 고객사 프로젝트에서도 쓰게 했습니다.</li>
         </ul></div>
-        <div class="blk"><div class="label">포인트 ↔ 원본 주행 이미지 매핑 · 개념도</div>
-          <div class="map-fig"><svg viewBox="0 0 560 300" role="img" aria-label="BEV 이미지의 포인트를 선택하면 그 지점을 찍은 원본 주행 이미지가 참조 화면에 나타난다" style="display:block;width:100%;height:auto;font-family:var(--font)">
-<text x="20" y="16" style="font-size:12px;fill:#8a8a8a">BEV 이미지 · 여러 장을 이어 붙인 한 장</text>
-<rect x="20" y="26" width="520" height="100" rx="8" fill="#2a2a2a"/>
-<path d="M40,108 C160,98 300,80 520,52" fill="none" stroke="#e9e7e1" stroke-width="2.5"/>
-<path d="M270,84 C360,92 440,102 520,112" fill="none" stroke="#e9e7e1" stroke-width="2.5" stroke-dasharray="8 6"/>
-<rect x="352" y="62" width="44" height="22" rx="3" fill="#555"/>
-<g style="font-size:11px;font-weight:700">
-<circle cx="140" cy="101" r="6" fill="#f6f5f1" stroke="#111" stroke-width="1.5"/><text x="140" y="124" text-anchor="middle" style="fill:#c9c9c6;font-weight:500">실선→점선</text>
-<circle cx="270" cy="84" r="8" fill="#BF5B2C" stroke="#fff" stroke-width="2"/><text x="270" y="72" text-anchor="middle" style="fill:#fff">분기점</text>
-<circle cx="374" cy="72" r="6" fill="#f6f5f1" stroke="#111" stroke-width="1.5"/><text x="374" y="56" text-anchor="middle" style="fill:#c9c9c6;font-weight:500">가려짐</text>
-</g>
-<line x1="140" y1="132" x2="115" y2="176" stroke="#b9b6ae" stroke-dasharray="3 4"/>
-<line x1="270" y1="94" x2="280" y2="176" stroke="#BF5B2C" stroke-width="2"/>
-<line x1="374" y1="80" x2="445" y2="176" stroke="#b9b6ae" stroke-dasharray="3 4"/>
-<g>
-<rect x="40" y="178" width="150" height="88" rx="6" fill="#3a3a3a"/>
-<rect x="205" y="178" width="150" height="88" rx="6" fill="#3a3a3a" stroke="#BF5B2C" stroke-width="3"/>
-<rect x="370" y="178" width="150" height="88" rx="6" fill="#3a3a3a"/>
-<path d="M60,250 L105,200 M170,250 L125,200 M225,250 L270,200 M335,250 L290,200 M390,250 L435,200 M500,250 L455,200" stroke="#6a6a6a" stroke-width="2"/>
-<text x="115" y="226" text-anchor="middle" style="font-size:11px;fill:#c9c9c6">원본 이미지 1</text>
-<text x="280" y="226" text-anchor="middle" style="font-size:11px;fill:#fff;font-weight:700">원본 이미지 2</text>
-<text x="445" y="226" text-anchor="middle" style="font-size:11px;fill:#c9c9c6">원본 이미지 3</text>
-</g>
-<text x="280" y="290" text-anchor="middle" style="font-size:12px;fill:#BF5B2C;font-weight:700">포인트 선택 ↔ 참조 화면 전환 (timestamp 매핑)</text>
-</svg></div>
+        <div class="blk"><div class="label">포인트 ↔ 원본 주행 이미지 매핑 · 실제 화면</div>
+          <figure class="map-shot"><img src="../../assets/img/aimmo-polyline-rv-mapping.jpg" alt="폴리라인 포인트에서 포인트를 선택하면 매핑된 RV 이미지로 이동하는 스튜디오 화면"><figcaption>포인트를 선택하면 왼쪽 위 참조 화면(RV)이 그 지점의 원본 이미지로 바뀜 · 정책 문서 예시</figcaption></figure>
         </div>
       </div>
       <div class="res-row">
