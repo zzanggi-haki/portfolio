@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>학장기 — 웹 초안 슬라이드 보기</title>
+<style>
+  html { scroll-snap-type: y proximity; }
+  body { margin: 0; background: #d8d6d0; font-family: 'Pretendard Variable', Pretendard, -apple-system, system-ui, sans-serif; }
+  .frame { position: relative; margin: 16px auto; overflow: hidden; background: #f6f5f1; box-shadow: 0 1px 3px rgba(0,0,0,0.12); scroll-snap-align: center; }
+  .frame iframe { position: absolute; top: 0; left: 0; width: 1280px; height: 720px; border: 0; transform-origin: 0 0; }
+  .bar { position: sticky; top: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; padding: 8px 16px; background: rgba(216,214,208,0.92); font-size: 12px; color: #555; }
+  .bar a { color: #333; }
+</style>
+</head>
+<body>
+<div class="bar"><span>웹 초안 · 슬라이드 보기 (16:9, 한 장씩)</span><a href="./">웹으로 보기</a></div>
+<div id="deck"></div>
+<script>
+(async function () {
+  const html = await (await fetch('./index.html', { cache: 'no-store' })).text();
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+  const ids = [...doc.querySelectorAll('main > section[id]')].map(s => s.id);
+  const deck = document.getElementById('deck');
+  const frames = ids.map((id, i) => {
+    const f = document.createElement('div'); f.className = 'frame'; f.id = 'p' + (i + 1);
+    const ifr = document.createElement('iframe');
+    ifr.src = `./index.html#only=${encodeURIComponent(id)}&n=${i + 1}&t=${ids.length}`;
+    ifr.loading = i < 3 ? 'eager' : 'lazy';
+    ifr.title = `${i + 1} / ${ids.length}`;
+    f.appendChild(ifr); deck.appendChild(f); return f;
+  });
+  function size() {
+    const w = Math.min(window.innerWidth - 32, (window.innerHeight - 64) * 16 / 9);
+    const k = w / 1280;
+    frames.forEach(f => {
+      f.style.width = (1280 * k) + 'px'; f.style.height = (720 * k) + 'px';
+      f.firstChild.style.transform = `scale(${k})`;
+    });
+  }
+  size(); window.addEventListener('resize', size);
+  if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
+})();
+</script>
+</body>
+</html>
