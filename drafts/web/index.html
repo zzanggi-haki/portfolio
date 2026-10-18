@@ -26,6 +26,7 @@
   .pill:hover { text-decoration: none; border-color: var(--ink); }
 
   /* summary */
+  .sec-title { margin: 0 0 1.25rem; font-size: clamp(1.6rem, 3.4vw, 2.3rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.25; }
   .summary .lead { font-size: clamp(1.05rem, 2vw, 1.25rem); line-height: 1.75; color: var(--ink-soft); max-width: 46rem; margin: 0; }
   .summary .lead b { color: var(--ink); }
   .ways { margin-top: 2.5rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
@@ -35,25 +36,24 @@
   .way a { display: inline-block; margin-top: 0.7rem; font-size: 0.85rem; color: var(--accent); }
 
   /* numbers */
-  .numbers .grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 2rem; align-items: stretch; }
-  .big { display: flex; flex-direction: column; justify-content: center; }
+  .numbers .big { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.75rem; }
   .num { font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
-  .big .num { font-size: clamp(4rem, 11vw, 7.5rem); }
+  .big .num { font-size: clamp(3.6rem, 8vw, 5.2rem); }
   .num small { font-size: 0.42em; font-weight: 700; letter-spacing: -0.01em; margin-left: 0.08em; }
-  .lbl { margin-top: 0.6rem; font-weight: 600; font-size: 1rem; }
+  .lbl { margin-top: 0.5rem; font-weight: 600; font-size: 1rem; }
+  .big .lbl { margin-top: 0; font-size: 1.15rem; font-weight: 700; }
   .src { margin-top: 0.3rem; color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
-  .groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-  .group { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 1.25rem 1.4rem 1.4rem; }
-  .group > .label { margin-bottom: 1rem; }
-  .group .item + .item { margin-top: 1.4rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
-  .group .num { font-size: clamp(2.4rem, 5vw, 3.2rem); }
+  .groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .group { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 1.2rem 1.3rem 1.3rem; }
+  .group > .label { margin-bottom: 0.9rem; }
+  .group .item + .item { margin-top: 1.1rem; padding-top: 1.1rem; border-top: 1px solid var(--line); }
+  .group .num { font-size: clamp(2.2rem, 4.4vw, 2.8rem); }
   .group.product { background: var(--ink); color: var(--on-dark); border-color: var(--ink); }
   .group.product .label, .group.product .src { color: var(--on-dark-muted); }
   .group.product .item + .item { border-top-color: #2c2c2c; }
-  .group.ai { grid-column: 1 / -1; background: var(--accent-soft); border-color: transparent; }
+  .group.ai { background: var(--accent-soft); border-color: transparent; }
   .group.ai .label { color: var(--accent); }
-  .group.ai .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
-  .group.ai .pair .item + .item { margin-top: 0; padding-top: 0; border-top: 0; padding-left: 1.5rem; border-left: 1px solid #E3CBBC; }
+  .group.ai .item + .item { border-top-color: #E3CBBC; }
 
   /* career */
   .career .era { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 1rem 2rem; padding: 1.1rem 0; border-top: 1px solid var(--line); }
@@ -207,6 +207,8 @@
   .draft-note { text-align: center; color: var(--muted); font-size: 0.8rem; padding: 2rem 0 3rem; }
 
   @media (max-width: 760px) {
+    .groups { grid-template-columns: minmax(0, 1fr); }
+    .numbers .big { flex-wrap: wrap; gap: 0.5rem 1rem; }
     .co-head { grid-template-columns: 1fr; gap: 1.5rem; }
     .ch-grid { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
     .ch-cases { grid-template-columns: minmax(0, 1fr); }
@@ -223,10 +225,6 @@
     .steps::before { top: 0.4rem; bottom: 0; left: 0.35rem; right: auto; width: 2px; height: auto; }
     .step::before { top: 0.25rem; left: -1.6rem; }
     .ways { grid-template-columns: 1fr; gap: 1.5rem; }
-    .numbers .grid { grid-template-columns: 1fr; }
-    .groups { grid-template-columns: 1fr; }
-    .group.ai .pair { grid-template-columns: 1fr; }
-    .group.ai .pair .item + .item { padding-left: 0; border-left: 0; padding-top: 1.4rem; border-top: 1px solid #E3CBBC; }
     .career .era { grid-template-columns: 1fr; gap: 0.75rem; }
     .job { grid-template-columns: 1fr auto; }
     .job .when { grid-column: 1 / -1; }
@@ -247,8 +245,8 @@
 <main id="top">
   <section class="hero" id="hero">
     <div class="wrap">
-      <p class="eyebrow">Product Manager · UX 리서치 5년 · AI 플랫폼 PO 2.5년</p>
-      <h1>일하는 장면에서 문제를 찾고,<br>제품으로 만들고, 이제는<br>AI로 일을 바꾸는 Product Owner<span class="dot" aria-hidden="true"></span></h1>
+      <p class="eyebrow">UX 리서치 5년 · AI 플랫폼 PO 2.5년</p>
+      <h1>일하는 장면에서 문제를 찾고,<br>제품으로 만들고,<br>AI로 일을 바꾸는 Product Owner<span class="dot" aria-hidden="true"></span></h1>
       <div class="who"><b>학장기</b><span>010.4013.2425</span><a href="mailto:zzanggi91@gmail.com">zzanggi91@gmail.com</a></div>
       <div class="cta">
         <a class="pill solid" href="#aimmo">대표 사례 보기</a>
@@ -260,6 +258,7 @@
 
   <section class="summary" id="summary">
     <div class="wrap">
+      <h2 class="sec-title">관찰하고, 작게 검증하고, 계속 고칩니다</h2>
       <p class="lead">UX 컨설턴트로 5년간 사용자를 관찰해 문제를 정의했고, AI 플랫폼 PO로 2.5년간 그 문제들을 제품 안에서 직접 풀고 개선해 왔습니다. AIMMO에서는 AI 학습 데이터 라벨링 플랫폼 <b>STUDIO</b>의 전략과 로드맵 수립부터 기획·개발·출시, 실제 사용 이후의 개선까지 제품의 전 주기를 주도했고, 최근에는 기업 AI 전환 제안과 기업 AI 교육에서 사람과 AI가 일을 나누는 방식을 직접 적용하고 있습니다.</p>
       <div class="ways">
         <div class="way">
@@ -282,11 +281,13 @@
   </section>
 
   <section class="numbers" id="numbers" aria-label="숫자로 보는 경력">
-    <div class="wrap grid">
+    <div class="wrap">
       <div class="big">
         <div class="num">9<small>년 차</small></div>
-        <div class="lbl">사용자 리서치에서 제품 관리, 지금은 AI 전환까지</div>
-        <div class="src">UX 컨설팅 5년 · AI 데이터 플랫폼 PO 2.5년 · AI 교육·AX 컨설팅</div>
+        <div>
+          <div class="lbl">사용자 리서치에서 제품 관리, 지금은 AI 전환까지</div>
+          <div class="src">UX 컨설팅 5년 · AI 데이터 플랫폼 PO 2.5년 · AI 교육·AX 컨설팅</div>
+        </div>
       </div>
       <div class="groups">
         <div class="group">
@@ -317,17 +318,15 @@
         </div>
         <div class="group ai">
           <div class="label">AI 전환</div>
-          <div class="pair">
-            <div class="item">
-              <div class="num">2<small>과정</small></div>
-              <div class="lbl">Claude Code 과정 주 강사</div>
-              <div class="src">공기업 실무자 1:1 과정(8주차 진행 중) · HRD 강사 원데이 클래스</div>
-            </div>
-            <div class="item">
-              <div class="num">35<small>회</small></div>
-              <div class="lbl">기업 AI 교육 기술 튜터</div>
-              <div class="src">LG · SK이노베이션 · 하나금융그룹 등</div>
-            </div>
+          <div class="item">
+            <div class="num">2<small>과정</small></div>
+            <div class="lbl">Claude Code 과정 주 강사</div>
+            <div class="src">공기업 실무자 1:1 과정(8주차 진행 중) · HRD 강사 원데이 클래스</div>
+          </div>
+          <div class="item">
+            <div class="num">35<small>회</small></div>
+            <div class="lbl">기업 AI 교육 기술 튜터</div>
+            <div class="src">LG · SK이노베이션 · 하나금융그룹 등</div>
           </div>
         </div>
       </div>
