@@ -195,6 +195,12 @@
   .scope4 b { display: block; margin-top: 0.15rem; font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; color: var(--ink); }
   .scope4 b small { font-size: 0.85rem; font-weight: 600; color: var(--muted); letter-spacing: 0; }
   .scope4 .hl b { color: var(--accent); }
+  .agree { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 1.5rem; }
+  .agree > .n { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.04em; padding-top: 0.2rem; }
+  .agree-h { margin: 0; font-size: 1.15rem; font-weight: 800; color: var(--ink); letter-spacing: -0.01em; }
+  .agree .flow.mini { margin-top: 0.8rem; }
+  .agree-f { margin: 0.8rem 0 0; font-size: 0.86rem; color: var(--ink-soft); }
+  @media (max-width: 760px) { .agree { grid-template-columns: minmax(0, 1fr); gap: 0.4rem; } }
   .scope4 p { margin: 0.4rem 0 0; font-size: 0.84rem; line-height: 1.6; color: var(--ink-soft); }
   .case figure.spec-sheet { margin: 0.9rem 0 0; }
   .spec-sheet table { width: 100%; border-collapse: collapse; background: #fff; font-size: 0.8rem; line-height: 1.4; color: #222; font-family: -apple-system, 'Apple SD Gothic Neo', sans-serif; }
@@ -721,7 +727,7 @@
             <li><span class="n">목표</span><p>STUDIO를 분자 구조 이미지 라벨링 툴로 바꿔 LG 저장소에 패키지로 납품</p></li>
             <li><span class="n">조건</span><p>2024.08 ~ 2025.02, 약 7개월 · PD 1 · FE 2 · QA 2 · BD 1</p></li>
             <li><span class="n">역할</span><p>프로젝트 리드 PO · 고객사 기획서 분석, 기능·단축키·산출물 정의서 작성, 프로젝트 보드 운영</p></li>
-            <li><span class="n">핵심 기능</span><p>이미지 속 원자 표기 텍스트(Et, NH 등)를 <b>추론해 분자식(LaTeX)으로 입력</b>하는 기능 신규 개발, 외부 API 비용 부담 정책 수립</p></li>
+            <li><span class="n">핵심 기능</span><p><b>STUDIO의 기존 라벨링 기능을 기준으로, 분자 구조 작업에 맞게 다시 맞춤.</b> 원자 표기 텍스트(Et, NH 등)를 추론해 분자식(LaTeX)으로 입력하는 기능은 새로 개발</p></li>
             <li><span class="n">결과</span><p>2025.02 개발 완료 · LG 저장소 패키징 → 2025.03 LG 내 서비스 오픈 → 1년 유지보수 계약 전환</p></li>
           </ul>
         </div>
@@ -742,6 +748,14 @@
         <div class="hl"><span class="n">최소 수정</span><b>9</b><p>공통 헤더 · 히스토리 · 모드별 툴바 · 원자 확인·수정 · 결합 확인·생성·수정 · 분자 목록 패널</p></div>
         <div><span class="n">새로 개발</span><b>19</b><p>잘린 선 · 괄호 · 원자·결합 클래스 수정 · 모드 선택 · 결과 미리보기 · 모드별 속성 패널</p></div>
         <div class="cut"><span class="n">빼거나 합침</span><b>2<small> + 세부 기능</small></b><p>전체 모드의 잘린 선 생성·수정은 결합 모드로 합침 · 밝기·대비·채도 조절, 코멘트 등 제외</p></div>
+      </div>
+      <div class="agree">
+        <span class="n">범위 협의</span>
+        <div>
+          <p class="agree-h">개발에 들어가기 전에, 기능 협의를 앞단에서 끝냈습니다</p>
+          <div class="flow mini"><span>고객사 요구 검토</span><i>→</i><span>기능정의서 수정·검토 요청</span><i>→</i><span>프로토타입으로 기능 확정</span><i>↻ 반복</i><span class="hl">협의 완료 후 개발 착수</span></div>
+          <p class="agree-f">이 반복으로 기능정의서가 v1.0 → v1.3으로 정리됨 · 다음 장에 v1.3 일부</p>
+        </div>
       </div>
     </div>
   </section>
