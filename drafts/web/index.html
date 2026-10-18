@@ -121,6 +121,9 @@
   .req td { padding: 0.85rem 0; border-bottom: 1px solid var(--line); color: var(--ink-soft); }
   .req td:first-child { width: 8rem; color: var(--ink); }
   .req td:last-child { color: var(--accent); font-weight: 600; }
+  .req4 td { vertical-align: top; padding-right: 1.25rem; }
+  .req4 td:last-child { padding-right: 0; }
+  .req4 td small { display: block; margin-top: 0.25rem; color: var(--muted); font-size: 0.82rem; }
   .must { margin-top: 1.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
   .must .label { margin-right: 0.5rem; }
   .must .chip { border: 1.5px solid var(--ink); border-radius: 999px; padding: 0.35rem 0.9rem; font-weight: 600; font-size: 0.9rem; }
@@ -395,7 +398,7 @@
       </div>
       <div class="ch-cases">
         <a href="#case-inspection"><small>사례 01</small><b>6단계였던 검수 과정을 3단계로 줄여 검수 효율 대폭 개선</b></a>
-        <a href="#case-oem"><small>사례 02</small><b>경쟁 수주에서 데모로 증명해 BMW 5개년 계약 기여</b></a>
+        <a href="#case-oem"><small>사례 02</small><b>처음 보는 요구사항도 기능으로 해석해 글로벌 선도 기업 3곳의 계약에 기여</b></a>
         <a href="#case-session"><small>사례 03</small><b>사용자 조사 세션으로 지속적인 개선 시스템 만들기</b></a>
       </div>
       <p class="ch-clients"><span>고객사</span>BMW · Bosch · Continental · Magna · Arbe · 현대자동차 · 카카오모빌리티 · 스트라드비전 · LG AI연구원 · 네이버</p>
@@ -462,11 +465,11 @@
       <p class="kicker">AIMMO · 사례 02</p>
       <div class="oem-head">
         <div>
-          <h3>경쟁 수주에서 데모로 증명해<br>BMW 5개년 계약 기여</h3>
+          <h3>처음 보는 요구사항도 기능으로 해석해<br>글로벌 선도 기업 3곳의 계약에 기여</h3>
           <p class="hit">BMW 5개년 계약 · Bosch 수주 기여 · Arbe 추가 계약 기여</p>
         </div>
         <div>
-          <p class="sub">스튜디오가 요구사항을 어디까지 해낼 수 있는지가 수주를 가르던 상황에서, 짧은 기한 안에 데모를 만들어 시연했습니다. Bosch도 같은 과정으로 수주에 기여했습니다.</p>
+          <p class="sub">글로벌 선도 기업의 요구사항을 분석해 스튜디오의 기능으로 해석하고, 데이터를 가장 정확하고 효율적으로 만드는 작업 방식을 데모로 먼저 제안했습니다. 기한이 짧아 개발팀과 바로 붙어 최소 기능으로 구현하고 시연했습니다.</p>
           <dl class="meta-dl"><dt>역할</dt><dd>Product Owner</dd><dt>기간</dt><dd>2023.11 ~ 2024.06</dd></dl>
         </div>
       </div>
@@ -481,18 +484,17 @@
   <section class="case case-cont" id="case-oem-problem">
     <div class="wrap">
       <p class="kicker">AIMMO · 사례 02 · 문제</p>
-      <h3>고객이 요구한 작업 유형과 방식이<br>스튜디오에 없었습니다</h3>
-      <p class="sub">글로벌 고객사들은 3D 큐보이드 중심이던 스튜디오로는 할 수 없는 작업 유형과 방식을 요구했습니다. 새로운 기술이 여럿 들어가야 했고, 그에 따라 제약 상황과 작업 방식, 프로젝트 진행 방식까지 먼저 정해야 했습니다. 요구 기한은 짧았습니다.</p>
-      <table class="req">
-        <thead><tr><th>고객사</th><th>요구한 작업 유형</th><th>당시 스튜디오</th></tr></thead>
+      <h3>고객이 원한 건 새 기능이 아니라,<br>데이터를 가장 정확하고 효율적으로 만드는 작업 방식이었습니다</h3>
+      <p class="sub">글로벌 선도 기업들은 라벨링을 더 세밀하게 만드는 고도화 요구사항을 미리 제시하고, 이를 기능으로 만들어 줄 곳을 찾고 있었습니다. 요구사항을 그대로 받아 적는 대신 무엇을 라벨링하려는지 분석해, 스튜디오의 기능과 작업 방식으로 해석해야 했습니다.</p>
+      <table class="req req4">
+        <thead><tr><th>고객사</th><th>요구사항</th><th>기능으로 해석</th><th>데모로 제안한 작업 방식</th></tr></thead>
         <tbody>
-          <tr><td><b>Bosch</b></td><td>폴리라인 포인트 · 선 위의 포인트마다 클래스와 속성 지정</td><td>지원하지 않음</td></tr>
-          <tr><td><b>BMW</b></td><td>BEV 이미지 위 폴리라인 포인트 · 포인트마다 클래스와 속성 지정</td><td>싱글·시퀀스 이미지만 지원</td></tr>
-          <tr><td><b>Arbe</b></td><td>레이더 포인트클라우드 위 2D 폴리곤</td><td>포인트클라우드는 3D 큐보이드 중심</td></tr>
+          <tr><td><b>BMW · Bosch</b></td><td>선이 달라지는 지점을 포인트 단위로 라벨링<small>예: 차선이 두 갈래로 나뉘는 곳, 실선이 점선으로 바뀌는 곳</small></td><td>폴리라인 포인트 + 포인트마다 클래스·속성</td><td>BEV 이미지 위에 선을 그리고, 달라지는 지점마다 클래스·속성 지정</td></tr>
+          <tr><td><b>Arbe</b></td><td>레이더 포인트클라우드에서 폴리곤 단면 라벨링</td><td>z값 0 단면의 2D 폴리곤</td><td>3D 큐보이드 중심 툴에 2D 폴리곤 작업 유형 추가</td></tr>
         </tbody>
       </table>
       <p class="note-ref">BEV(Bird's Eye View) · 주행 사진들을 위에서 내려다본 시점으로 이어 붙인 한 장의 이미지</p>
-      <div class="must"><span class="label">먼저 정해야 했던 것</span><span class="chip">제약 상황</span><span class="chip">작업 방식</span><span class="chip">프로젝트 진행 방식</span></div>
+      <div class="must"><span class="label">함께 정해야 했던 것</span><span class="chip">제약 상황</span><span class="chip">작업 방식</span><span class="chip">프로젝트 진행 방식</span></div>
     </div>
   </section>
 
