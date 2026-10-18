@@ -124,6 +124,16 @@
   .req4 td { vertical-align: top; padding-right: 1.25rem; }
   .req4 td:last-child { padding-right: 0; }
   .req4 td small { display: block; margin-top: 0.25rem; color: var(--muted); font-size: 0.82rem; }
+  .why3 { margin-top: 1.75rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .why3 > div { border-top: 2px solid var(--ink); padding-top: 0.8rem; }
+  .why3 > div.hl { border-top-color: var(--accent); }
+  .why3 .n { display: block; font-size: 0.8rem; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 0.4rem; }
+  .why3 .hl .n { color: var(--accent); font-weight: 700; }
+  .why3 p { margin: 0; color: var(--ink-soft); line-height: 1.7; }
+  .why3 b { color: var(--ink); }
+  .res-row { margin-top: 1.75rem; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 3rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+  .res-row .label { display: block; margin-bottom: 0.4rem; }
+  .res-row p { margin: 0; color: var(--ink); font-weight: 600; line-height: 1.6; }
   .must { margin-top: 1.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
   .must .label { margin-right: 0.5rem; }
   .must .chip { border: 1.5px solid var(--ink); border-radius: 999px; padding: 0.35rem 0.9rem; font-weight: 600; font-size: 0.9rem; }
@@ -236,6 +246,7 @@
     .case .row { grid-template-columns: 1fr; gap: 0.5rem; }
     .cover-grid, .sol-grid, .oem-head { grid-template-columns: minmax(0, 1fr); gap: 1.75rem; }
     .trio { grid-template-columns: minmax(0, 1fr); }
+    .why3, .res-row { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
     .steps.steps4 { grid-template-columns: minmax(0, 1fr); }
     .tb-lane { grid-template-columns: minmax(0, 1fr); gap: 0.5rem; }
     .tb-flow { flex-direction: column; align-items: flex-start; row-gap: 0; }
@@ -485,41 +496,58 @@
     <div class="wrap">
       <p class="kicker">AIMMO · 사례 02 · 문제</p>
       <h3>고객이 원한 건 새 기능이 아니라,<br>데이터를 가장 정확하고 효율적으로 만드는 작업 방식이었습니다</h3>
-      <p class="sub">글로벌 선도 기업들은 라벨링을 더 세밀하게 만드는 고도화 요구사항을 미리 제시하고, 이를 기능으로 만들어 줄 곳을 찾고 있었습니다. 요구사항을 그대로 받아 적는 대신 무엇을 라벨링하려는지 분석해, 스튜디오의 기능과 작업 방식으로 해석해야 했습니다.</p>
-      <table class="req req4">
-        <thead><tr><th>고객사</th><th>요구사항</th><th>기능으로 해석</th><th>데모로 제안한 작업 방식</th></tr></thead>
-        <tbody>
-          <tr><td><b>BMW · Bosch</b></td><td>선이 달라지는 지점을 포인트 단위로 라벨링<small>예: 차선이 두 갈래로 나뉘는 곳, 실선이 점선으로 바뀌는 곳</small></td><td>폴리라인 포인트 + 포인트마다 클래스·속성</td><td>BEV 이미지 위에 선을 그리고, 달라지는 지점마다 클래스·속성 지정</td></tr>
-          <tr><td><b>Arbe</b></td><td>레이더 포인트클라우드에서 폴리곤 단면 라벨링</td><td>z값 0 단면의 2D 폴리곤</td><td>3D 큐보이드 중심 툴에 2D 폴리곤 작업 유형 추가</td></tr>
-        </tbody>
-      </table>
+      <p class="sub">글로벌 선도 기업들은 라벨링을 더 세밀하게 만드는 고도화 요구사항을 미리 제시하고, 이를 기능으로 만들어 줄 곳을 찾고 있었습니다. 요구사항을 그대로 받아 적는 대신, 실제 작업 장면에서 어디가 어려울지부터 따져 작업 방식으로 해석했습니다.</p>
+      <div class="why3">
+        <div><span class="n">요구사항 · BMW</span><p>버드아이뷰로 이어 붙인 주행 이미지 위에 차선을 폴리라인으로 그리고, <b>분기점·잘림·가려짐</b>을 포인트마다 클래스·속성으로 라벨링</p></div>
+        <div><span class="n">작업 장면에서 막히는 지점</span><p>이어 붙인 한 장만 보고는 차선이 끊긴 건지 다른 차에 가려진 건지 판단하기 어려워, <b>작업자도 검수자도</b> 정확하게 라벨링하기 어려움</p></div>
+        <div class="hl"><span class="n">그래서 필요한 작업 방식</span><p>포인트를 찍을 때마다 <b>그 지점을 찍은 원본 주행 이미지</b>를 바로 함께 볼 수 있어야 함</p></div>
+      </div>
+      <p class="ex"><span>판단이 어려운 예</span>이 차선은 여기서 끊긴 걸까, 앞차에 가려진 걸까?</p>
       <p class="note-ref">BEV(Bird's Eye View) · 주행 사진들을 위에서 내려다본 시점으로 이어 붙인 한 장의 이미지</p>
-      <div class="must"><span class="label">함께 정해야 했던 것</span><span class="chip">제약 상황</span><span class="chip">작업 방식</span><span class="chip">프로젝트 진행 방식</span></div>
     </div>
   </section>
 
   <section class="case case-cont" id="case-oem-2">
     <div class="wrap">
       <p class="kicker">AIMMO · 사례 02 · 해결 과정과 결과</p>
-      <h3>개발팀과 바로 붙어<br>최소 기능 데모로 먼저 보여 주기</h3>
+      <h3>포인트마다 원본 주행 이미지를 바로 확인하도록</h3>
       <div class="sol-grid">
         <div class="blk"><div class="label">해결 과정</div><ul class="plain">
-          <li><b>파악</b> — 요구사항을 리소스·작업 방식·필요 기능 기준으로 검토해 바로 가능한 것과 개발 후 가능한 것을 나눴습니다.</li>
-          <li><b>판단</b> — 기한이 짧아 개발팀과 바로 붙어 요구사항을 빠르게 파악하고, 최소 기능으로 데모를 구현해 바로 시연했습니다.</li>
-          <li><b>확장</b> — 데모 기능을 정식 작업 유형으로 다듬어, 다른 고객사 프로젝트에서도 쓰게 했습니다.</li>
+          <li><b>해석</b> — 요구를 "차선(선)"과 "선 위 지점의 의미(점)"로 나눠, 폴리라인 위 포인트마다 클래스·속성을 다는 <b>폴리라인 포인트</b> 작업 유형으로 정의했습니다. 기존 폴리라인과 분리하고, 포인트 클래스는 폴리라인과 독립적으로 두어 어떤 차선에도 같은 기준을 쓰게 했습니다.</li>
+          <li><b>작업 방식</b> — 포인트의 timestamp 속성으로 원본 주행 이미지(참조 화면)를 연결했습니다. 포인트를 고르면 그 지점의 원본으로 참조 화면이 바뀌고, 참조 화면을 넘기면 해당 포인트가 선택됩니다.</li>
+          <li><b>확장</b> — 짧은 기한 안에 최소 기능 데모로 시연한 뒤 정식 작업 유형으로 배포해, 다른 고객사 프로젝트에서도 쓰게 했습니다.</li>
         </ul></div>
-        <div class="blk"><div class="label">결과</div><ul class="plain">
-          <li><b>사업</b> — BMW 5개년 계약 · Bosch 수주 기여 · Arbe 추가 계약 기여</li>
-          <li><b>제품</b> — 데모 기능 2종(폴리라인 포인트, 포인트클라우드 2D 폴리곤)을 정식 작업 유형으로 편입</li>
-        </ul></div>
-      </div>
-      <div class="blk tobe-blk"><div class="label">데모에서 정식 작업 유형까지</div>
-        <div class="steps steps4">
-          <div class="step"><small>2023.11</small><b>Bosch 데모</b><span>폴리라인 포인트</span></div>
-          <div class="step"><small>2024.01</small><b>운영 배포</b><span>폴리라인 포인트 정식 기능</span></div>
-          <div class="step"><small>2024.03</small><b>BMW BEV 적용</b><span>프로젝트 타임라인 매핑</span></div>
-          <div class="step hl"><small>2024.03 ~ 2024.06</small><b>Arbe 데모 → 신규 작업 유형</b><span>포인트클라우드 2D 폴리곤</span></div>
+        <div class="blk"><div class="label">포인트 ↔ 원본 주행 이미지 매핑 · 개념도</div>
+          <div class="map-fig"><svg viewBox="0 0 560 300" role="img" aria-label="BEV 이미지의 포인트를 선택하면 그 지점을 찍은 원본 주행 이미지가 참조 화면에 나타난다" style="display:block;width:100%;height:auto;font-family:var(--font)">
+<text x="20" y="16" style="font-size:12px;fill:#8a8a8a">BEV 이미지 · 여러 장을 이어 붙인 한 장</text>
+<rect x="20" y="26" width="520" height="100" rx="8" fill="#2a2a2a"/>
+<path d="M40,108 C160,98 300,80 520,52" fill="none" stroke="#e9e7e1" stroke-width="2.5"/>
+<path d="M270,84 C360,92 440,102 520,112" fill="none" stroke="#e9e7e1" stroke-width="2.5" stroke-dasharray="8 6"/>
+<rect x="352" y="62" width="44" height="22" rx="3" fill="#555"/>
+<g style="font-size:11px;font-weight:700">
+<circle cx="140" cy="101" r="6" fill="#f6f5f1" stroke="#111" stroke-width="1.5"/><text x="140" y="124" text-anchor="middle" style="fill:#c9c9c6;font-weight:500">실선→점선</text>
+<circle cx="270" cy="84" r="8" fill="#BF5B2C" stroke="#fff" stroke-width="2"/><text x="270" y="72" text-anchor="middle" style="fill:#fff">분기점</text>
+<circle cx="374" cy="72" r="6" fill="#f6f5f1" stroke="#111" stroke-width="1.5"/><text x="374" y="56" text-anchor="middle" style="fill:#c9c9c6;font-weight:500">가려짐</text>
+</g>
+<line x1="140" y1="132" x2="115" y2="176" stroke="#b9b6ae" stroke-dasharray="3 4"/>
+<line x1="270" y1="94" x2="280" y2="176" stroke="#BF5B2C" stroke-width="2"/>
+<line x1="374" y1="80" x2="445" y2="176" stroke="#b9b6ae" stroke-dasharray="3 4"/>
+<g>
+<rect x="40" y="178" width="150" height="88" rx="6" fill="#3a3a3a"/>
+<rect x="205" y="178" width="150" height="88" rx="6" fill="#3a3a3a" stroke="#BF5B2C" stroke-width="3"/>
+<rect x="370" y="178" width="150" height="88" rx="6" fill="#3a3a3a"/>
+<path d="M60,250 L105,200 M170,250 L125,200 M225,250 L270,200 M335,250 L290,200 M390,250 L435,200 M500,250 L455,200" stroke="#6a6a6a" stroke-width="2"/>
+<text x="115" y="226" text-anchor="middle" style="font-size:11px;fill:#c9c9c6">원본 이미지 1</text>
+<text x="280" y="226" text-anchor="middle" style="font-size:11px;fill:#fff;font-weight:700">원본 이미지 2</text>
+<text x="445" y="226" text-anchor="middle" style="font-size:11px;fill:#c9c9c6">원본 이미지 3</text>
+</g>
+<text x="280" y="290" text-anchor="middle" style="font-size:12px;fill:#BF5B2C;font-weight:700">포인트 선택 ↔ 참조 화면 전환 (timestamp 매핑)</text>
+</svg></div>
         </div>
+      </div>
+      <div class="res-row">
+        <div><span class="label">결과 · 사업</span><p>BMW 5개년 계약 · Bosch 수주 기여 · Arbe 추가 계약 기여</p></div>
+        <div><span class="label">결과 · 제품</span><p>폴리라인 포인트(2024.01)와 포인트클라우드 2D 폴리곤(2024.06)을 정식 작업 유형으로 편입. Arbe는 같은 원칙으로 주행 가능 영역(Free Space)을 Top view 폴리곤으로 라벨링</p></div>
       </div>
     </div>
   </section>
