@@ -3,15 +3,15 @@ lang: en
 name: Jangki Hak
 name_en: 학장기
 tagline: Product Owner who finds problems through UX research and solves them with AI products
-phone: +82 10-4013-2425
+phone: +82 10.4013.2425
 email: zzanggi91@gmail.com
 links:
   - label: Portfolio
-    url: ./portfolio.html
+    url: https://zzanggi-haki.github.io/portfolio/web/
   - label: GitHub
     url: https://github.com/zzanggi-haki
 experience: 9 years of experience (since Feb 2017)
-updated: 2026-10-15
+updated: 2026-10-19
 labels:
   Summary: SUMMARY
   Core strengths: CORE STRENGTHS
@@ -27,17 +27,17 @@ Spent five years observing users and defining problems as a UX consultant, then 
 
 Experience defining user problems through Video Ethnography, UT, FGI, and heatmap analysis kept actual user needs at the center of feature planning and product operations. At STUDIO, an AI training data labeling platform, **led the full product lifecycle**, from strategy and roadmaps through planning, development, launch, and improvements after actual use.
 
-Translated requirements from global manufacturers including BMW, Bosch, and Arbe into product features, contributing to **a five-year BMW contract and contracts of at least six months with Bosch and Arbe**. When LG AI Research, an existing SaaS customer, **switched to a package purchase**, delivered an on-premises version with minimal changes. Recently proposed a framework for building SCM AI agents for LG Chem based on UX research methods, and I am testing how work should be split between people and AI in my own work.
+Translated requirements from global manufacturers including BMW, Bosch, and Arbe into product features, contributing to **a five-year BMW contract and contracts of at least six months with Bosch and Arbe**. When LG AI Research, which had used STUDIO through AIMMO data projects, **decided to buy the tool itself**, delivered it as the first on-premises package. Recently proposed a framework for building SCM AI agents for LG Chem based on UX research methods, and I am testing how work should be split between people and AI in my own work.
 
 ## Core strengths
 
 ### Find real needs through research and observation
 #### Start by observing users' actual work
-Use research methods developed over five years as a UX consultant to identify causes in actual work settings instead of taking requirements at face value. Observed reviewers leaving and returning to the viewer, then cut the review process from six steps to three. For the LG AI Research delivery, first mapped the work process and made minimal changes to the existing tool.
+Use research methods developed over five years as a UX consultant to identify causes in actual work settings instead of taking requirements at face value. Observed reviewers leaving and returning to the viewer, then cut the review process from nine steps to four. For the LG AI Research delivery, broke requirements down by feature and filtered out what existing features could already cover, narrowing new development to what molecular structure labeling needed.
 
 ### Build systems for continuous product improvement
 #### Turn user feedback into weekly product improvements
-Designed a weekly session with project PMs to consolidate scattered requests from operational teams, then established it as a regular team process with consistent PM participation. This aligned PM and development priorities. A task force of more than eight people maintained weekly releases without a single missed release for 2.5 years and handled 106 improvements and support cases in 2024 alone.
+Designed a weekly session with project PMs and actual labelers to consolidate scattered requests from operational teams, ran it for about a year, and established it as a regular team process with consistent PM participation. Requests from the session flowed into weekly releases. A task force of more than eight people maintained weekly releases without a single missed release for 2.5 years and handled 106 improvements and support cases in 2024 alone.
 
 ### Validate on a small scale, then expand into the product
 #### Turn one customer's request into a product all customers can use
@@ -48,7 +48,7 @@ Release MVPs into actual work environments, confirm their effectiveness, then ex
 ### Corporate AI Instructor and Technical Tutor (freelance) · May 2026 ~ present
 
 - **Designed and taught two Claude Code courses as lead instructor**
-  - 1:1 course for a public enterprise practitioner (Jul 2026 ~ ongoing, week 8): Claude Code literacy, design and procurement review automation, and exercises updating unit prices in design cost breakdowns for an electrical practitioner at Korea Rural Community Corporation
+  - 1:1 course for a public enterprise practitioner (Jul 2026 ~ ongoing): Claude Code literacy, design and procurement review automation, and exercises updating unit prices in design cost breakdowns for an electrical practitioner at Korea Rural Community Corporation
   - One-day class for HRD instructors (Sep 2026): Claude Code fundamentals and hands-on exercises, building tools for immediate use in training
 - **Technical tutor for 35 corporate AI training sessions** — LG 18, SK Innovation 11, Hana Financial Group and Hana Capital 4, LX MDI and D&O CM 2
   - SK Innovation AI Agent course for team leaders (Aug ~ Sep 2026): Literacy in the internal AI tool Innohub, work redesign, and AI agent creation
@@ -72,14 +72,14 @@ Oversaw product strategy and roadmaps through launch and operations; led a task 
 
 - **Contributed to major global project contracts** — five-year BMW contract and contracts of at least six months with Bosch and Arbe
   - Added customer demo features to the roadmap as standard features and turned them into general-purpose task types for other customers
-- **Improved labeling efficiency** — cut review steps from 6 to 3
+- **Improved labeling efficiency** — cut review steps from 9 to 4
   - Released an MVP for editing directly within the thumbnail viewer, adopted by all reviewers
   - Prioritized point cloud performance improvements and refactoring ahead of new features
 - **Expanded business scope** — supported new data types and on-premises sales
   - Developed new task types — point cloud 2D polygons for the Arbe project and text labeling for the Naver project
   - Took sole responsibility for on-premises packaging for LG AI Research, launched in Mar 2025, and converted to a one-year maintenance contract
 - **Built an operating process that turned operational requests into product improvements** — no missed weekly releases over 2.5 years; 106 improvements and support cases in 2024
-  - Designed weekly project PM sessions and established them as a regular team process, connecting them to three-month roadmaps to reflect operational requests in that week's priorities
+  - Designed weekly sessions with project PMs and labelers, ran them for about a year, and established them as a regular team process, connecting them to three-month roadmaps to reflect operational requests in that week's priorities
 
 ### Freelance — Service Planning PL and UX Consultant · Jun 2022 ~ Oct 2022
 
