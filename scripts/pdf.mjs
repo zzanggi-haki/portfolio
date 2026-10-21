@@ -37,11 +37,11 @@ async function resumePdf(input, output) {
 
 // portfolio.pdf — dist/web/index.html의 section 하나를 1280×720 한 장으로 (= 슬라이드 보기와 같은 화면)
 // section마다 #only=<id> iframe을 한 페이지씩 세운 인쇄용 페이지를 임시로 만들어 한 번에 PDF로 뽑는다
-async function slidesPdf() {
+async function slidesPdf(input = 'index.html', output = 'portfolio.pdf') {
   const webDir = path.join(DIST, 'web');
-  const html = fs.readFileSync(path.join(webDir, 'index.html'), 'utf8');
+  const html = fs.readFileSync(path.join(webDir, input), 'utf8');
   const ids = [...html.matchAll(/^\s*<section[^>]*\bid="([^"]+)"/gm)].map((m) => m[1]);
-  const frames = ids.map((id, i) => `<iframe src="index.html#only=${encodeURIComponent(id)}&n=${i + 1}&t=${ids.length}"></iframe>`).join('\n');
+  const frames = ids.map((id, i) => `<iframe src="${input}#only=${encodeURIComponent(id)}&n=${i + 1}&t=${ids.length}"></iframe>`).join('\n');
   const tmp = path.join(webDir, '_print.html');
   fs.writeFileSync(tmp, `<!doctype html><meta charset="utf-8"><style>
 @page { size: 1280px 720px; margin: 0; } html, body { margin: 0; padding: 0; }
@@ -65,8 +65,8 @@ iframe { display: block; width: 1280px; height: 720px; border: 0; break-after: p
     }
   }
   await page.emulateMedia({ media: 'screen' });
-  await page.pdf({ path: path.join(DIST, 'portfolio.pdf'), width: '1280px', height: '720px', printBackground: true, preferCSSPageSize: true });
-  console.log(`  ✓ portfolio.pdf (${ids.length}장)`);
+  await page.pdf({ path: path.join(DIST, output), width: '1280px', height: '720px', printBackground: true, preferCSSPageSize: true });
+  console.log(`  ✓ ${output} (${ids.length}장)`);
   await page.close();
   fs.rmSync(tmp);
 }
@@ -74,4 +74,10 @@ iframe { display: block; width: 1280px; height: 720px; border: 0; break-after: p
 await resumePdf('resume.html', 'resume.pdf');
 await resumePdf('resume.en.html', 'resume.en.pdf');
 await slidesPdf();
+// 지원 공고 맞춤본 (VARIANT=nhn npm run pdf → resume.nhn.pdf, portfolio.nhn.pdf)
+const v = process.env.VARIANT;
+if (v) {
+  await resumePdf(`resume.${v}.html`, `resume.${v}.pdf`);
+  await slidesPdf(`${v}.html`, `portfolio.${v}.pdf`);
+}
 await browser.close();
