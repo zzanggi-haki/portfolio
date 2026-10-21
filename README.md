@@ -19,7 +19,25 @@ styles/theme.css (키노트 톤)                      └─npm run pdf─▶ re
 
 - **1층 노션**이 사실(수치·날짜·문구)의 원본. 노션에서 고치고 `npm run sync` 하면 `data/`가 갱신됩니다.
 - **2층 이 레포**는 "어떻게 보여줄지"만 가집니다. 슬라이드 본문에서 `{{card:슬러그.필드}}`로 노션 카드 값을 끌어 씁니다.
-- **3층 공고별 산출물**은 이 레포를 건드리지 않고 따로 만듭니다 (`/tailor`, 추후).
+- **3층 공고별 맞춤본**은 원본과 별도 파일로 둡니다 (아래 "공고별 맞춤본").
+
+## 공고별 맞춤본
+
+원본(`content/resume.ko.md`, `drafts/web/index.html`)은 그대로 두고, 공고마다 별도 파일을 만듭니다.
+
+| 파일 | 내용 |
+|---|---|
+| `content/resume.<이름>.ko.md` | 맞춤 이력서 |
+| `drafts/web/<이름>.html` | 맞춤 포트폴리오 (원본 복사 후 수정) |
+
+```bash
+VARIANT=nhn npm run build   # dist/resume.nhn.html, dist/web/nhn.html 추가
+VARIANT=nhn npm run pdf     # dist/resume.nhn.pdf, dist/portfolio.nhn.pdf 추가
+```
+
+- 맞춤 이력서 PDF에는 링크(포트폴리오·GitHub·본문 링크·메일)를 모두 빼고 텍스트만 남깁니다. 공개 포트폴리오는 원본이라 헷갈리지 않게 하기 위해서입니다. 맞춤 포트폴리오는 PDF로 따로 제출합니다.
+- CI 배포에는 `VARIANT`가 없으므로 맞춤본은 공개 사이트에 올라가지 않습니다.
+- 버전은 태그로 남깁니다: `apply/<회사>-<날짜>` (예: `apply/nhn-enterprise-2026-10-21`).
 
 ## 슬라이드 편집
 

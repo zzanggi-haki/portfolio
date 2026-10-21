@@ -97,8 +97,15 @@ ${body}
 </html>`;
 
 // ───────────────────────── 이력서 ─────────────────────────
-function buildResume(file, out) {
-  const { data: fm, content } = matter(expandRefs(read(file)));
+// noLinks: 공고 맞춤본은 링크(포트폴리오·GitHub·본문 링크)를 모두 빼고 텍스트만 남김 — 공개 포트폴리오와 헷갈리지 않게
+function buildResume(file, out, { noLinks = false } = {}) {
+  const parsed = matter(expandRefs(read(file)));
+  const fm = parsed.data;
+  let content = parsed.content;
+  if (noLinks) {
+    fm.links = [];
+    content = content.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+  }
   const sections = splitSections(content, 2);
   const labels = fm.labels || {};
 
@@ -144,7 +151,7 @@ function buildResume(file, out) {
     <div class="label">${fm.lang === 'ko' ? 'RESUME' : 'RESUME'} · ${esc(fm.experience || '')}</div>
     <h1>${esc(fm.name)}<span class="alt">${esc(fm.name_en || '')}</span></h1>
     <p class="tagline">${esc(fm.tagline)}</p>
-    <div class="contact"><span>${esc(fm.phone)}</span><a href="mailto:${esc(fm.email)}">${esc(fm.email)}</a>${links}</div>
+    <div class="contact"><span>${esc(fm.phone)}</span>${noLinks ? `<span>${esc(fm.email)}</span>` : `<a href="mailto:${esc(fm.email)}">${esc(fm.email)}</a>`}${links}</div>
   </header>
   ${rows}
   <footer class="resume-foot"><span>${esc(fm.name_en || fm.name)}</span><span>Updated ${esc(fm.updated instanceof Date ? fm.updated.toISOString().slice(0, 10) : fm.updated || '')}</span></footer>
@@ -308,10 +315,9 @@ function buildIndex() {
 // ───────────────────────── 웹 포트폴리오 (drafts/web → dist/web) ─────────────────────────
 // 웹 초안을 그대로 공개본으로 복사. 원본은 레포 루트 기준 ../../ 경로를 쓰므로 dist/web 기준 ../ 로 바꾸고,
 // "웹 초안" 표기와 초안 안내 문구는 공개본에서 뺀다. 비교안(variants-*)·검토용 페이지는 올리지 않음.
-function buildWebPortfolio() {
+function buildWebPortfolio(files = ['index.html', 'deck.html']) {
   const src = path.join(ROOT, 'drafts/web');
   if (!fs.existsSync(src)) return 0;
-  const files = ['index.html', 'deck.html'];
   for (const f of files) {
     const html = fs.readFileSync(path.join(src, f), 'utf8')
       .replaceAll('../../dist/', '../')
@@ -339,4 +345,11 @@ const n = buildSlides('slides', 'portfolio.html');
 if (fs.existsSync(path.join(ROOT, 'slides-demo'))) buildSlides('slides-demo', 'layout-demo.html');
 buildIndex();
 const w = buildWebPortfolio();
-console.log(`done. slides: ${n}, web portfolio: ${w} files`);
+// 지원 공고 맞춤본 (VARIANT=nhn npm run build): content/resume.nhn.ko.md, drafts/web/nhn.html
+// CI 배포에는 VARIANT가 없으므로 공개 사이트에 올라가지 않음
+const v = process.env.VARIANT;
+if (v) {
+  buildResume(`content/resume.${v}.ko.md`, `resume.${v}.html`, { noLinks: true });
+  buildWebPortfolio([`${v}.html`]);
+}
+console.log(`done. slides: ${n}, web portfolio: ${w} files${v ? `, variant: ${v}` : ''}`);
