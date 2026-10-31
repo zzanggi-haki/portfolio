@@ -23,17 +23,20 @@ styles/theme.css (키노트 톤)                      └─npm run pdf─▶ re
 
 ## 공고별 맞춤본
 
-원본(`content/resume.ko.md`, `drafts/web/index.html`)은 그대로 두고, 공고마다 별도 파일을 만듭니다.
+원본(`content/resume.ko.md`, `drafts/web/index.html`)은 그대로 두고, 공고마다 별도 파일을 만듭니다. 채용 데이터는 이 레포(공개)에 두지 않으므로 **레포 밖 지원건 폴더**를 읽는 방식을 씁니다.
 
-| 파일 | 내용 |
+| 지원건 폴더 (예: `~/Desktop/ZZANGGI/job-ops/applications/<날짜_회사_직무>/`) | 내용 |
 |---|---|
-| `content/resume.<이름>.ko.md` | 맞춤 이력서 |
-| `drafts/web/<이름>.html` | 맞춤 포트폴리오 (원본 복사 후 수정) |
+| `resume.ko.md` | 맞춤 이력서 (원본 복사 후 수정) |
+| `portfolio.html` | 맞춤 포트폴리오 (`drafts/web/index.html` 복사 후 수정, 없으면 이력서만) |
 
 ```bash
-VARIANT=nhn npm run build   # dist/resume.nhn.html, dist/web/nhn.html 추가
-VARIANT=nhn npm run pdf     # dist/resume.nhn.pdf, dist/portfolio.nhn.pdf 추가
+VARIANT_DIR=<지원건 폴더> VARIANT=<slug> VARIANT_LABEL=<회사> npm run build
+VARIANT_DIR=<지원건 폴더> VARIANT=<slug> VARIANT_LABEL=<회사> npm run pdf
+# → 지원건 폴더에 학장기_이력서_<회사>.pdf, 학장기_포트폴리오_<회사>.pdf
 ```
+
+예전 방식(`content/resume.<이름>.ko.md`, `drafts/web/<이름>.html` + `VARIANT=<이름>`)도 그대로 동작합니다.
 
 - 맞춤 이력서 PDF에는 링크(포트폴리오·GitHub·본문 링크·메일)를 모두 빼고 텍스트만 남깁니다. 공개 포트폴리오는 원본이라 헷갈리지 않게 하기 위해서입니다. 맞춤 포트폴리오는 PDF로 따로 제출합니다.
 - CI 배포에는 `VARIANT`가 없으므로 맞춤본은 공개 사이트에 올라가지 않습니다.
