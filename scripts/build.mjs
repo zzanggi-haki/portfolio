@@ -16,7 +16,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(ROOT, 'dist');
 const md = new MarkdownIt({ html: true, linkify: true, typographer: false });
 
-const read = (p) => fs.readFileSync(path.join(ROOT, p), 'utf8');
+const read = (p) => fs.readFileSync(path.resolve(ROOT, p), 'utf8');
 const esc = (s = '') => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const write = (rel, html) => { const p = path.join(DIST, rel); fs.mkdirSync(path.dirname(p), { recursive: true }); fs.writeFileSync(p, html); console.log('  ✓', rel); };
 
@@ -315,11 +315,13 @@ function buildIndex() {
 // ───────────────────────── 웹 포트폴리오 (drafts/web → dist/web) ─────────────────────────
 // 웹 초안을 그대로 공개본으로 복사. 원본은 레포 루트 기준 ../../ 경로를 쓰므로 dist/web 기준 ../ 로 바꾸고,
 // "웹 초안" 표기와 초안 안내 문구는 공개본에서 뺀다. 비교안(variants-*)·검토용 페이지는 올리지 않음.
+// files 항목이 [원본 절대 경로, 출력 이름]이면 레포 밖 파일을 읽는다 (VARIANT_DIR 맞춤본)
 function buildWebPortfolio(files = ['index.html', 'deck.html']) {
   const src = path.join(ROOT, 'drafts/web');
   if (!fs.existsSync(src)) return 0;
-  for (const f of files) {
-    const html = fs.readFileSync(path.join(src, f), 'utf8')
+  for (const entry of files) {
+    const [from, f] = Array.isArray(entry) ? entry : [path.join(src, entry), entry];
+    const html = fs.readFileSync(from, 'utf8')
       .replaceAll('../../dist/', '../')
       .replaceAll('../../', '../')
       .replace(/<p class="draft-note">[\s\S]*?<\/p>\n?/, '')
@@ -346,9 +348,14 @@ if (fs.existsSync(path.join(ROOT, 'slides-demo'))) buildSlides('slides-demo', 'l
 buildIndex();
 const w = buildWebPortfolio();
 // 지원 공고 맞춤본 (VARIANT=nhn npm run build): content/resume.nhn.ko.md, drafts/web/nhn.html
+// VARIANT_DIR=<지원건 폴더>: 레포 밖 폴더의 resume.ko.md · portfolio.html을 읽음 — 채용 데이터를 공개 레포에 두지 않기 위해
 // CI 배포에는 VARIANT가 없으므로 공개 사이트에 올라가지 않음
-const v = process.env.VARIANT;
-if (v) {
+const vdir = process.env.VARIANT_DIR && path.resolve(process.env.VARIANT_DIR);
+const v = process.env.VARIANT || (vdir && 'variant');
+if (vdir) {
+  buildResume(path.join(vdir, 'resume.ko.md'), `resume.${v}.html`, { noLinks: true });
+  if (fs.existsSync(path.join(vdir, 'portfolio.html'))) buildWebPortfolio([[path.join(vdir, 'portfolio.html'), `${v}.html`]]);
+} else if (v) {
   buildResume(`content/resume.${v}.ko.md`, `resume.${v}.html`, { noLinks: true });
   buildWebPortfolio([`${v}.html`]);
 }

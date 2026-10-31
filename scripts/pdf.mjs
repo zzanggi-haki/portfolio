@@ -75,9 +75,18 @@ await resumePdf('resume.html', 'resume.pdf');
 await resumePdf('resume.en.html', 'resume.en.pdf');
 await slidesPdf();
 // 지원 공고 맞춤본 (VARIANT=nhn npm run pdf → resume.nhn.pdf, portfolio.nhn.pdf)
-const v = process.env.VARIANT;
+// VARIANT_DIR이면 PDF를 그 폴더에 학장기_이력서_<VARIANT_LABEL>.pdf · 학장기_포트폴리오_<VARIANT_LABEL>.pdf로 복사
+const vdir = process.env.VARIANT_DIR && path.resolve(process.env.VARIANT_DIR);
+const v = process.env.VARIANT || (vdir && 'variant');
 if (v) {
   await resumePdf(`resume.${v}.html`, `resume.${v}.pdf`);
-  await slidesPdf(`${v}.html`, `portfolio.${v}.pdf`);
+  const hasPortfolio = fs.existsSync(path.join(DIST, 'web', `${v}.html`));
+  if (hasPortfolio) await slidesPdf(`${v}.html`, `portfolio.${v}.pdf`);
+  if (vdir) {
+    const label = process.env.VARIANT_LABEL || v;
+    fs.copyFileSync(path.join(DIST, `resume.${v}.pdf`), path.join(vdir, `학장기_이력서_${label}.pdf`));
+    if (hasPortfolio) fs.copyFileSync(path.join(DIST, `portfolio.${v}.pdf`), path.join(vdir, `학장기_포트폴리오_${label}.pdf`));
+    console.log('  →', vdir);
+  }
 }
 await browser.close();
